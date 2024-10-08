@@ -3,23 +3,19 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import csv from 'csv-parser';
-import pg from 'pg';
-import { PrismaClient, Role } from '@prisma/client';
+import { Prisma, PrismaClient, Role } from '@prisma/client';
 import { nanoid } from 'nanoid';
-const { Client } = pg;
+import { DefaultArgs } from '@prisma/client/runtime/library';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const prisma = new PrismaClient();
 
-const userMap: any = {};
-const pgConfig = {
-  host: 'localhost',
-  user: 'postgres',
-  password: 'kodakollectiv',
-  database: 'bitte-new',
-  port: 5434
-};
-const pgClient = new Client(pgConfig);
+const restaurantType = await prisma.restaurantType.findMany({
+  include: {
+    restaurantTypeTranslation: true
+  }
+})
 
 export async function userMigrate() {
   const results: any[] = [];
@@ -30,7 +26,6 @@ export async function userMigrate() {
     .on('data', (data) => results.push(data))
     .on('end', async () => {
       try {
-        // Begin Prisma transaction
         const transaction = await prisma.$transaction(async (prisma) => {
           for (const row of results) {
             const newUser = await prisma.user.create({
@@ -46,7 +41,6 @@ export async function userMigrate() {
               },
             });
 
-            // Call the restaurant migration for each user (with old and new ID)
             await restaurantMigrate(row.id, newUser.id, prisma);
           }
         });
@@ -60,7 +54,27 @@ export async function userMigrate() {
     });
 }
 
-export async function restaurantMigrate(oldId: string, newId: string, prisma: any) {
+async function getRestaurantType(resType: string) {
+  if (resType) {
+    for (const type of restaurantType) {
+      const matchedType = type.restaurantTypeTranslation.find(
+        (translation) => translation.name.toLowerCase() === resType.toLowerCase()
+      );
+
+      if (matchedType) {
+        return type;
+      }
+    }
+
+    return null;
+  }
+}
+
+export async function restaurantMigrate(
+  oldId: string,
+  newId: string,
+  prisma: Omit<PrismaClient<Prisma.PrismaClientOptions, never, DefaultArgs>, "$connect" | "$disconnect" | "$on" | "$transaction" | "$use" | "$extends">
+) {
   const results: any[] = [];
   const csvFilePath = path.join(__dirname, '../csv/restaurants.csv');
   fs.createReadStream(csvFilePath)
@@ -68,13 +82,12 @@ export async function restaurantMigrate(oldId: string, newId: string, prisma: an
     .on('data', (data) => results.push(data))
     .on('end', async () => {
       try {
-        // Batch processing to reduce individual DB inserts
         const filteredRestaurants = results.filter(row => row.userId === oldId);
 
         for (const row of filteredRestaurants) {
           const token = nanoid(12);
+          const resType = await getRestaurantType(row.cuisines);
 
-          // Use Prisma to insert restaurants for the given user
           await prisma.restaurant.create({
             data: {
               name: row.name,
@@ -84,6 +97,14 @@ export async function restaurantMigrate(oldId: string, newId: string, prisma: an
               restaurantUsers: {
                 create: { userId: newId, isSelected: false }
               },
+              ...(row.cuisines && { restaurantTypeId: row.cuisines && resType?.id }),
+              theme: {
+                create: {
+                  facebookLink: row.facebookLink,
+                  instagramLink: row.instaLink,
+                  tiktokLink: row.tiktokLink
+                }
+              }
             },
           });
         }
