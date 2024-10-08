@@ -9,7 +9,11 @@ import { DefaultArgs } from '@prisma/client/runtime/library';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  transactionOptions: {
+    timeout: 600000
+  }
+});
 
 const restaurantType = await prisma.restaurantType.findMany({
   include: {
@@ -77,41 +81,121 @@ export async function restaurantMigrate(
 ) {
   const results: any[] = [];
   const csvFilePath = path.join(__dirname, '../csv/restaurants.csv');
-  fs.createReadStream(csvFilePath)
-    .pipe(csv())
-    .on('data', (data) => results.push(data))
-    .on('end', async () => {
-      try {
-        const filteredRestaurants = results.filter(row => row.userId === oldId);
+  return new Promise((resolve, reject) => {
+    fs.createReadStream(csvFilePath)
+      .pipe(csv())
+      .on('data', (data) => results.push(data))
+      .on('end', async () => {
+        try {
+          const filteredRestaurants = results.filter(row => row.userId === oldId);
+          await Promise.all(filteredRestaurants.map(async (row) => {
+            const token = nanoid(12);
+            const resType = await getRestaurantType(row.cuisines);
 
-        for (const row of filteredRestaurants) {
-          const token = nanoid(12);
-          const resType = await getRestaurantType(row.cuisines);
-
-          await prisma.restaurant.create({
-            data: {
-              name: row.name,
-              address: row.address,
-              token: token,
-              vat_number: row.VATNumber,
-              restaurantUsers: {
-                create: { userId: newId, isSelected: false }
+            const newRes = await prisma.restaurant.create({
+              data: {
+                name: row.name,
+                address: row.address,
+                token: token,
+                vat_number: row.VATNumber,
+                restaurantUsers: {
+                  create: { userId: newId, isSelected: false },
+                },
+                ...(row.cuisines && { restaurantTypeId: row.cuisines && resType?.id }),
+                theme: {
+                  create: {
+                    facebookLink: row.facebookLink,
+                    instagramLink: row.instaLink,
+                    tiktokLink: row.tiktokLink,
+                  },
+                },
               },
-              ...(row.cuisines && { restaurantTypeId: row.cuisines && resType?.id }),
-              theme: {
-                create: {
-                  facebookLink: row.facebookLink,
-                  instagramLink: row.instaLink,
-                  tiktokLink: row.tiktokLink
-                }
-              }
-            },
-          });
-        }
+            });
+            const languagesArray = row.languages.split(',');
 
-        console.log(`Restaurants for user ${newId} successfully migrated!`);
-      } catch (error) {
-        console.error('Error migrating restaurants:', error);
-      }
-    });
+            await categoryMigrate(row.id, newRes.id, languagesArray, prisma,);
+          }));
+
+          console.log(`Restaurants for user ${newId} successfully migrated!`);
+          resolve(true);
+        } catch (error) {
+          console.error('Error migrating restaurants:', error);
+          reject(error);
+        }
+      });
+  });
+}
+
+export async function categoryMigrate(
+  resOldId: string,
+  resNewId: string,
+  languages: Array<any>,
+  prisma: Omit<PrismaClient<Prisma.PrismaClientOptions, never, DefaultArgs>, "$connect" | "$disconnect" | "$on" | "$transaction" | "$use" | "$extends">,
+) {
+  const results: any[] = [];
+  const csvFilePath = path.join(__dirname, '../csv/categories.csv');
+  return new Promise((resolve, reject) => {
+    fs.createReadStream(csvFilePath)
+      .pipe(csv())
+      .on('data', (data) => results.push(data))
+      .on('end', async () => {
+        try {
+          const filteredCategories = results.filter(row => row.restaurantId === resOldId);
+          await Promise.all(filteredCategories.map(async (row) => {
+            const translations = [];
+
+            if (languages.length > 0) {
+              if (languages.length === 1) {
+                const lang = languages[0];
+
+                translations.push({
+                  lang: lang,
+                  name: row.title,
+                  note: ''
+                });
+              } else {
+
+                languages.forEach(lang => {
+                  if (lang === 'pt') {
+                    translations.push({
+                      lang: 'pt',
+                      name: row.title,
+                      note: ''
+                    });
+                  } else if (lang === 'en') {
+                    translations.push({
+                      lang: 'en',
+                      name: row.title_ol,
+                      note: ''
+                    });
+                  }
+
+                });
+              }
+            }
+            await prisma.category.create({
+              data: {
+                isActive: row.isActive == 1 ? true : false,
+                createdAt: new Date(row.createdAt),
+                updatedAt: new Date(row.updatedAt),
+                restaurantId: resNewId,
+                categoryTranslation: {
+                  createMany: {
+                    data: translations.length > 0 ? translations : [],
+                  },
+                },
+                position: parseInt(row.srOrder, 10) || 0,
+                deletedAt: row.isDeleted == 1 ? new Date() : null
+              },
+            });
+          }));
+
+          console.log(`Categories for restaurant ${resNewId} successfully migrated!`);
+          resolve(true);
+        } catch (error) {
+          console.error('Error migrating categories:', error);
+          reject(error);
+        }
+      });
+  });
 }
