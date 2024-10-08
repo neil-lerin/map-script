@@ -1,0 +1,436 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 String              @id @default(uuid())
+  email              String              @unique
+  password           String?
+  name               String?
+  country            String?
+  role               Role
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+  isVerified         Boolean             @default(false)
+  defaultLanguange   String              @default("en")
+  isActive           Boolean             @default(true)
+  phoneNumber        String?
+  authProviders      AuthProviders[]
+  dietaryWarnings    DeitaryWarning[]
+  emailVerification  EmailVerification[]
+  ingredients        Ingredient[]
+  passwordResetToken PasswordReset[]
+  RestaurantUser     RestaurantUser[]
+  tags               Tag[]
+  userPermissions    UserPermission[]
+}
+
+model AuthProviders {
+  id        String        @id @default(uuid())
+  userId    String
+  name      ProviderName?
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  user      User          @relation(fields: [userId], references: [id])
+}
+
+model UserPermission {
+  userId       String
+  permissionId String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  permission   Permission @relation(fields: [permissionId], references: [id])
+  user         User       @relation(fields: [userId], references: [id])
+
+  @@id([userId, permissionId])
+}
+
+model Permission {
+  id              String           @id @default(uuid())
+  name            String           @unique
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  user_permission UserPermission[]
+}
+
+model Restaurant {
+  id               String            @id @default(uuid())
+  name             String
+  address          String?
+  postal_code      String?
+  vat_number       String?
+  token            String            @unique
+  scheduleId       String?
+  contact_email    String?
+  contact_name     String?
+  contact_number   String?
+  image            String?
+  restaurantTypeId String?
+  deletedAt        DateTime?
+  categories       Category[]
+  menuItems        MenuItem[]
+  restaurantType   RestaurantType?   @relation(fields: [restaurantTypeId], references: [id])
+  schedule         Schedule?         @relation(fields: [scheduleId], references: [id])
+  restaurantTable  RestaurantTable[] @relation("RestaurantTable")
+  restaurantUsers  RestaurantUser[]
+  theme            Theme?
+}
+
+model MenuItem {
+  id                String                   @id @default(uuid())
+  restaurantId      String?
+  dish_images       String[]
+  price             Decimal                  @db.Decimal(9, 2)
+  calories          Int?
+  variantMenuItemId String?
+  extraMenuItemId   String?
+  categoryId        String?
+  subCategoryId     String?
+  scheduleId        String?
+  isActive          Boolean                  @default(false)
+  position          Int
+  isAvailable       Boolean                  @default(true)
+  portionSize       Int                      @default(1)
+  deletedAt         DateTime?
+  category          Category?                @relation("MenuItemCategory", fields: [categoryId], references: [id])
+  extraMenuItem     MenuItem?                @relation("extraMenuItems", fields: [extraMenuItemId], references: [id])
+  extraItems        MenuItem[]               @relation("extraMenuItems")
+  restaurant        Restaurant?              @relation(fields: [restaurantId], references: [id])
+  schedule          Schedule?                @relation(fields: [scheduleId], references: [id])
+  subCategory       Category?                @relation("MenuItemSubCategory", fields: [subCategoryId], references: [id])
+  variantMenuItem   MenuItem?                @relation("variantMenuItems", fields: [variantMenuItemId], references: [id])
+  variantItems      MenuItem[]               @relation("variantMenuItems")
+  comboWith         MenuItemCombo[]          @relation("ComboMenuItem")
+  combos            MenuItemCombo[]          @relation("MenuItemCombo")
+  dietaryWarnings   MenuItemDietaryWarning[]
+  menuItemExtras    MenuItemExtra[]          @relation("MenuItemExtra")
+  ingredients       MenuItemIngredient[]
+  pairings          MenuItemPairing[]        @relation("MenuItemPair")
+  pairedWith        MenuItemPairing[]        @relation("PairedMenuItem")
+  menuItemPurchases MenuItemPurchase[]       @relation("MenuItemPurchase")
+  menuItemReviews   MenuItemReview[]         @relation("MenuItemReview")
+  tags              MenuItemTag[]
+  menuVariants      MenuItemVariant[]        @relation("MenuItemVariant")
+  menuTranslations  MenuTranslation[]        @relation("MenuItemTranslation")
+}
+
+model Category {
+  id                  String                @id @default(uuid())
+  image               String?
+  position            Int
+  categoryId          String?
+  scheduleId          String?
+  restaurantId        String?
+  isActive            Boolean               @default(true)
+  createdAt           DateTime?             @default(now())
+  updatedAt           DateTime?             @updatedAt
+  deletedAt           DateTime?
+  category            Category?             @relation("SubCategories", fields: [categoryId], references: [id])
+  subcategories       Category[]            @relation("SubCategories")
+  restaurant          Restaurant?           @relation(fields: [restaurantId], references: [id])
+  schedule            Schedule?             @relation(fields: [scheduleId], references: [id])
+  categoryTranslation CategoryTranslation[]
+  menuItems           MenuItem[]            @relation("MenuItemCategory")
+  subMenuItems        MenuItem[]            @relation("MenuItemSubCategory")
+}
+
+model Schedule {
+  id         String       @id @default(uuid())
+  time       Json?
+  days       String[]
+  isCustom   Boolean      @default(false)
+  category   Category[]
+  menuItem   MenuItem[]
+  Restaurant Restaurant[]
+}
+
+model Ingredient {
+  id                    String                  @id @default(uuid())
+  isGlobal              Boolean                 @default(false)
+  userId                String?
+  user                  User?                   @relation(fields: [userId], references: [id])
+  ingredientTranslation IngredientTranslation[] @relation("IngredientTranslation")
+  menuItems             MenuItemIngredient[]
+}
+
+model DeitaryWarning {
+  id                        String                      @id @default(uuid())
+  isGlobal                  Boolean                     @default(false)
+  userId                    String?
+  user                      User?                       @relation(fields: [userId], references: [id])
+  dietaryWarningTranslation DietaryWarningTranslation[] @relation("DietaryWarningTranslation")
+  menuItems                 MenuItemDietaryWarning[]
+}
+
+model Tag {
+  id        String        @id @default(uuid())
+  name      String
+  userId    String?
+  menuItems MenuItemTag[]
+  user      User?         @relation(fields: [userId], references: [id])
+}
+
+model MenuItemIngredient {
+  ingredientId String
+  menuItemId   String
+  assignedAt   DateTime   @default(now())
+  quantity     Int
+  unit         String
+  price        Decimal    @db.Decimal(9, 2)
+  ingredient   Ingredient @relation(fields: [ingredientId], references: [id])
+  menuItem     MenuItem   @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
+
+  @@id([ingredientId, menuItemId])
+}
+
+model MenuItemDietaryWarning {
+  dietaryWarningId String
+  menuItemId       String
+  assignedAt       DateTime       @default(now())
+  dietaryWarning   DeitaryWarning @relation(fields: [dietaryWarningId], references: [id])
+  menuItem         MenuItem       @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
+
+  @@id([dietaryWarningId, menuItemId])
+}
+
+model MenuItemTag {
+  tagId      String
+  menuItemId String
+  assignedAt DateTime @default(now())
+  menuItem   MenuItem @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
+  tag        Tag      @relation(fields: [tagId], references: [id])
+
+  @@id([tagId, menuItemId])
+}
+
+model Theme {
+  id                String      @id @default(uuid())
+  restaurantId      String?     @unique
+  style             ThemeStyle?
+  fontType          String?
+  price_color       String?     @default("#1D78E4")
+  button_color      String?     @default("#1D78E4")
+  menu_background   String?
+  logo              String?
+  facebookLink      String?
+  instagramLink     String?
+  tiktokLink        String?
+  xLink             String?
+  youtubeLink       String?
+  background_color  String?     @default("#F4F4F4")
+  category          String?     @default("#102D50")
+  description       String?     @default("#3E5169")
+  item_name         String?     @default("#102D50")
+  sub_category      String?     @default("#102D50")
+  isImageBackground Boolean     @default(false)
+  restaurant        Restaurant? @relation(fields: [restaurantId], references: [id])
+}
+
+model RestaurantUser {
+  userId       String
+  restaurantId String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  isSelected   Boolean
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  user         User       @relation(fields: [userId], references: [id])
+
+  @@id([userId, restaurantId])
+}
+
+model RestaurantTable {
+  id           String      @id @default(uuid())
+  restaurantId String?
+  tableName    String
+  seatCapacity Int
+  qr           String?
+  token        String      @unique
+  restaurant   Restaurant? @relation("RestaurantTable", fields: [restaurantId], references: [id])
+}
+
+model MenuItemReview {
+  id         String    @id @default(uuid())
+  menuItemId String?
+  username   String
+  title      String
+  content    String
+  createdAt  DateTime  @default(now())
+  rating     Decimal   @db.Decimal(2, 1)
+  menuItem   MenuItem? @relation("MenuItemReview", fields: [menuItemId], references: [id])
+}
+
+model MenuItemPurchase {
+  id           String    @id @default(uuid())
+  menuItemId   String?
+  quantity     String
+  totalAmount  Decimal   @db.Decimal(10, 2)
+  purchaseDate DateTime  @default(now())
+  menuItem     MenuItem? @relation("MenuItemPurchase", fields: [menuItemId], references: [id])
+}
+
+model MenuTranslation {
+  id          String    @id @default(uuid())
+  menuItemId  String?
+  name        String
+  description String?
+  lang        String
+  menuItem    MenuItem? @relation("MenuItemTranslation", fields: [menuItemId], references: [id])
+}
+
+model MenuItemPairing {
+  menuItemId       String
+  pairedMenuItemId String
+  menuItem         MenuItem @relation("MenuItemPair", fields: [menuItemId], references: [id], onDelete: Cascade)
+  pairedMenuItem   MenuItem @relation("PairedMenuItem", fields: [pairedMenuItemId], references: [id])
+
+  @@id([menuItemId, pairedMenuItemId])
+}
+
+model MenuItemCombo {
+  menuItemId      String
+  comboItemId     String
+  totalPrice      Decimal  @db.Decimal(9, 2)
+  discountedPrice Decimal  @db.Decimal(9, 2)
+  comboItem       MenuItem @relation("ComboMenuItem", fields: [comboItemId], references: [id])
+  menuItem        MenuItem @relation("MenuItemCombo", fields: [menuItemId], references: [id], onDelete: Cascade)
+
+  @@id([menuItemId, comboItemId])
+}
+
+model MenuItemVariant {
+  id                     String                   @id @default(uuid())
+  menuItemId             String?
+  name                   String
+  price                  Decimal?                 @db.Decimal(9, 2)
+  itemVariantTranslation ItemVariantTranslation[]
+  menuItem               MenuItem?                @relation("MenuItemVariant", fields: [menuItemId], references: [id])
+}
+
+model MenuItemExtra {
+  id                   String                 @id @default(uuid())
+  menuItemId           String?
+  name                 String
+  price                Decimal                @db.Decimal(9, 2)
+  itemExtraTranslation ItemExtraTranslation[]
+  menuItem             MenuItem?              @relation("MenuItemExtra", fields: [menuItemId], references: [id])
+}
+
+model DietaryWarningTranslation {
+  id               String          @id @default(uuid())
+  dietaryWarningId String?
+  name             String
+  lang             String
+  dietaryWarning   DeitaryWarning? @relation("DietaryWarningTranslation", fields: [dietaryWarningId], references: [id])
+}
+
+model Translation {
+  id              String        @id @default(uuid())
+  lang            String?
+  isGroupKey      Boolean       @default(false)
+  key             String
+  translationId   String?
+  value           String?
+  translation     Translation?  @relation("TranslationKeys", fields: [translationId], references: [id])
+  translationKeys Translation[] @relation("TranslationKeys")
+}
+
+model IngredientTranslation {
+  id           String      @id @default(uuid())
+  ingredientId String?
+  name         String
+  lang         String
+  ingredient   Ingredient? @relation("IngredientTranslation", fields: [ingredientId], references: [id])
+}
+
+model RestaurantType {
+  id                        String                      @id @default(uuid())
+  Restaurant                Restaurant[]
+  restaurantTypeTranslation RestaurantTypeTranslation[] @relation("RestaurantTypeTranslation")
+}
+
+model RestaurantTypeTranslation {
+  id               String          @id @default(uuid())
+  restaurantTypeId String?
+  lang             String
+  name             String
+  restaurantType   RestaurantType? @relation("RestaurantTypeTranslation", fields: [restaurantTypeId], references: [id])
+}
+
+model PasswordReset {
+  id        String    @id @default(uuid())
+  token     String    @unique
+  userId    String?
+  createdAt DateTime  @default(now())
+  expiredAt DateTime
+  usedAt    DateTime?
+  user      User?     @relation(fields: [userId], references: [id])
+}
+
+model EmailVerification {
+  id        String    @id @default(uuid())
+  otpCode   String
+  token     String
+  userId    String?
+  createdAt DateTime  @default(now())
+  expiredAt DateTime
+  usedAt    DateTime?
+  user      User?     @relation(fields: [userId], references: [id])
+}
+
+model CategoryTranslation {
+  id         String    @id @default(uuid())
+  categoryId String?
+  name       String
+  lang       String
+  isDefault  Boolean   @default(false)
+  note       String
+  category   Category? @relation(fields: [categoryId], references: [id])
+}
+
+model ItemVariantTranslation {
+  id                String           @id @default(uuid())
+  menuItemVariantId String?
+  name              String
+  lang              String
+  isDefault         Boolean          @default(false)
+  menuItemVariant   MenuItemVariant? @relation(fields: [menuItemVariantId], references: [id])
+}
+
+model ItemExtraTranslation {
+  id              String         @id @default(uuid())
+  menuItemExtraId String?
+  name            String
+  lang            String
+  isDefault       Boolean        @default(false)
+  menuItemExtra   MenuItemExtra? @relation(fields: [menuItemExtraId], references: [id])
+}
+
+enum OTPType {
+  SIGN_UP
+  FORGOT_PASSWORD
+}
+
+enum Role {
+  ADMIN
+  CUSTOMER
+  OWNER
+  EMPLOYEE
+}
+
+enum ProviderName {
+  FACEBOOK
+  GOOGLE
+}
+
+enum ThemeStyle {
+  THEME_1
+  THEME_2
+  THEME_3
+  LIST_STYLE
+  GALLERY_STYLE
+}

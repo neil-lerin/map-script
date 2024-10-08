@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",           // Specify ECMAScript target version
+    "module": "ESNext",           // Specify module code generation
+    "outDir": "./dist",           // Redirect output structure to the 'dist' directory
+    "rootDir": "./",              // Specify the root directory of input files
+    "strict": true,               // Enable all strict type-checking options
+    "esModuleInterop": true,      // Enables emit interoperability between CommonJS and ES Modules
+    "skipLibCheck": true,         // Skip type checking of declaration files
+    "moduleResolution":"node",        
+  },
+  "include": [
+    "script/**/*.ts",         
+    "migrate.ts",             
+    "csv/**/*"
+  ],        
+  "exclude": [
+    "node_modules",          
+    "**/*.spec.ts"             
+  ]
+}
