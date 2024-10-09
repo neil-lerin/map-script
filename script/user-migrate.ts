@@ -7,6 +7,7 @@ import { Prisma, PrismaClient, Role } from '@prisma/client';
 import { nanoid } from 'nanoid';
 import { DefaultArgs } from '@prisma/client/runtime/library';
 import { itemIngredientMap } from './item-ingredient-map.js';
+import { dietaryRestrictionMap } from './dietary-restrictions-map.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -29,7 +30,8 @@ const categoryitem = path.join(__dirname, '../csv/categoryitem.csv');
 const itemCsv = path.join(__dirname, '../csv/items.csv');
 const ingredientsCsv = path.join(__dirname, '../csv/ingredients.csv');
 const itemIngredientsCsv = path.join(__dirname, '../csv/itemingredient.csv');
-
+const restrictionsCsv = path.join(__dirname, '../csv/restrictions.csv');
+const dietaryRestriction = path.join(__dirname, '../csv/dietaryrestrictions.csv');
 const menuItemMap: Array<{
   oldId: string,
   newId: string
@@ -40,6 +42,10 @@ const allIngredientMaps: Array<{
   newId: string
 }> = [];
 
+const allRestrictionsMaps: Array<{
+  oldId: string,
+  newId: string
+}> = [];
 
 export async function userMigrate() {
   const results: any[] = [];
@@ -68,8 +74,9 @@ export async function userMigrate() {
             await restaurantMigrate(row.id, newUser.id, prisma);
           }
           await itemIngredientMap(menuItemMap, allIngredientMaps, itemIngredientsCsv, prisma)
+          await dietaryRestrictionMap(menuItemMap, allRestrictionsMaps, dietaryRestriction, prisma)
         });
-        console.log(allIngredientMaps)
+
         console.log('Data successfully inserted into PostgreSQL!');
       } catch (error) {
         console.error('Error inserting data:', error);
@@ -134,6 +141,7 @@ export async function restaurantMigrate(
             });
             const languagesArray = row.languages.split(',');
             await ingredientMigrate(row.id, newRes.id, newUserId, languagesArray, prisma)
+            await restricitonMigrate(row.id, newRes.id, newUserId, languagesArray, prisma)
             await categoryMigrate(row.id, newRes.id, languagesArray, prisma,);
           }));
 
@@ -213,6 +221,74 @@ export async function ingredientMigrate(
       });
   })
 }
+
+export async function restricitonMigrate(
+  oldRestoId: string,
+  newRestoId: string,
+  userId: string,
+  languages: Array<any>,
+  prisma: Omit<PrismaClient<Prisma.PrismaClientOptions, never, DefaultArgs>, "$connect" | "$disconnect" | "$on" | "$transaction" | "$use" | "$extends">
+) {
+  const results: any[] = [];
+  return new Promise((resolve, reject) => {
+    fs.createReadStream(restrictionsCsv)
+      .pipe(csv())
+      .on('data', (data) => results.push(data))
+      .on('end', async () => {
+        try {
+          const filteredResctrictions = results.filter(row => row.restaurantId === oldRestoId);
+
+          await Promise.all(filteredResctrictions.map(async (row) => {
+            const translations = [];
+
+            if (languages.length > 0) {
+              if (languages.length === 1) {
+                const lang = languages[0];
+
+                translations.push({
+                  lang: lang,
+                  name: row.name,
+                });
+              } else {
+                languages.forEach(lang => {
+                  if (lang === 'pt') {
+                    translations.push({
+                      lang: 'pt',
+                      name: row.name,
+                    });
+                  } else if (lang === 'en') {
+                    translations.push({
+                      lang: 'en',
+                      name: row.name_ol,
+                    });
+                  }
+
+                });
+              }
+            }
+            const newWarning = await prisma.deitaryWarning.create({
+              data: {
+                isGlobal: false,
+                userId: userId,
+                dietaryWarningTranslation: {
+                  createMany: {
+                    data: translations.length > 0 ? translations : [],
+                  },
+                }
+              },
+            });
+            allRestrictionsMaps.push({ oldId: row.id, newId: newWarning.id })
+          }));
+          console.log(`Rescritcions added for resto ${newRestoId}`);
+          resolve(true);
+        } catch (error) {
+          console.error('Error migrating restaurants:', error);
+          reject(error);
+        }
+      });
+  })
+}
+
 
 export async function categoryMigrate(
   resOldId: string,
@@ -539,35 +615,6 @@ export async function categoryItem(
       });
   });
 }
-
-// export async function itemIngredientMap(
-//   oldItemId: string,
-//   newResId: string,
-//   oldResId: string,
-//   prisma: Omit<PrismaClient<Prisma.PrismaClientOptions, never, DefaultArgs>, "$connect" | "$disconnect" | "$on" | "$transaction" | "$use" | "$extends">
-// ) {
-//   const results: any[] = [];
-//   return new Promise((resolve, reject) => {
-//     fs.createReadStream(itemIngredientsCsv)
-//       .pipe(csv())
-//       .on('data', (data) => results.push(data))
-//       .on('end', async () => {
-//         try {
-//           const filterdItemIngredients = results.filter(row => row.itemId === oldItemId);
-
-//           await Promise.all(results.map(async (row) => {
-
-
-//           }));
-//           console.log(`Item ingredient migrated!`);
-//           resolve(true);
-//         } catch (error) {
-//           console.error('Error migrating categories:', error);
-//           reject(error);
-//         }
-//       });
-//   });
-// }
 
 export async function findItemInCsv(itemId: string): Promise<any> {
   return new Promise((resolve, reject) => {

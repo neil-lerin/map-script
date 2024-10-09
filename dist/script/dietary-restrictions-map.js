@@ -1,36 +1,33 @@
 import fs from 'fs';
 import csv from 'csv-parser';
-export async function itemIngredientMap(itemMap, ingredientMap, itemIngredientsCsv, prisma) {
+export async function dietaryRestrictionMap(itemMap, restrictionsMap, restrictionsCsv, prisma) {
     const results = [];
     return new Promise((resolve, reject) => {
-        fs.createReadStream(itemIngredientsCsv)
+        fs.createReadStream(restrictionsCsv)
             .pipe(csv())
             .on('data', (data) => results.push(data))
             .on('end', async () => {
             try {
                 await Promise.all(results.map(async (row) => {
-                    const newIngredient = ingredientMap.find((ingredient) => ingredient.oldId === row.ingredientId);
+                    const newRestrictions = restrictionsMap.find((restriction) => restriction.oldId === row.restrictionId);
                     const newItem = itemMap.find((item) => item.oldId === row.itemId);
-                    if (!newIngredient?.newId) {
-                        console.error(`Ingredient not found for oldId: ${row.ingredientId}`);
+                    if (!newRestrictions?.newId) {
+                        console.error(`Ingredient not found for oldId: ${row.restrictionid}`);
                         return;
                     }
                     if (!newItem?.newId) {
                         console.error(`Menu item not found for oldId: ${row.itemId}`);
                         return;
                     }
-                    await prisma.menuItemIngredient.create({
+                    await prisma.menuItemDietaryWarning.create({
                         data: {
-                            ingredientId: newIngredient.newId,
+                            dietaryWarningId: newRestrictions.newId,
                             menuItemId: newItem.newId,
                             assignedAt: new Date(),
-                            quantity: 1,
-                            unit: "",
-                            price: 0.00,
                         },
                     });
                 }));
-                console.log(`Item ingredient migrated!`);
+                console.log(`Menu Item warning migrated!`);
                 resolve(true);
             }
             catch (error) {
