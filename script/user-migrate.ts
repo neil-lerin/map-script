@@ -8,6 +8,7 @@ import { nanoid } from 'nanoid';
 import { DefaultArgs } from '@prisma/client/runtime/library';
 import { itemIngredientMap } from './item-ingredient-map.js';
 import { dietaryRestrictionMap } from './dietary-restrictions-map.js';
+import { itemSideScript } from './sides-script.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -32,6 +33,7 @@ const ingredientsCsv = path.join(__dirname, '../csv/ingredients.csv');
 const itemIngredientsCsv = path.join(__dirname, '../csv/itemingredient.csv');
 const restrictionsCsv = path.join(__dirname, '../csv/restrictions.csv');
 const dietaryRestriction = path.join(__dirname, '../csv/dietaryrestrictions.csv');
+const sidesCsv = path.join(__dirname, '../csv/sides.csv');
 const menuItemMap: Array<{
   oldId: string,
   newId: string
@@ -75,6 +77,7 @@ export async function userMigrate() {
           }
           await itemIngredientMap(menuItemMap, allIngredientMaps, itemIngredientsCsv, prisma)
           await dietaryRestrictionMap(menuItemMap, allRestrictionsMaps, dietaryRestriction, prisma)
+          await itemSideScript(menuItemMap, sidesCsv, prisma)
         });
 
         console.log('Data successfully inserted into PostgreSQL!');
