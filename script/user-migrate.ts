@@ -9,7 +9,8 @@ import { DefaultArgs } from '@prisma/client/runtime/library';
 import { itemIngredientMap } from './item-ingredient-map.js';
 import { dietaryRestrictionMap } from './dietary-restrictions-map.js';
 import { itemSideScript } from './sides-script.js';
-// eeeree
+import * as bcrypt from 'bcrypt';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const prisma = new PrismaClient({
@@ -48,7 +49,7 @@ const allRestrictionsMaps: Array<{
   oldId: string,
   newId: string
 }> = [];
-
+const hashPass = await bcrypt.hash("password", 10)
 export async function userMigrate() {
   const results: any[] = [];
   const csvFilePath = path.join(__dirname, '../csv/users.csv');
@@ -69,7 +70,7 @@ export async function userMigrate() {
                 defaultLanguange: row.userLanguage,
                 phoneNumber: row.mobile,
                 isVerified: true,
-                password: row.password
+                password: hashPass
               },
             });
 

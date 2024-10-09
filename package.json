@@ -13,6 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.20.0",
+    "bcrpyt": "^2.0.0",
+    "bcrypt": "^5.1.1",
     "csv-parser": "^3.0.0",
     "mysql2": "^3.11.3",
     "nanoid": "^5.0.7",
@@ -21,6 +23,7 @@
   },
   "type": "module",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^22.7.5",
     "@types/pg": "^8.11.10",
     "copyfiles": "^2.4.1",
