@@ -615,8 +615,8 @@ export async function categoryItem(
                 if (row.name_ol !== 'NULL' && row.description_ol !== 'NULL') {
                   translations.push({
                     lang: 'en',
-                    name: row.name_ol,
-                    description: row.description_ol
+                    name: item.name_ol,
+                    description: item.description_ol
                   });
                 }
               }
