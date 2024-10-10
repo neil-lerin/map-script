@@ -322,32 +322,31 @@ export async function categoryMigrate(
                   note: ''
                 });
               }
-              // else {
+              else {
+                languages.forEach(lang => {
+                  if (lang === 'pt') {
+                    translations.push({
+                      lang: 'pt',
+                      name: row.title,
+                      note: ''
+                    });
+                  } else if (lang === 'en' && row.title_ol !== 'NULL') {
+                    translations.push({
+                      lang: 'en',
+                      name: row.title_ol,
+                      note: ''
+                    });
+                  }
 
-              //   languages.forEach(lang => {
-              //     if (lang === 'pt') {
-              //       translations.push({
-              //         lang: 'pt',
-              //         name: row.title,
-              //         note: ''
-              //       });
-              //     } else if (lang === 'en') {
-              //       translations.push({
-              //         lang: 'en',
-              //         name: row.title_ol,
-              //         note: ''
-              //       });
-              //     }
-
-              //   });
-              // }
-              if (row.title_ol !== 'NULL') {
-                translations.push({
-                  lang: 'en',
-                  name: row.title_ol,
-                  note: ''
                 });
               }
+              // if (row.title_ol !== 'NULL') {
+              //   translations.push({
+              //     lang: 'en',
+              //     name: row.title_ol,
+              //     note: ''
+              //   });
+              // }
             }
             const newCategory = await prisma.category.create({
               data: {
@@ -407,32 +406,32 @@ export async function subCategoryMigrate(
                   note: ''
                 });
               }
-              // else {
+              else {
 
-              //   languages.forEach(lang => {
-              //     if (lang === 'pt') {
-              //       translations.push({
-              //         lang: 'pt',
-              //         name: row.title,
-              //         note: ''
-              //       });
-              //     } else if (lang === 'en') {
-              //       translations.push({
-              //         lang: 'en',
-              //         name: row.title_ol,
-              //         note: ''
-              //       });
-              //     }
+                languages.forEach(lang => {
+                  if (lang === 'pt') {
+                    translations.push({
+                      lang: 'pt',
+                      name: row.title,
+                      note: ''
+                    });
+                  } else if (lang === 'en' && row.title_ol !== 'NULL') {
+                    translations.push({
+                      lang: 'en',
+                      name: row.title_ol,
+                      note: ''
+                    });
+                  }
 
-              //   });
-              // }
-              if (row.title_ol !== 'NULL') {
-                translations.push({
-                  lang: 'en',
-                  name: row.title_ol,
-                  note: ''
                 });
               }
+              // if (row.title_ol !== 'NULL') {
+              //   translations.push({
+              //     lang: 'en',
+              //     name: row.title_ol,
+              //     note: ''
+              //   });
+              // }
             }
             const newSubCat = await prisma.category.create({
               data: {
@@ -498,32 +497,32 @@ export async function subcategoryItemMigrate(
                     description: row.description
                   });
                 }
-                // else {
+                else {
 
-                //   languages.forEach(lang => {
-                //     if (lang === 'pt') {
-                //       translations.push({
-                //         lang: 'pt',
-                //         name: row.name,
-                //         description: row.description
-                //       });
-                //     } else if (lang === 'en') {
-                //       translations.push({
-                //         lang: 'en',
-                //         name: row.name_ol,
-                //         description: row.description_ol
-                //       });
-                //     }
+                  languages.forEach(lang => {
+                    if (lang === 'pt') {
+                      translations.push({
+                        lang: 'pt',
+                        name: row.name,
+                        description: row.description
+                      });
+                    } else if (lang === 'en' && (row.name_ol !== 'NULL' && row.description_ol !== 'NULL')) {
+                      translations.push({
+                        lang: 'en',
+                        name: row.name_ol,
+                        description: row.description_ol
+                      });
+                    }
 
-                //   });
-                // }
-                if (row.name_ol !== 'NULL' && row.description_ol !== 'NULL') {
-                  translations.push({
-                    lang: 'en',
-                    name: row.name_ol,
-                    description: row.description_ol
                   });
                 }
+                // if (row.name_ol !== 'NULL' && row.description_ol !== 'NULL') {
+                //   translations.push({
+                //     lang: 'en',
+                //     name: row.name_ol,
+                //     description: row.description_ol
+                //   });
+                // }
               }
             }
             const newItem = await prisma.menuItem.create({
@@ -593,32 +592,32 @@ export async function categoryItem(
                     description: item.description
                   });
                 }
-                // else {
+                else {
 
-                //   languages.forEach(lang => {
-                //     if (lang === 'pt') {
-                //       translations.push({
-                //         lang: 'pt',
-                //         name: item.name,
-                //         description: item.description
-                //       });
-                //     } else if (lang === 'en') {
-                //       translations.push({
-                //         lang: 'en',
-                //         name: item.name_ol,
-                //         description: item.description_ol
-                //       });
-                //     }
+                  languages.forEach(lang => {
+                    if (lang === 'pt') {
+                      translations.push({
+                        lang: 'pt',
+                        name: item.name,
+                        description: item.description
+                      });
+                    } else if (lang === 'en' && (row.name_ol !== 'NULL' && row.description_ol !== 'NULL')) {
+                      translations.push({
+                        lang: 'en',
+                        name: item.name_ol,
+                        description: item.description_ol
+                      });
+                    }
 
-                //   });
-                // }
-                if (row.name_ol !== 'NULL' && row.description_ol !== 'NULL') {
-                  translations.push({
-                    lang: 'en',
-                    name: item.name_ol,
-                    description: item.description_ol
                   });
                 }
+                // if (row.name_ol !== 'NULL' && row.description_ol !== 'NULL') {
+                //   translations.push({
+                //     lang: 'en',
+                //     name: item.name_ol,
+                //     description: item.description_ol
+                //   });
+                // }
               }
               const newItem = await prisma.menuItem.create({
                 data: {
