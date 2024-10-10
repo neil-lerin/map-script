@@ -136,9 +136,9 @@ export async function restaurantMigrate(
                 ...(row.cuisines && { restaurantTypeId: row.cuisines && resType?.id }),
                 theme: {
                   create: {
-                    facebookLink: row.facebookLink,
-                    instagramLink: row.instaLink,
-                    tiktokLink: row.tiktokLink,
+                    facebookLink: row.facebookLink === 'NULL' ? null : row.facebookLink,
+                    instagramLink: row.instaLink === 'NULL' ? null : row.instaLink,
+                    tiktokLink: row.tiktokLink === 'NULL' ? null : row.tiktokLink,
                   },
                 },
               },
