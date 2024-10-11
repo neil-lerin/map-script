@@ -8,6 +8,7 @@ import { nanoid } from 'nanoid';
 import { itemIngredientMap } from './item-ingredient-map.js';
 import { dietaryRestrictionMap } from './dietary-restrictions-map.js';
 import { itemSideScript } from './sides-script.js';
+import * as bcrypt from 'bcrypt';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const prisma = new PrismaClient({
@@ -34,6 +35,7 @@ const sidesCsv = path.join(__dirname, '../csv/sides.csv');
 const menuItemMap = [];
 const allIngredientMaps = [];
 const allRestrictionsMaps = [];
+const hashPass = await bcrypt.hash("password", 10);
 export async function userMigrate() {
     const results = [];
     const csvFilePath = path.join(__dirname, '../csv/users.csv');
@@ -44,6 +46,7 @@ export async function userMigrate() {
         .on('end', async () => {
         try {
             const transaction = await prisma.$transaction(async (prisma) => {
+                let isFirstRestaurant = true;
                 for (const row of results) {
                     const newUser = await prisma.user.create({
                         data: {
@@ -54,7 +57,7 @@ export async function userMigrate() {
                             defaultLanguange: row.userLanguage,
                             phoneNumber: row.mobile,
                             isVerified: true,
-                            password: row.password
+                            password: hashPass
                         },
                     });
                     await restaurantMigrate(row.id, newUser.id, prisma);
@@ -93,9 +96,12 @@ export async function restaurantMigrate(oldUserId, newUserId, prisma) {
             .on('end', async () => {
             try {
                 const filteredRestaurants = results.filter(row => row.userId === oldUserId);
+                // let hasSelectedRestaurant = false;
                 await Promise.all(filteredRestaurants.map(async (row) => {
                     const token = nanoid(12);
                     const resType = await getRestaurantType(row.cuisines);
+                    // const isSelected = !hasSelectedRestaurant;
+                    // hasSelectedRestaurant = true;
                     const newRes = await prisma.restaurant.create({
                         data: {
                             name: row.name,
@@ -108,15 +114,15 @@ export async function restaurantMigrate(oldUserId, newUserId, prisma) {
                             ...(row.cuisines && { restaurantTypeId: row.cuisines && resType?.id }),
                             theme: {
                                 create: {
-                                    facebookLink: row.facebookLink,
-                                    instagramLink: row.instaLink,
-                                    tiktokLink: row.tiktokLink,
+                                    facebookLink: row.facebookLink === 'NULL' ? null : row.facebookLink,
+                                    instagramLink: row.instaLink === 'NULL' ? null : row.instaLink,
+                                    tiktokLink: row.tiktokLink === 'NULL' ? null : row.tiktokLink,
                                 },
                             },
                         },
                     });
                     const languagesArray = row.languages.split(',');
-                    await ingredientMigrate(row.id, newRes.id, newUserId, languagesArray, prisma);
+                    // await ingredientMigrate(row.id, newRes.id, newUserId, languagesArray, prisma)
                     await restricitonMigrate(row.id, newRes.id, newUserId, languagesArray, prisma);
                     await categoryMigrate(row.id, newRes.id, languagesArray, prisma);
                 }));
@@ -277,7 +283,7 @@ export async function categoryMigrate(resOldId, resNewId, languages, prisma) {
                                         note: ''
                                     });
                                 }
-                                else if (lang === 'en') {
+                                else if (lang === 'en' && row.title_ol !== 'NULL') {
                                     translations.push({
                                         lang: 'en',
                                         name: row.title_ol,
@@ -286,6 +292,13 @@ export async function categoryMigrate(resOldId, resNewId, languages, prisma) {
                                 }
                             });
                         }
+                        // if (row.title_ol !== 'NULL') {
+                        //   translations.push({
+                        //     lang: 'en',
+                        //     name: row.title_ol,
+                        //     note: ''
+                        //   });
+                        // }
                     }
                     const newCategory = await prisma.category.create({
                         data: {
@@ -344,7 +357,7 @@ export async function subCategoryMigrate(oldCategoryId, newCategoryId, languages
                                         note: ''
                                     });
                                 }
-                                else if (lang === 'en') {
+                                else if (lang === 'en' && row.title_ol !== 'NULL') {
                                     translations.push({
                                         lang: 'en',
                                         name: row.title_ol,
@@ -353,6 +366,13 @@ export async function subCategoryMigrate(oldCategoryId, newCategoryId, languages
                                 }
                             });
                         }
+                        // if (row.title_ol !== 'NULL') {
+                        //   translations.push({
+                        //     lang: 'en',
+                        //     name: row.title_ol,
+                        //     note: ''
+                        //   });
+                        // }
                     }
                     const newSubCat = await prisma.category.create({
                         data: {
@@ -412,7 +432,7 @@ export async function subcategoryItemMigrate(oldSubCategoryId, newSubCategoryId,
                                             description: row.description
                                         });
                                     }
-                                    else if (lang === 'en') {
+                                    else if (lang === 'en' && (row.name_ol !== 'NULL' && row.description_ol !== 'NULL')) {
                                         translations.push({
                                             lang: 'en',
                                             name: row.name_ol,
@@ -421,6 +441,13 @@ export async function subcategoryItemMigrate(oldSubCategoryId, newSubCategoryId,
                                     }
                                 });
                             }
+                            // if (row.name_ol !== 'NULL' && row.description_ol !== 'NULL') {
+                            //   translations.push({
+                            //     lang: 'en',
+                            //     name: row.name_ol,
+                            //     description: row.description_ol
+                            //   });
+                            // }
                         }
                     }
                     const newItem = await prisma.menuItem.create({
@@ -486,7 +513,7 @@ export async function categoryItem(oldCategoryId, newCategoryId, restaurantId, l
                                             description: item.description
                                         });
                                     }
-                                    else if (lang === 'en') {
+                                    else if (lang === 'en' && (row.name_ol !== 'NULL' && row.description_ol !== 'NULL')) {
                                         translations.push({
                                             lang: 'en',
                                             name: item.name_ol,
@@ -495,6 +522,13 @@ export async function categoryItem(oldCategoryId, newCategoryId, restaurantId, l
                                     }
                                 });
                             }
+                            // if (row.name_ol !== 'NULL' && row.description_ol !== 'NULL') {
+                            //   translations.push({
+                            //     lang: 'en',
+                            //     name: item.name_ol,
+                            //     description: item.description_ol
+                            //   });
+                            // }
                         }
                         const newItem = await prisma.menuItem.create({
                             data: {

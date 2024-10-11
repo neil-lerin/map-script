@@ -11,10 +11,10 @@
 "10","Bebidas",NULL,NULL,NULL,"4","1","0","2023-10-01 14:25:29","2024-03-08 16:20:17","4","Drinks and beverages"
 "11","Entradas",NULL,NULL,NULL,"0","1","0","2023-10-03 22:29:58","2023-10-03 22:29:58","5",NULL
 "12","Comida",NULL,NULL,NULL,"0","1","0","2023-10-09 14:45:08","2023-10-10 07:41:41","6","Food"
-"13","Sushi ",NULL,NULL,NULL,"0","1","0","2023-10-10 10:47:43","2023-12-07 16:39:00","7","Sushi"
-"14","Sobremesas",NULL,NULL,NULL,"3","1","0","2023-10-10 11:14:25","2023-12-07 16:39:00","7","Desserts"
-"15","Massas Japonesas",NULL,NULL,NULL,"2","1","0","2023-10-17 08:03:05","2023-12-26 21:53:03","7","Japanese Noodles"
-"16","Sushi Sets",NULL,NULL,NULL,"1","1","0","2023-10-17 08:29:04","2023-12-07 16:39:00","7","Sushi Sets"
+"13","Sushi ",NULL,NULL,NULL,"4","1","0","2023-10-10 10:47:43","2024-09-02 10:24:35","7","Sushi"
+"14","Sobremesas",NULL,NULL,NULL,"7","1","0","2023-10-10 11:14:25","2024-09-02 10:24:35","7","Desserts"
+"15","Massas Japonesas",NULL,NULL,NULL,"6","1","0","2023-10-17 08:03:05","2024-09-02 10:24:35","7","Japanese Noodles"
+"16","Sushi Sets",NULL,NULL,NULL,"5","1","0","2023-10-17 08:29:04","2024-09-02 10:24:35","7","Sushi Sets"
 "17","Entradas",NULL,NULL,NULL,"0","1","0","2023-11-08 18:30:11","2023-11-08 18:30:11","8",NULL
 "18","Pratos do dia",NULL,NULL,NULL,"0","1","0","2023-11-08 18:30:17","2023-11-08 18:30:17","8",NULL
 "19","Peixe",NULL,NULL,NULL,"0","1","0","2023-11-08 18:30:26","2023-11-08 18:30:26","8",NULL
@@ -50,7 +50,7 @@
 "49","Bagels",NULL,NULL,NULL,"0","1","0","2023-11-27 23:24:58","2023-11-27 23:25:07","11",NULL
 "50","Starters",NULL,NULL,NULL,"0","1","0","2023-12-01 19:03:17","2023-12-01 19:03:17","12",NULL
 "51","Continental",NULL,NULL,NULL,"0","1","0","2023-12-01 19:03:25","2023-12-01 19:03:25","12",NULL
-"52","COMIDAS",NULL,NULL,NULL,"1","1","0","2023-12-06 16:32:33","2024-05-01 10:36:31","13",NULL
+"52","COMIDAS",NULL,NULL,NULL,"1","1","0","2023-12-06 16:32:33","2024-07-02 13:38:38","13","FOOD"
 "53","Faça a sua poke",NULL,NULL,NULL,"5","1","1","2023-12-07 16:40:49","2024-03-30 15:00:55","7",NULL
 "54","Food",NULL,NULL,NULL,"0","1","0","2023-12-10 16:07:39","2023-12-10 16:18:53","14","Food"
 "55","Drinks",NULL,NULL,NULL,"0","1","0","2023-12-10 16:07:53","2023-12-10 16:18:17","14","Drinks"
@@ -63,18 +63,18 @@
 "62","Alcoholic drinks",NULL,NULL,NULL,"7","1","0","2023-12-19 22:58:48","2023-12-26 14:04:21","15","Alcoholic drinks"
 "63","Chef's specials",NULL,NULL,NULL,"1","1","0","2023-12-19 23:05:03","2023-12-26 14:03:23","15","Chef's specials"
 "64","PIZZA ",NULL,NULL,NULL,"0","1","1","2023-12-25 02:24:37","2023-12-25 02:31:47","16",NULL
-"65","ENTRADAS / PETISCOS / TAPAS",NULL,NULL,NULL,"0","1","0","2023-12-25 02:31:04","2024-01-09 19:53:12","16","Starters / to nibble"
+"65"," PETISCOS / TAPAS",NULL,NULL,NULL,"6","1","0","2023-12-25 02:31:04","2024-07-28 18:48:13","16","Starters / to nibble"
 "66","PASTA & RISOTTO",NULL,NULL,NULL,"2","1","1","2023-12-25 02:33:21","2023-12-25 02:45:43","16",NULL
 "67","DO TALHO",NULL,NULL,NULL,"3","1","1","2023-12-25 02:33:40","2023-12-25 03:00:52","16",NULL
 "68","DO MAR",NULL,NULL,NULL,"4","1","1","2023-12-25 02:33:52","2023-12-25 03:00:59","16",NULL
 "69","DO CAMPO",NULL,NULL,NULL,"5","1","1","2023-12-25 02:35:26","2023-12-25 03:01:08","16",NULL
-"70","DOCES ",NULL,NULL,NULL,"3","1","0","2023-12-25 02:35:52","2024-02-27 23:05:38","16","Sweets"
-"71","TOSTAS E CREPES SALGADOS ",NULL,NULL,NULL,"4","1","0","2023-12-25 02:36:53","2024-01-10 04:29:23","16","Toasties & salted crepes"
-"72","BEBIDAS QUENTES  ",NULL,NULL,NULL,"5","1","0","2023-12-25 02:38:08","2024-01-09 19:56:53","16","Hot Drinks"
-"73","PRATOS PRINCIPAIS ",NULL,NULL,NULL,"1","1","0","2023-12-25 02:43:41","2024-01-10 01:53:35","16","Main"
-"74","BEBIDAS , DRINKS & COCKTAILS ",NULL,NULL,NULL,"6","1","0","2023-12-26 20:39:17","2024-01-09 19:56:28","16","Drinks & Cocktails & Co"
-"75","PIZZAS ",NULL,NULL,NULL,"2","1","0","2023-12-27 02:28:20","2024-02-27 23:02:21","16","Pizzas"
-"76","VINHOS    ",NULL,NULL,NULL,"7","1","0","2023-12-27 03:35:31","2024-01-15 06:24:47","16","Wine"
+"70","DOCES ",NULL,NULL,NULL,"9","1","0","2023-12-25 02:35:52","2024-07-28 18:48:13","16","Sweets"
+"71","TOSTAS E CREPES SALGADOS ",NULL,NULL,NULL,"11","0","0","2023-12-25 02:36:53","2024-07-28 18:48:13","16","Toasties & salted crepes"
+"72","BEBIDAS QUENTES  ",NULL,NULL,NULL,"10","1","0","2023-12-25 02:38:08","2024-07-28 18:48:13","16","Hot Drinks"
+"73","PRATOS PRINCIPAIS ",NULL,NULL,NULL,"4","1","0","2023-12-25 02:43:41","2024-07-28 18:48:13","16","Main"
+"74","Drinks & COCKTAILS 🍹🍻🥂",NULL,NULL,NULL,"1","1","0","2023-12-26 20:39:17","2024-07-28 18:48:13","16","Drinks & Cocktails & Co"
+"75","PIZZAS ",NULL,NULL,NULL,"5","1","0","2023-12-27 02:28:20","2024-07-28 18:48:13","16","Pizzas"
+"76","VINHOS    🍷🍷🍾",NULL,NULL,NULL,"2","1","0","2023-12-27 03:35:31","2024-07-28 18:48:13","16","Wine"
 "77","Antipasti",NULL,NULL,NULL,"1","1","0","2023-12-28 11:42:31","2024-01-26 17:08:32","17","Starters"
 "78","Pizzas Tradicionais",NULL,NULL,NULL,"2","1","0","2023-12-28 11:42:42","2024-01-26 17:08:32","17","Traditional Pizzas"
 "79","Pizzas Especiais",NULL,NULL,NULL,"3","1","0","2023-12-28 11:42:55","2024-01-26 17:08:32","17","Special Pizzas"
@@ -126,7 +126,7 @@
 "125","Test",NULL,NULL,NULL,"0","1","0","2024-02-21 09:20:53","2024-03-06 17:43:37","3","test"
 "126","Pratos do dia",NULL,NULL,NULL,"1","0","1","2024-02-21 16:24:36","2024-02-21 16:26:39","4",NULL
 "127","Menus de almoço",NULL,NULL,NULL,"0","0","0","2024-02-21 16:27:04","2024-04-16 22:09:56","4","Special offers"
-"128","Entradas",NULL,NULL,NULL,"0","1","0","2024-02-21 22:31:54","2024-03-01 22:14:25","33",NULL
+"128","Entradas",NULL,NULL,NULL,"0","1","0","2024-02-21 22:31:54","2024-08-08 17:55:46","33","Starters"
 "129","Prato Principal",NULL,NULL,NULL,"1","1","0","2024-02-21 22:32:11","2024-03-01 22:14:25","33",NULL
 "130","Sobremesas",NULL,NULL,NULL,"4","1","0","2024-02-21 22:35:53","2024-03-01 22:14:25","33",NULL
 "131","Bebidas",NULL,NULL,NULL,"3","1","0","2024-02-21 22:36:05","2024-03-01 22:14:25","33",NULL
@@ -330,15 +330,15 @@
 "335","RESTAURANTE .COME   |   EMENTA",NULL,NULL,NULL,"1","1","0","2023-12-30 21:44:29","2024-03-06 20:32:51","74",NULL
 "336","Sobremesas",NULL,NULL,NULL,"2","0","0","2024-01-05 21:39:11","2024-03-06 20:33:41","74",NULL
 "337","Sugestão do Dia",NULL,NULL,NULL,"0","0","1","2024-02-22 10:13:54","2024-03-06 20:32:52","74",NULL
-"338","ementa",NULL,NULL,NULL,"0","1","0","2024-03-06 22:51:33","2024-03-15 21:38:21","18",NULL
-"339","Sopas",NULL,NULL,NULL,"1","1","0","2024-03-07 19:20:32","2024-03-21 18:34:08","75","Soup"
-"340","Partilha entre Gandins",NULL,NULL,NULL,"3","1","0","2024-03-07 19:25:13","2024-04-05 12:41:44","75","Sharing Between Gandins"
-"341","Cortes à Gandim ",NULL,NULL,NULL,"4","1","0","2024-03-07 19:42:16","2024-04-05 12:41:59","75","Gandim Cuts"
-"342","Peixes Vagabundos ",NULL,NULL,NULL,"5","1","0","2024-03-07 19:45:20","2024-04-05 12:42:40","75","Vagrant fish"
-"343","Biogandim ",NULL,NULL,NULL,"6","1","0","2024-03-07 19:49:01","2024-04-05 12:44:58","75","BioGandim"
-"344","Abaladiça à Gandim ",NULL,NULL,NULL,"7","1","0","2024-03-07 19:50:49","2024-04-05 12:46:15","75","Desserts"
-"345","Bebidas ",NULL,NULL,NULL,"8","1","0","2024-03-07 20:19:01","2024-03-21 18:26:36","75",NULL
-"346","Couvert",NULL,NULL,NULL,"0","1","0","2024-03-07 20:30:01","2024-03-21 18:35:33","75","Starters"
+"338","EMENTA",NULL,NULL,NULL,"0","1","0","2024-03-06 22:51:33","2024-06-20 13:13:20","18",NULL
+"339","Sopas",NULL,NULL,NULL,"1","1","0","2024-03-07 19:20:32","2024-06-12 19:42:06","75","Soup"
+"340","Partilha entre Gandins",NULL,NULL,NULL,"3","1","0","2024-03-07 19:25:13","2024-06-12 19:42:06","75","Sharing Between Gandins"
+"341","Cortes à Gandim ",NULL,NULL,NULL,"4","1","0","2024-03-07 19:42:16","2024-06-12 19:42:06","75","Gandim Cuts"
+"342","Peixes Vagabundos ",NULL,NULL,NULL,"5","1","0","2024-03-07 19:45:20","2024-06-12 19:42:06","75","Vagrant fish"
+"343","Biogandim ",NULL,NULL,NULL,"6","1","0","2024-03-07 19:49:01","2024-06-12 19:42:06","75","BioGandim"
+"344","Abaladiça à Gandim ",NULL,NULL,NULL,"7","1","0","2024-03-07 19:50:49","2024-06-12 19:42:06","75","Desserts"
+"345","Bebidas ",NULL,NULL,NULL,"8","1","0","2024-03-07 20:19:01","2024-06-12 19:42:06","75",NULL
+"346","Couvert",NULL,NULL,NULL,"0","1","0","2024-03-07 20:30:01","2024-06-12 19:42:06","75","Starters"
 "347","Teeegg1",NULL,NULL,NULL,"0","1","0","2024-03-08 05:19:15","2024-03-08 11:00:10","3","iiiiiii"
 "348","tezt22",NULL,NULL,NULL,"0","1","0","2024-03-08 08:33:24","2024-03-08 08:33:24","3",NULL
 "349","new cat1",NULL,NULL,NULL,"0","1","0","2024-03-08 11:48:01","2024-03-08 12:01:28","3","Tesr1"
@@ -349,10 +349,10 @@
 "354","Saladas",NULL,NULL,NULL,"5","1","0","2024-03-13 18:26:44","2024-03-14 14:05:38","21","Salads"
 "355","Sopas",NULL,NULL,NULL,"6","1","0","2024-03-13 18:37:52","2024-03-14 14:06:00","21","Soups"
 "356","Ovos",NULL,NULL,NULL,"9","1","0","2024-03-13 18:54:53","2024-03-14 14:16:24","21","Eggs"
-"357","TINTOS",NULL,NULL,NULL,"0","1","0","2024-03-16 22:43:19","2024-03-16 22:43:19","77",NULL
-"358","BRANCOS",NULL,NULL,NULL,"0","1","0","2024-03-17 13:29:32","2024-03-17 13:29:32","77",NULL
-"359","VERDES",NULL,NULL,NULL,"0","1","0","2024-03-17 13:41:30","2024-03-17 13:41:30","77",NULL
-"360","SANGRIAS, ROSÉS, FRISANTES E ESPUMANTE",NULL,NULL,NULL,"0","1","0","2024-03-17 13:43:45","2024-03-17 13:43:45","77",NULL
+"357","VINHOS TINTOS",NULL,NULL,NULL,"3","1","0","2024-03-16 22:43:19","2024-07-14 13:18:49","77",NULL
+"358","VINHOS BRANCOS",NULL,NULL,NULL,"4","1","0","2024-03-17 13:29:32","2024-07-14 13:18:49","77",NULL
+"359","VINHOS VERDES",NULL,NULL,NULL,"5","1","0","2024-03-17 13:41:30","2024-07-14 13:18:49","77",NULL
+"360","ROSÉS, FRISANTES E SANGRIA",NULL,NULL,NULL,"6","1","0","2024-03-17 13:43:45","2024-07-14 13:18:49","77",NULL
 "361","SOBREMESAS",NULL,NULL,NULL,"2","1","0","2024-03-17 13:56:08","2024-03-20 17:36:32","78",NULL
 "362","ENTRADAS",NULL,NULL,NULL,"0","1","0","2024-03-17 13:56:52","2024-03-20 17:36:32","78",NULL
 "363","Comida",NULL,NULL,NULL,"0","1","1","2023-10-09 14:45:08","2024-04-05 12:24:33","80","Food"
@@ -373,11 +373,11 @@
 "378","ACOMPANHAMENTOS",NULL,NULL,NULL,"3","1","0","2024-03-19 15:56:38","2024-03-20 15:38:14","83",NULL
 "379","SUSHI",NULL,NULL,NULL,"5","1","0","2024-03-19 16:35:21","2024-03-20 15:38:14","83",NULL
 "380","Petiscos",NULL,NULL,NULL,"0","1","0","2024-03-19 23:38:54","2024-04-25 21:45:02","85","Snacks"
-"381","Caldos",NULL,NULL,NULL,"0","1","0","2024-03-19 23:38:59","2024-03-19 23:38:59","85",NULL
+"381","Caldos",NULL,NULL,NULL,"0","1","0","2024-03-19 23:38:59","2024-05-13 22:49:48","85","Special soup"
 "382","Pastel de vento",NULL,NULL,NULL,"0","1","0","2024-03-19 23:39:10","2024-04-25 21:47:42","85","Pastry"
 "383","Refeições (grelhados)",NULL,NULL,NULL,"0","1","0","2024-03-19 23:39:24","2024-04-25 21:48:34","85","Meals (grilled)"
 "384","Pizzas e Rodízio",NULL,NULL,NULL,"0","1","0","2024-03-19 23:40:40","2024-04-25 21:50:41","85","Pizzas and All you can eat"
-"385","Bebidas",NULL,NULL,NULL,"0","1","0","2024-03-19 23:43:02","2024-03-19 23:43:02","85",NULL
+"385","Bebidas",NULL,NULL,NULL,"0","1","0","2024-03-19 23:43:02","2024-05-13 23:02:56","85","Drinks"
 "386","aaaa",NULL,NULL,NULL,"0","1","1","2024-03-20 06:27:05","2024-03-28 10:05:03","86",NULL
 "387","SOBREMESA",NULL,NULL,NULL,"6","1","0","2024-03-20 10:08:46","2024-03-20 15:38:14","83",NULL
 "388","CERVEJAS E SIDRAS",NULL,NULL,NULL,"2","1","0","2024-03-20 15:09:05","2024-03-20 17:24:41","79",NULL
@@ -488,10 +488,10 @@
 "497","Pão",NULL,NULL,NULL,NULL,"1","0","2024-03-28 18:31:49","2024-03-28 18:31:49","35","Bread"
 "498","Polvo à Lagareiro",NULL,NULL,NULL,NULL,"1","0","2024-03-28 18:31:49","2024-03-28 18:31:49","35","Octopus in Lagareiro"
 "499","café",NULL,NULL,NULL,NULL,"1","0","2024-03-28 18:31:49","2024-03-28 18:31:49","35","coffee"
-"500","Caldos - MaV",NULL,NULL,NULL,"0","1","0","2024-03-28 18:44:47","2024-03-28 18:44:47","85",NULL
-"501","Petiscos - MaV",NULL,NULL,NULL,"0","1","0","2024-03-28 18:44:58","2024-03-28 18:44:58","85",NULL
-"502","Bebidas - MaV",NULL,NULL,NULL,"0","1","0","2024-03-28 18:45:09","2024-03-28 18:45:09","85",NULL
-"503","Garrafas - MaV",NULL,NULL,NULL,"0","1","0","2024-03-28 18:45:19","2024-03-28 18:45:19","85",NULL
+"500","Caldos - MaV",NULL,NULL,NULL,"0","1","0","2024-03-28 18:44:47","2024-05-22 21:21:16","85","Special soup - Live Music"
+"501","Petiscos - MaV",NULL,NULL,NULL,"0","1","0","2024-03-28 18:44:58","2024-05-22 21:07:15","85","Snacks - Live Music"
+"502","Bebidas - MaV",NULL,NULL,NULL,"0","1","0","2024-03-28 18:45:09","2024-05-13 22:52:46","85","Drinks - Live music"
+"503","Garrafas - MaV",NULL,NULL,NULL,"0","1","0","2024-03-28 18:45:19","2024-05-13 22:52:37","85","Bottles - Live Music"
 "504","Sopa",NULL,NULL,NULL,NULL,"1","0","2024-03-28 18:52:55","2024-03-28 18:52:55","36","Soup"
 "505","Arroz",NULL,NULL,NULL,NULL,"1","0","2024-03-28 18:52:55","2024-03-28 18:52:55","36","Rice"
 "506","Pão",NULL,NULL,NULL,NULL,"1","0","2024-03-28 18:52:55","2024-03-28 18:52:55","36","Bread"
@@ -580,20 +580,20 @@
 "589","Sobremesas",NULL,NULL,NULL,"4","1","1","2024-04-04 15:13:30","2024-04-04 15:42:32","29","Dessert"
 "590","Bebidas",NULL,NULL,NULL,"5","1","1","2024-04-04 15:13:34","2024-04-04 15:42:38","29",NULL
 "591","Especiais Dia do Pai",NULL,NULL,NULL,"0","1","1","2024-04-04 15:26:08","2024-04-04 15:42:15","29",NULL
-"592","Entradadas",NULL,NULL,NULL,"0","1","0","2024-04-04 19:02:59","2024-04-04 22:21:03","29",NULL
-"593","Hambúrgueres ",NULL,NULL,NULL,"1","1","0","2024-04-04 19:03:27","2024-04-04 22:21:03","29",NULL
-"594","Bowls",NULL,NULL,NULL,"2","1","0","2024-04-04 19:03:39","2024-04-04 22:21:03","29",NULL
-"595","Torradas",NULL,NULL,NULL,"3","1","0","2024-04-04 19:03:57","2024-04-04 22:21:03","29",NULL
-"596","Bowls de Frutas",NULL,NULL,NULL,"5","1","0","2024-04-04 19:04:21","2024-04-04 22:21:03","29",NULL
-"597","Menu Criança",NULL,NULL,NULL,"4","1","0","2024-04-04 19:05:22","2024-04-04 22:21:03","29",NULL
-"598","Panquecas",NULL,NULL,NULL,"6","1","0","2024-04-04 19:05:33","2024-04-04 22:21:03","29",NULL
-"599","Sumos Naturais",NULL,NULL,NULL,"8","1","0","2024-04-04 19:06:56","2024-04-04 22:21:03","29",NULL
-"600","Smothies",NULL,NULL,NULL,"9","1","0","2024-04-04 19:07:10","2024-04-04 22:21:03","29",NULL
-"601","Cafetaria",NULL,NULL,NULL,"10","1","0","2024-04-04 19:07:30","2024-04-04 22:21:03","29",NULL
-"602","Cafetaria Especial",NULL,NULL,NULL,"11","1","0","2024-04-04 19:07:54","2024-04-04 22:21:03","29",NULL
-"603","Águas, chás e refrigerantes",NULL,NULL,NULL,"12","1","0","2024-04-04 19:08:44","2024-04-04 22:21:03","29",NULL
-"604","Cocktails, sangria e companhia ",NULL,NULL,NULL,"13","1","0","2024-04-04 19:09:54","2024-04-04 22:21:03","29",NULL
-"605","Sobremesas",NULL,NULL,NULL,"7","1","0","2024-04-04 22:20:10","2024-04-04 22:21:03","29",NULL
+"592","Entradadas",NULL,NULL,NULL,"0","1","1","2024-04-04 19:02:59","2024-09-13 08:05:30","29",NULL
+"593","Hambúrgueres ",NULL,NULL,NULL,"1","1","1","2024-04-04 19:03:27","2024-09-13 08:05:34","29",NULL
+"594","Bowls",NULL,NULL,NULL,"2","1","1","2024-04-04 19:03:39","2024-09-13 08:05:38","29",NULL
+"595","Torradas",NULL,NULL,NULL,"3","1","1","2024-04-04 19:03:57","2024-09-13 08:05:41","29",NULL
+"596","Bowls de Frutas",NULL,NULL,NULL,"5","1","1","2024-04-04 19:04:21","2024-09-13 08:05:48","29",NULL
+"597","Menu Criança",NULL,NULL,NULL,"4","1","1","2024-04-04 19:05:22","2024-09-13 08:05:44","29",NULL
+"598","Panquecas",NULL,NULL,NULL,"6","1","1","2024-04-04 19:05:33","2024-09-13 08:05:54","29",NULL
+"599","Sumos Naturais",NULL,NULL,NULL,"8","1","1","2024-04-04 19:06:56","2024-09-13 08:06:03","29",NULL
+"600","Smothies",NULL,NULL,NULL,"9","1","1","2024-04-04 19:07:10","2024-09-13 08:06:07","29",NULL
+"601","Cafetaria",NULL,NULL,NULL,"10","1","1","2024-04-04 19:07:30","2024-09-13 08:06:10","29",NULL
+"602","Cafetaria Especial",NULL,NULL,NULL,"11","1","1","2024-04-04 19:07:54","2024-09-13 08:06:14","29",NULL
+"603","Águas, chás e refrigerantes",NULL,NULL,NULL,"12","1","1","2024-04-04 19:08:44","2024-09-13 08:06:18","29",NULL
+"604","Cocktails, sangria e companhia ",NULL,NULL,NULL,"13","1","1","2024-04-04 19:09:54","2024-09-13 08:06:21","29",NULL
+"605","Sobremesas",NULL,NULL,NULL,"7","1","1","2024-04-04 22:20:10","2024-09-13 08:05:59","29",NULL
 "606","Sopa",NULL,NULL,NULL,NULL,"1","0","2024-04-05 11:26:48","2024-04-05 11:26:48","90","Soup"
 "607","Arroz",NULL,NULL,NULL,NULL,"1","0","2024-04-05 11:26:48","2024-04-05 11:26:48","90","Rice"
 "608","Pão",NULL,NULL,NULL,NULL,"1","0","2024-04-05 11:26:48","2024-04-05 11:26:48","90","Bread"
@@ -630,7 +630,7 @@
 "639","Cocktail ",NULL,NULL,NULL,"10","1","0","2024-04-12 10:58:55","2024-04-12 15:17:39","97",NULL
 "640","Shots ",NULL,NULL,NULL,"11","1","0","2024-04-12 10:59:11","2024-04-12 15:17:39","97",NULL
 "641","Tostadas",NULL,NULL,NULL,"6","1","0","2024-04-12 15:17:27","2024-04-12 15:20:46","97",NULL
-"642","Carta de Vinhos",NULL,NULL,NULL,"9","0","0","2024-04-12 16:49:56","2024-04-12 16:51:00","75",NULL
+"642","Carta de Vinhos",NULL,NULL,NULL,"9","0","0","2024-04-12 16:49:56","2024-06-12 19:42:06","75",NULL
 "643","PIZZA ",NULL,NULL,NULL,"0","1","1","2023-12-25 02:24:37","2024-04-13 04:31:31","98",NULL
 "644","ENTRADAS / PETISCOS / TAPAS",NULL,NULL,NULL,"0","1","0","2023-12-25 02:31:04","2024-04-13 04:31:31","98","Starters / to nibble"
 "645","PASTA & RISOTTO",NULL,NULL,NULL,"2","1","1","2023-12-25 02:33:21","2024-04-13 04:31:32","98",NULL
@@ -657,13 +657,13 @@
 "666","Shots ",NULL,NULL,NULL,"11","1","0","2024-04-12 10:59:11","2024-04-14 12:50:21","100",NULL
 "667","Tostadas",NULL,NULL,NULL,"6","1","1","2024-04-12 15:17:27","2024-04-17 16:53:12","100",NULL
 "668","Pets",NULL,NULL,NULL,"0","1","0","2024-04-17 06:01:15","2024-04-17 06:09:42","102",NULL
-"669","ANTIPASTI - Entradas Italianas",NULL,NULL,NULL,"0","1","0","2024-04-22 14:38:05","2024-04-22 14:39:39","101",NULL
-"670","PRIMI PIATI",NULL,NULL,NULL,"0","1","0","2024-04-22 14:38:20","2024-04-22 14:38:20","101",NULL
-"671","PIZZA & CALZONE",NULL,NULL,NULL,"0","1","0","2024-04-22 14:38:37","2024-04-22 14:38:37","101",NULL
-"672","INPIN RYIORI - Entrada Japonesas",NULL,NULL,NULL,"0","1","0","2024-04-22 14:39:23","2024-04-22 14:39:23","101",NULL
-"673","ESTE OESTE - Itália & Japão",NULL,NULL,NULL,"0","1","0","2024-04-22 14:40:05","2024-04-22 14:40:05","101",NULL
-"674","SUSHI & SASHIMI",NULL,NULL,NULL,"0","1","0","2024-04-22 14:40:21","2024-04-22 14:40:21","101",NULL
-"675","TEMAKI",NULL,NULL,NULL,"0","1","0","2024-04-22 14:40:31","2024-04-22 14:40:31","101",NULL
+"669","ANTIPASTI - Entradas Italianas",NULL,NULL,NULL,"6","1","0","2024-04-22 14:38:05","2024-06-07 11:26:16","101",NULL
+"670","PASTE & RISOTTI",NULL,NULL,NULL,"8","1","0","2024-04-22 14:38:20","2024-06-07 11:26:16","101",NULL
+"671","PIZZE",NULL,NULL,NULL,"9","1","0","2024-04-22 14:38:37","2024-06-07 11:26:16","101",NULL
+"672","INPIN RYIORI - Entrada Japonesas",NULL,NULL,NULL,"0","1","0","2024-04-22 14:39:23","2024-06-07 11:26:16","101",NULL
+"673","ESTE OESTE - Itália & Japão",NULL,NULL,NULL,"5","1","0","2024-04-22 14:40:05","2024-06-07 11:26:16","101",NULL
+"674","SUSHI & SASHIMI",NULL,NULL,NULL,"2","1","0","2024-04-22 14:40:21","2024-06-07 11:26:16","101",NULL
+"675","TEMAKI",NULL,NULL,NULL,"3","1","0","2024-04-22 14:40:31","2024-06-07 11:26:16","101",NULL
 "676","Soup",NULL,NULL,NULL,NULL,"1","0","2024-04-25 05:39:13","2024-04-25 05:39:13","14","Soup"
 "677","Food",NULL,NULL,NULL,"0","1","1","2023-12-10 16:07:39","2024-04-25 05:41:38","103","Food"
 "678","Drinks",NULL,NULL,NULL,"0","1","1","2023-12-10 16:07:53","2024-04-25 05:41:39","103","Drinks"
@@ -685,5 +685,753 @@
 "694","BEBIDAS",NULL,NULL,NULL,"0","1","0","2024-04-29 15:08:31","2024-04-29 15:08:31","105",NULL
 "695","GRELHADOS",NULL,NULL,NULL,"2","1","1","2024-04-30 12:55:55","2024-05-01 10:37:13","13",NULL
 "696","FRANCESINHAS",NULL,NULL,NULL,"0","1","1","2024-04-30 13:55:32","2024-04-30 13:57:30","13",NULL
-"697","ENTRADAS",NULL,NULL,NULL,"0","1","0","2024-05-01 10:36:26","2024-05-01 10:36:31","13",NULL
+"697","ENTRADAS",NULL,NULL,NULL,"0","1","0","2024-05-01 10:36:26","2024-07-02 13:42:19","13","STARTERS"
 "698","SopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopa",NULL,NULL,NULL,NULL,"1","1","2024-05-03 11:21:06","2024-05-03 11:22:26","6","Soup"
+"699","Sopa SopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopaSopa",NULL,NULL,NULL,NULL,"1","1","2024-05-03 14:08:37","2024-05-03 14:08:48","92","Soup"
+"700","Arroz",NULL,NULL,NULL,NULL,"1","1","2024-05-03 14:08:37","2024-05-03 14:08:52","92","Rice"
+"701","Pão",NULL,NULL,NULL,NULL,"1","1","2024-05-03 14:08:37","2024-05-03 14:08:55","92","Bread"
+"702","Polvo à Lagareiro",NULL,NULL,NULL,NULL,"1","1","2024-05-03 14:08:37","2024-05-03 14:08:58","92","Octopus in Lagareiro"
+"703","café",NULL,NULL,NULL,NULL,"1","1","2024-05-03 14:08:37","2024-05-03 14:09:02","92","coffee"
+"704","Sopa",NULL,NULL,NULL,NULL,"1","1","2024-05-06 12:37:56","2024-05-06 18:00:29","92","Soup"
+"705","SOBREMESAS",NULL,NULL,NULL,"3","1","1","2024-05-06 13:01:15","2024-05-15 18:48:12","13",NULL
+"706","ACOMPANHAMENTOS EXTRA",NULL,NULL,NULL,"2","1","0","2024-05-06 14:49:41","2024-07-10 14:05:30","13","EXTRA SIDES"
+"707","VINHOS ",NULL,NULL,NULL,"5","1","0","2024-05-06 14:54:10","2024-10-01 10:08:22","13","WINES"
+"708","Sopa",NULL,NULL,NULL,NULL,"1","1","2024-05-06 18:00:58","2024-05-06 18:01:09","92","Soup"
+"709","Arroz",NULL,NULL,NULL,NULL,"1","1","2024-05-06 18:00:58","2024-05-06 18:03:37","92","Rice"
+"710","Pão",NULL,NULL,NULL,NULL,"1","1","2024-05-06 18:00:58","2024-05-06 18:03:43","92","Bread"
+"711","Polvo à Lagareiro",NULL,NULL,NULL,NULL,"1","1","2024-05-06 18:00:58","2024-05-06 18:03:47","92","Octopus in Lagareiro"
+"712","café",NULL,NULL,NULL,NULL,"1","1","2024-05-06 18:00:58","2024-05-06 18:03:52","92","coffee"
+"713","Sopa",NULL,NULL,NULL,NULL,"1","1","2024-05-06 18:02:02","2024-05-06 18:03:56","92","Soup"
+"714","The moon hung low, casting shadows that danced with the wind's whispers. Crickets sang their nightly lullaby, a melody of nature's symphony. In the distance, city lights twinkled, a stark contrast to the tranquil countryside. Stars dotted the sky likewewe",NULL,NULL,NULL,NULL,"1","0","2024-05-06 18:42:44","2024-05-06 18:42:44","36","Soup"
+"715","The moon hung low, casting shadows that danced with the wind's whispers. Crickets sang their nightly lullaby, a melody of nature's symphony. In the distance, city lights twinkled, a stark contrast to the tranquil countryside. Stars dotted the sky likewewet",NULL,NULL,NULL,NULL,"1","0","2024-05-07 04:35:59","2024-05-07 04:35:59","36","Soup"
+"716","""The moon hung low, casting shadows that danced with the wind's whispers. Crickets sang their nightly lullaby, a melody of nature's symphony. In the distance, city lights twinkled, a stark contrast to the tranquil countryside. Stars dotted the sky likewewe",NULL,NULL,NULL,NULL,"1","1","2024-05-07 13:07:16","2024-05-07 13:08:01","92","Soup"
+"717","The moon hung low, casting shadows that danced with the wind's whispers. Crickets sang their nightly lullaby, a melody of nature's symphony. In the distance, city lights twinkled, a stark contrast to the tranquil countryside. Stars dotted the sky likewewe",NULL,NULL,NULL,NULL,"1","1","2024-05-07 13:07:16","2024-05-07 13:08:05","92","Soup"
+"718","""The moon hung low, casting shadows that danced with the wind's whispers. Crickets sang their nightly lullaby, a melody of nature's symphony. In the distance, city lights twinkled, a stark contrast to the tranquil countryside. Stars dotted the sky likewewe",NULL,NULL,NULL,NULL,"1","1","2024-05-07 13:12:19","2024-05-07 13:12:33","92","Soup"
+"719","The moon hung low, casting shadows that danced with the wind's whispers. Crickets sang their nightly lullaby, a melody of nature's symphony. In the distance, city lights twinkled, a stark contrast to the tranquil countryside. Stars dotted the sky likewewe",NULL,NULL,NULL,NULL,"1","1","2024-05-07 13:12:19","2024-05-07 13:12:37","92","Soup"
+"720","""The moon hung low, casting shadows that danced with the wind's whispers. Crickets sang their nightly lullaby, a melody of nature's symphony. In the distance, city lights twinkled, a stark contrast to the tranquil countryside. Stars dotted the sky likewewe",NULL,NULL,NULL,NULL,"1","1","2024-05-07 13:14:23","2024-05-07 13:14:45","92","Soup"
+"721","The moon hung low, casting shadows that danced with the wind's whispers. Crickets sang their nightly lullaby, a melody of nature's symphony. In the distance, city lights twinkled, a stark contrast to the tranquil countryside. Stars dotted the sky likewewe",NULL,NULL,NULL,NULL,"1","1","2024-05-07 13:14:23","2024-05-07 13:14:50","92","Soup"
+"722","""The moon hung low, casting shadows that danced with the wind's whispers. Crickets sang their nightly lullaby, a melody of nature's symphony. In the distance, city lights twinkled, a stark contrast to the tranquil countryside. Stars dotted the sky likewewe",NULL,NULL,NULL,NULL,"1","1","2024-05-07 13:15:23","2024-05-07 13:16:09","92","Soup"
+"723","The moon hung low, casting shadows that danced with the wind's whispers. Crickets sang their nightly lullaby, a melody of nature's symphony. In the distance, city lights twinkled, a stark contrast to the tranquil countryside. Stars dotted the sky likewewe",NULL,NULL,NULL,NULL,"1","1","2024-05-07 13:15:23","2024-05-07 13:16:13","92","Soup"
+"724","""The moon hung low, casting shadows that danced with the wind's whispers. Crickets sang their nightly lullaby, a melody of nature's symphony. In the distance, city lights twinkled, a stark contrast to the tranquil countryside. Stars dotted the sky likewewe",NULL,NULL,NULL,NULL,"1","1","2024-05-07 13:16:21","2024-05-07 13:17:10","92","Soup"
+"725","The moon hung low, casting shadows that danced with the wind's whispers. Crickets sang their nightly lullaby, a melody of nature's symphony. In the distance, city lights twinkled, a stark contrast to the tranquil countryside. Stars dotted the sky likewewe",NULL,NULL,NULL,NULL,"1","1","2024-05-07 13:16:21","2024-05-07 13:17:14","92","Soup"
+"726","Entradas",NULL,NULL,NULL,"0","1","0","2024-05-08 18:22:13","2024-05-23 20:56:09","106","Appetizers"
+"727","Sopa de massa de arroz/Rice noodles soup",NULL,NULL,NULL,"1","1","0","2024-05-08 18:24:41","2024-05-23 20:56:09","106",NULL
+"728","Caril (Coconut Curry) Picante/Spicy🌶",NULL,NULL,NULL,"2","1","0","2024-05-08 18:26:18","2024-05-23 20:56:09","106",NULL
+"729","Prato do dia",NULL,NULL,NULL,"3","0","1","2024-05-08 18:32:44","2024-05-15 14:41:26","106",NULL
+"730","Sopa",NULL,NULL,NULL,NULL,"1","1","2024-05-09 09:27:22","2024-05-09 09:27:38","81","Soup"
+"731","Arroz",NULL,NULL,NULL,NULL,"1","1","2024-05-09 09:27:22","2024-05-09 09:27:53","81","Rice"
+"732","Pão",NULL,NULL,NULL,NULL,"1","1","2024-05-09 09:27:22","2024-05-09 09:27:58","81","Bread"
+"733","Polvo à Lagareiro",NULL,NULL,NULL,NULL,"1","1","2024-05-09 09:27:22","2024-05-09 09:28:02","81",NULL
+"734","café",NULL,NULL,NULL,NULL,"1","1","2024-05-09 09:27:22","2024-05-09 09:28:08","81","coffee"
+"735","Especial Santos Populares",NULL,NULL,NULL,"2","0","0","2024-05-10 16:43:26","2024-09-02 10:24:35","7","Special"
+"736","RESTAURANTE .COME   |   EMENTA",NULL,NULL,NULL,"1","0","1","2023-12-30 21:44:29","2024-05-11 15:34:13","107",NULL
+"737","Sobremesas",NULL,NULL,NULL,"2","0","1","2024-01-05 21:39:11","2024-05-11 15:34:13","107",NULL
+"738","Sugestão do Dia",NULL,NULL,NULL,"0","0","1","2024-02-22 10:13:54","2024-05-11 15:34:13","107",NULL
+"739","MENU",NULL,NULL,NULL,"0","1","0","2024-03-06 22:51:33","2024-05-16 12:00:01","107",NULL
+"740","ENTRADAS",NULL,NULL,NULL,"0","1","0","2024-05-13 01:34:08","2024-08-12 11:41:47","108","Starters"
+"741","A NOSSA GRELHA",NULL,NULL,NULL,"0","1","0","2024-05-13 01:34:30","2024-08-12 13:00:17","108","ON OUR GRILL"
+"742","NA MAO",NULL,NULL,NULL,"0","1","0","2024-05-13 01:34:40","2024-08-12 13:00:45","108","IN HAND"
+"743","CLASSICOS DA FREGUESA NO FORNO",NULL,NULL,NULL,"0","1","0","2024-05-13 01:35:00","2024-08-12 13:01:13","108","CUSTOMER CLASSICS"
+"744","SUBREMESAS",NULL,NULL,NULL,"0","1","0","2024-05-13 01:35:17","2024-08-12 11:41:57","108","Desserts"
+"745","EXTRAS",NULL,NULL,NULL,"0","1","0","2024-05-13 22:57:29","2024-08-12 12:50:19","108","EXTRA"
+"746","PIZZA ",NULL,NULL,NULL,"0","1","1","2023-12-25 02:24:37","2024-05-14 05:35:05","109",NULL
+"747","ENTRADAS / PETISCOS / TAPAS",NULL,NULL,NULL,"0","1","0","2023-12-25 02:31:04","2024-05-14 05:35:05","109","Starters / to nibble"
+"748","PASTA & RISOTTO",NULL,NULL,NULL,"2","1","1","2023-12-25 02:33:21","2024-05-14 05:35:06","109",NULL
+"749","DO TALHO",NULL,NULL,NULL,"3","1","1","2023-12-25 02:33:40","2024-05-14 05:35:06","109",NULL
+"750","DO MAR",NULL,NULL,NULL,"4","1","1","2023-12-25 02:33:52","2024-05-14 05:35:06","109",NULL
+"751","DO CAMPO",NULL,NULL,NULL,"5","1","1","2023-12-25 02:35:26","2024-05-14 05:35:06","109",NULL
+"752","DOCES ",NULL,NULL,NULL,"3","1","0","2023-12-25 02:35:52","2024-05-14 05:35:06","109","Sweets"
+"753","TOSTAS E CREPES SALGADOS ",NULL,NULL,NULL,"4","1","0","2023-12-25 02:36:53","2024-05-14 05:35:06","109","Toasties & salted crepes"
+"754","BEBIDAS QUENTES  ",NULL,NULL,NULL,"5","1","0","2023-12-25 02:38:08","2024-05-14 05:35:06","109","Hot Drinks"
+"755","PRATOS PRINCIPAIS ",NULL,NULL,NULL,"1","1","0","2023-12-25 02:43:41","2024-05-14 05:35:06","109","Main"
+"756","BEBIDAS , DRINKS & COCKTAILS ",NULL,NULL,NULL,"6","1","0","2023-12-26 20:39:17","2024-05-14 05:35:06","109","Drinks & Cocktails & Co"
+"757","PIZZAS ",NULL,NULL,NULL,"2","1","0","2023-12-27 02:28:20","2024-05-14 05:35:06","109","Pizzas"
+"758","VINHOS    ",NULL,NULL,NULL,"7","1","0","2023-12-27 03:35:31","2024-05-14 05:35:06","109","Wine"
+"759","Pratos do dia",NULL,NULL,NULL,"3","0","0","2024-05-14 16:15:23","2024-09-02 10:24:35","7","Daily special"
+"760","Entradas",NULL,NULL,NULL,"0","1","0","2024-05-15 16:19:13","2024-05-15 16:19:13","110",NULL
+"761","SOBREMESAS",NULL,NULL,NULL,"3","1","0","2024-05-16 13:47:43","2024-10-01 10:07:42","13","DESSERTS"
+"762","Sugestões da semana",NULL,NULL,NULL,"0","0","0","2024-05-19 08:11:50","2024-07-28 18:48:13","16","This week , chef suggestions"
+"763","INSALATE",NULL,NULL,NULL,"7","1","0","2024-05-20 15:31:29","2024-06-07 11:26:16","101",NULL
+"764","TEISHOKU",NULL,NULL,NULL,"1","1","0","2024-05-20 15:32:20","2024-06-07 11:26:16","101",NULL
+"765","MAKI",NULL,NULL,NULL,"4","1","0","2024-05-20 15:32:32","2024-06-07 11:26:16","101",NULL
+"766","BAMBINI",NULL,NULL,NULL,"10","1","0","2024-05-20 15:32:42","2024-06-07 11:26:16","101",NULL
+"767","SOBREMESA",NULL,NULL,NULL,"11","1","0","2024-05-20 15:32:50","2024-06-07 11:26:16","101",NULL
+"768","Bebidas",NULL,NULL,NULL,"8","1","0","2024-05-22 15:11:12","2024-09-02 10:24:35","7","Drinks"
+"769","WOK - Thailandês/Japonês/ Chinês/ Coreano",NULL,NULL,NULL,"3","1","0","2024-05-22 18:15:54","2024-05-23 20:56:09","106",NULL
+"770","Salada (Salad)",NULL,NULL,NULL,"4","1","0","2024-05-22 18:51:32","2024-05-23 20:56:09","106",NULL
+"771","Acompahamento/ Side dish",NULL,NULL,NULL,"5","1","0","2024-05-22 18:59:02","2024-05-23 20:56:09","106",NULL
+"772","Somremesas/ Dessert",NULL,NULL,NULL,"6","1","0","2024-05-22 19:04:52","2024-05-23 20:56:09","106",NULL
+"773","SANGRIA",NULL,NULL,NULL,"4","1","0","2024-05-22 20:16:58","2024-10-10 10:39:00","13","SANGRIA"
+"774","Antipasti",NULL,NULL,NULL,"0","1","0","2024-05-23 13:35:31","2024-05-23 15:33:44","111","STARTERS"
+"775","Insalate",NULL,NULL,NULL,"0","1","0","2024-05-23 13:58:59","2024-05-23 15:44:47","111","Salads"
+"776","Pastas (XL por mais 5.95€)",NULL,NULL,NULL,"0","1","0","2024-05-23 14:07:24","2024-05-23 15:48:39","111","Pastas (XL for an extra 5,95€)"
+"777","Pizzas",NULL,NULL,NULL,"0","1","0","2024-05-23 14:22:52","2024-05-23 15:58:11","111","Pizzas"
+"778","Risotti",NULL,NULL,NULL,"0","1","0","2024-05-23 14:38:31","2024-05-23 16:07:22","111","Risotto"
+"779","Calzones",NULL,NULL,NULL,"0","1","0","2024-05-23 14:44:13","2024-05-23 16:09:31","111","Calzones"
+"780","Fusion Burger",NULL,NULL,NULL,"0","1","0","2024-05-23 14:47:35","2024-05-23 16:10:40","111","Fusion Burger"
+"781","Hambúrgueres (duplo +4.50€ / triplo +7.95€)",NULL,NULL,NULL,"0","1","0","2024-05-23 14:51:31","2024-05-23 16:12:27","111","Burgeres* (double + 4,50€ / triple + 7,95€)"
+"782","Especialidades",NULL,NULL,NULL,"0","1","0","2024-05-23 15:02:34","2024-05-24 16:25:30","111","Specialties"
+"783","Prato Bambini (até aos 10 anos)",NULL,NULL,NULL,"0","1","0","2024-05-23 15:09:43","2024-05-23 16:18:14","111","Children's Plate (up to 10 years)"
+"784","Extras (preço por unidade)",NULL,NULL,NULL,"0","1","0","2024-05-23 15:11:23","2024-05-24 08:59:45","111","Extras (ingredients to enrich your dish, price per uni)"
+"785","Bebidas",NULL,NULL,NULL,"0","1","1","2024-05-24 08:03:52","2024-05-24 09:00:54","111",NULL
+"786","Services",NULL,NULL,NULL,"0","1","0","2024-05-24 08:06:04","2024-05-26 18:57:30","112",NULL
+"787","Os nossos Gins (inclui água tónica)",NULL,NULL,NULL,"0","1","0","2024-05-24 09:01:53","2024-05-28 15:14:01","111","Our gins (includes tonic water)"
+"788","Gins (inclui água tónica, 6cl.)",NULL,NULL,NULL,"0","1","0","2024-05-24 09:09:28","2024-05-28 15:15:24","111","Gins (includes tonic water, 6cl.)"
+"789","Cocktails (com álcool)",NULL,NULL,NULL,"0","1","0","2024-05-24 09:16:18","2024-05-28 15:22:49","111","Cocktails (with alcohol)"
+"790","Mocktails (sem álcool)",NULL,NULL,NULL,"0","1","0","2024-05-24 09:28:35","2024-05-28 15:52:50","111","Mocktails (alchohol-free)"
+"791","Caipirinhas",NULL,NULL,NULL,"0","1","0","2024-05-24 09:32:44","2024-05-28 16:11:41","111","Caipirinhas"
+"792","Whisky",NULL,NULL,NULL,"0","1","0","2024-05-24 09:34:45","2024-05-28 16:17:07","111","Whisky"
+"793","Rum",NULL,NULL,NULL,"0","1","0","2024-05-24 09:39:45","2024-05-28 16:30:04","111","Rum"
+"794","Tequilla (6cl)",NULL,NULL,NULL,"0","1","0","2024-05-24 09:42:28","2024-05-28 16:36:13","111","Tequilla (6cl)"
+"795","Vodka (6cl)",NULL,NULL,NULL,"0","1","0","2024-05-24 09:43:46","2024-05-28 16:37:14","111","Vodka (6cl)"
+"796","Champagne / Espumante",NULL,NULL,NULL,"0","1","0","2024-05-24 09:46:30","2024-05-28 16:41:02","111","Champagne / Sparkling"
+"797","Cervejas",NULL,NULL,NULL,"0","1","0","2024-05-24 09:48:12","2024-05-28 16:43:06","111","Beers"
+"798","Águas",NULL,NULL,NULL,"0","1","0","2024-05-24 09:50:20","2024-06-04 09:30:15","111","Waters"
+"799","Refrigerantes",NULL,NULL,NULL,"0","1","0","2024-05-24 09:52:17","2024-06-04 09:33:27","111","Soft drinks"
+"800","Digestivos / Licor 6cl",NULL,NULL,NULL,"0","1","0","2024-05-24 09:54:41","2024-06-04 09:43:12","111","Digestives/Liquor 6cl"
+"801","Sangrias",NULL,NULL,NULL,"0","1","0","2024-05-24 10:00:54","2024-06-04 09:46:04","111","Sangrias"
+"802","Antipasti",NULL,NULL,NULL,"0","1","0","2024-05-23 13:35:31","2024-05-24 10:03:51","113","STARTERS"
+"803","Insalate",NULL,NULL,NULL,"0","1","0","2024-05-23 13:58:59","2024-05-24 10:03:51","113","Salads"
+"804","Pastas (XL por mais 5.95€)",NULL,NULL,NULL,"0","1","0","2024-05-23 14:07:24","2024-05-24 10:03:51","113","Pastas (XL for an extra 5,95€)"
+"805","Pizzas",NULL,NULL,NULL,"0","1","0","2024-05-23 14:22:52","2024-05-24 10:03:51","113","Pizzas"
+"806","Risotti",NULL,NULL,NULL,"0","1","0","2024-05-23 14:38:31","2024-05-24 10:03:51","113","Risotto"
+"807","Calzones",NULL,NULL,NULL,"0","1","0","2024-05-23 14:44:13","2024-05-24 10:03:51","113","Calzones"
+"808","Fusion Burger",NULL,NULL,NULL,"0","1","0","2024-05-23 14:47:35","2024-05-24 10:03:52","113","Fusion Burger"
+"809","Hambúrgueres (duplo +4.50€ / triplo +7.95€)",NULL,NULL,NULL,"0","1","0","2024-05-23 14:51:31","2024-05-24 10:03:52","113","Burgeres* (double + 4,50€ / triple + 7,95€)"
+"810","Carnes e Especialidades",NULL,NULL,NULL,"0","1","0","2024-05-23 15:02:34","2024-05-24 10:03:52","113","Meat and Specialties"
+"811","Prato Bambini (até aos 10 anos)",NULL,NULL,NULL,"0","1","0","2024-05-23 15:09:43","2024-05-24 10:03:52","113","Children's Plate (up to 10 years)"
+"812","Extras (preço por unidade)",NULL,NULL,NULL,"0","1","0","2024-05-23 15:11:23","2024-05-24 10:03:52","113","Extras (ingredients to enrich your dish, price per uni)"
+"813","Bebidas",NULL,NULL,NULL,"0","1","1","2024-05-24 08:03:52","2024-05-24 10:03:52","113",NULL
+"814","Os nossos Gins",NULL,NULL,NULL,"0","1","0","2024-05-24 09:01:53","2024-05-24 10:03:52","113",NULL
+"815","Gins",NULL,NULL,NULL,"0","1","0","2024-05-24 09:09:28","2024-05-24 10:03:52","113",NULL
+"816","Cocktails com álcool",NULL,NULL,NULL,"0","1","0","2024-05-24 09:16:18","2024-05-24 10:03:52","113",NULL
+"817","Mocktails sem álcool",NULL,NULL,NULL,"0","1","0","2024-05-24 09:28:35","2024-05-24 10:03:52","113",NULL
+"818","Caipirinhas",NULL,NULL,NULL,"0","1","0","2024-05-24 09:32:44","2024-05-24 10:03:52","113",NULL
+"819","Whisky",NULL,NULL,NULL,"0","1","0","2024-05-24 09:34:45","2024-05-24 10:03:52","113",NULL
+"820","Rum",NULL,NULL,NULL,"0","1","0","2024-05-24 09:39:45","2024-05-24 10:03:52","113",NULL
+"821","Tequilla",NULL,NULL,NULL,"0","1","0","2024-05-24 09:42:28","2024-05-24 10:03:52","113",NULL
+"822","Vodka",NULL,NULL,NULL,"0","1","0","2024-05-24 09:43:46","2024-05-24 10:03:52","113",NULL
+"823","Champagne / Espumante",NULL,NULL,NULL,"0","1","0","2024-05-24 09:46:30","2024-05-24 10:03:52","113",NULL
+"824","Cervejas",NULL,NULL,NULL,"0","1","0","2024-05-24 09:48:12","2024-05-24 10:03:52","113",NULL
+"825","Águas",NULL,NULL,NULL,"0","1","0","2024-05-24 09:50:20","2024-05-24 10:03:52","113",NULL
+"826","Refrigerantes",NULL,NULL,NULL,"0","1","0","2024-05-24 09:52:17","2024-05-24 10:03:52","113",NULL
+"827","Digestivos / Licor",NULL,NULL,NULL,"0","1","0","2024-05-24 09:54:41","2024-05-24 10:03:52","113",NULL
+"828","Sangrias",NULL,NULL,NULL,"0","1","0","2024-05-24 10:00:54","2024-05-24 10:03:52","113",NULL
+"829","Vinhos Brancos",NULL,NULL,NULL,"0","1","0","2024-05-24 10:08:45","2024-06-04 09:54:03","111","White Wines"
+"830","Sado",NULL,NULL,NULL,"0","1","1","2024-05-24 10:18:09","2024-05-24 10:52:59","111",NULL
+"831","Vinhos Tintos",NULL,NULL,NULL,"0","1","0","2024-05-24 10:21:26","2024-06-04 10:41:50","111","Red Wines"
+"832","Sado",NULL,NULL,NULL,"0","1","1","2024-05-24 10:46:52","2024-05-24 10:52:05","111",NULL
+"833","Dão",NULL,NULL,NULL,"0","1","1","2024-05-24 10:47:49","2024-05-24 10:52:08","111",NULL
+"834","Vinhos Verdes",NULL,NULL,NULL,"0","1","0","2024-05-24 11:49:30","2024-06-04 10:54:18","111","Green Wines"
+"835","Vinhos Rosés",NULL,NULL,NULL,"0","1","0","2024-05-24 11:53:16","2024-06-04 11:00:52","111","Rosé wines"
+"836","Vinhos Italianos",NULL,NULL,NULL,"0","1","0","2024-05-24 12:54:14","2024-06-04 11:00:47","111","Italian Wines"
+"837","Cafetaria",NULL,NULL,NULL,"0","1","0","2024-05-24 13:00:06","2024-06-04 11:04:34","111","Coffee"
+"838","Sobremesas",NULL,NULL,NULL,"0","1","0","2024-05-24 13:03:51","2024-06-04 11:08:58","111","Desserts"
+"839","Bebida e Regrigerents (Soft Drinks)",NULL,NULL,NULL,"7","1","0","2024-05-24 18:28:46","2024-05-24 18:28:46","106",NULL
+"840","Bebidas asiaticas (Asian drink/ beer)",NULL,NULL,NULL,"8","1","0","2024-05-24 19:12:18","2024-05-24 19:12:18","106",NULL
+"841","Cerveja Portuguesa (Portuguese beer)",NULL,NULL,NULL,"9","1","0","2024-05-24 19:38:14","2024-05-24 19:38:14","106",NULL
+"842","Sangria Jar",NULL,NULL,NULL,"10","1","0","2024-05-24 20:00:46","2024-05-24 20:00:46","106",NULL
+"843","Entradas",NULL,NULL,NULL,"0","1","0","2024-05-08 18:22:13","2024-05-25 17:58:46","114","Appetizers"
+"844","Sopa de massa de arroz/Rice noodles soup",NULL,NULL,NULL,"1","1","0","2024-05-08 18:24:41","2024-05-25 17:58:46","114",NULL
+"845","Caril (Coconut Curry) Picante/Spicy🌶",NULL,NULL,NULL,"2","1","0","2024-05-08 18:26:18","2024-05-25 17:58:46","114",NULL
+"846","Prato do dia",NULL,NULL,NULL,"3","0","1","2024-05-08 18:32:44","2024-05-24 20:39:14","114",NULL
+"847","WOK - Thailandês/Japonês/ Chinês/ Coreano",NULL,NULL,NULL,"3","1","0","2024-05-22 18:15:54","2024-05-25 17:58:46","114",NULL
+"848","Salada (Salad)",NULL,NULL,NULL,"4","1","0","2024-05-22 18:51:32","2024-05-25 17:58:46","114",NULL
+"849","Acompahamento/ Side dish",NULL,NULL,NULL,"5","1","0","2024-05-22 18:59:02","2024-05-25 17:58:46","114",NULL
+"850","Somremesas/ Dessert",NULL,NULL,NULL,"6","1","0","2024-05-22 19:04:52","2024-05-25 17:58:46","114",NULL
+"851","Bebida e Refrigerents (Soft Drinks)",NULL,NULL,NULL,"7","1","0","2024-05-24 18:28:46","2024-05-25 17:58:46","114",NULL
+"852","Bebidas asiaticas (Asian drink/ beer)",NULL,NULL,NULL,"8","1","0","2024-05-24 19:12:18","2024-05-25 17:58:46","114",NULL
+"853","Cerveja Portuguesa (Portuguese beer)",NULL,NULL,NULL,"9","1","0","2024-05-24 19:38:14","2024-05-25 17:58:46","114",NULL
+"854","Sangria Jar",NULL,NULL,NULL,"10","1","0","2024-05-24 20:00:46","2024-05-25 17:58:46","114",NULL
+"855","Café/Chá (Coffee/Tea)",NULL,NULL,NULL,"11","1","0","2024-05-25 18:20:12","2024-05-25 18:20:12","114",NULL
+"856","Entradas",NULL,NULL,NULL,"0","1","0","2024-05-08 18:22:13","2024-05-25 18:32:55","115","Appetizers"
+"857","Sopa de massa de arroz/Rice noodles soup",NULL,NULL,NULL,"1","1","0","2024-05-08 18:24:41","2024-05-25 18:32:55","115",NULL
+"858","Caril (Coconut Curry) Picante/Spicy🌶",NULL,NULL,NULL,"2","1","0","2024-05-08 18:26:18","2024-05-25 18:32:55","115",NULL
+"859","Prato do dia",NULL,NULL,NULL,"3","0","1","2024-05-08 18:32:44","2024-05-25 18:32:55","115",NULL
+"860","WOK - Thailandês/Japonês/ Chinês/ Coreano",NULL,NULL,NULL,"3","1","0","2024-05-22 18:15:54","2024-05-25 18:32:55","115",NULL
+"861","Salada (Salad)",NULL,NULL,NULL,"4","1","0","2024-05-22 18:51:32","2024-05-25 18:32:55","115",NULL
+"862","Acompahamento/ Side dish",NULL,NULL,NULL,"5","1","0","2024-05-22 18:59:02","2024-05-25 18:32:55","115",NULL
+"863","Somremesas/ Dessert",NULL,NULL,NULL,"6","1","0","2024-05-22 19:04:52","2024-05-25 18:32:55","115",NULL
+"864","Bebida e Refrigerents (Soft Drinks)",NULL,NULL,NULL,"7","1","0","2024-05-24 18:28:46","2024-05-25 18:32:55","115",NULL
+"865","Bebidas asiaticas (Asian drink/ beer)",NULL,NULL,NULL,"8","1","0","2024-05-24 19:12:18","2024-05-25 18:32:55","115",NULL
+"866","Cerveja Portuguesa (Portuguese beer)",NULL,NULL,NULL,"9","1","0","2024-05-24 19:38:14","2024-05-25 18:32:55","115",NULL
+"867","Sangria Jar",NULL,NULL,NULL,"10","1","0","2024-05-24 20:00:46","2024-05-25 18:32:55","115",NULL
+"868","Café/Chá (Coffee/Tea)",NULL,NULL,NULL,"11","1","0","2024-05-25 18:20:12","2024-05-25 18:32:55","115",NULL
+"869","Entradas",NULL,NULL,NULL,"0","1","0","2024-05-08 18:22:13","2024-05-25 22:51:10","116","Appetizers"
+"870","Sopa de massa de arroz/Rice noodles soup",NULL,NULL,NULL,"1","1","0","2024-05-08 18:24:41","2024-05-25 22:51:10","116",NULL
+"871","Caril (Coconut Curry) Picante/Spicy🌶",NULL,NULL,NULL,"2","1","0","2024-05-08 18:26:18","2024-05-25 22:51:10","116",NULL
+"872","Prato do dia",NULL,NULL,NULL,"3","0","1","2024-05-08 18:32:44","2024-05-25 18:33:10","116",NULL
+"873","WOK - Thailandês/Japonês/ Chinês/ Coreano",NULL,NULL,NULL,"3","1","0","2024-05-22 18:15:54","2024-05-25 22:51:10","116",NULL
+"874","Salada (Salad)",NULL,NULL,NULL,"4","1","0","2024-05-22 18:51:32","2024-05-25 22:51:10","116",NULL
+"875","Acompahamento/ Side dish",NULL,NULL,NULL,"5","1","0","2024-05-22 18:59:02","2024-05-25 22:51:10","116",NULL
+"876","Somremesas/ Dessert",NULL,NULL,NULL,"6","1","0","2024-05-22 19:04:52","2024-05-25 22:51:10","116",NULL
+"877","Bebida e Refrigerents (Soft Drinks)",NULL,NULL,NULL,"7","1","0","2024-05-24 18:28:46","2024-05-25 22:51:10","116",NULL
+"878","Bebidas asiaticas (Asian drink/ beer)",NULL,NULL,NULL,"8","1","0","2024-05-24 19:12:18","2024-05-25 22:51:10","116",NULL
+"879","Cerveja Portuguesa (Portuguese beer)",NULL,NULL,NULL,"9","1","0","2024-05-24 19:38:14","2024-05-25 22:51:10","116",NULL
+"880","Sangria Jar",NULL,NULL,NULL,"10","1","0","2024-05-24 20:00:46","2024-05-25 22:51:10","116",NULL
+"881","Café/Chá (Coffee/Tea)",NULL,NULL,NULL,"11","1","0","2024-05-25 18:20:12","2024-05-25 22:51:10","116",NULL
+"882","Entradas",NULL,NULL,NULL,"0","1","0","2024-05-08 18:22:13","2024-05-25 18:42:29","117","Appetizers"
+"883","Sopa de massa de arroz/Rice noodles soup",NULL,NULL,NULL,"1","1","0","2024-05-08 18:24:41","2024-05-25 18:42:29","117",NULL
+"884","Caril (Coconut Curry) Picante/Spicy🌶",NULL,NULL,NULL,"2","1","0","2024-05-08 18:26:18","2024-05-25 18:42:29","117",NULL
+"885","Prato do dia",NULL,NULL,NULL,"3","0","1","2024-05-08 18:32:44","2024-05-25 18:42:29","117",NULL
+"886","WOK - Thailandês/Japonês/ Chinês/ Coreano",NULL,NULL,NULL,"3","1","0","2024-05-22 18:15:54","2024-05-25 18:42:29","117",NULL
+"887","Salada (Salad)",NULL,NULL,NULL,"4","1","0","2024-05-22 18:51:32","2024-05-25 18:42:29","117",NULL
+"888","Acompahamento/ Side dish",NULL,NULL,NULL,"5","1","0","2024-05-22 18:59:02","2024-05-25 18:42:29","117",NULL
+"889","Somremesas/ Dessert",NULL,NULL,NULL,"6","1","0","2024-05-22 19:04:52","2024-05-25 18:42:29","117",NULL
+"890","Bebida e Refrigerents (Soft Drinks)",NULL,NULL,NULL,"7","1","0","2024-05-24 18:28:46","2024-05-25 18:42:29","117",NULL
+"891","Bebidas asiaticas (Asian drink/ beer)",NULL,NULL,NULL,"8","1","0","2024-05-24 19:12:18","2024-05-25 18:42:29","117",NULL
+"892","Cerveja Portuguesa (Portuguese beer)",NULL,NULL,NULL,"9","1","0","2024-05-24 19:38:14","2024-05-25 18:42:29","117",NULL
+"893","Sangria Jar",NULL,NULL,NULL,"10","1","0","2024-05-24 20:00:46","2024-05-25 18:42:29","117",NULL
+"894","Café/Chá (Coffee/Tea)",NULL,NULL,NULL,"11","1","0","2024-05-25 18:20:12","2024-05-25 18:42:29","117",NULL
+"895","Maintenance",NULL,NULL,NULL,"0","1","0","2024-05-26 18:21:41","2024-05-26 18:21:41","112",NULL
+"896","Entradas",NULL,NULL,NULL,"0","1","0","2024-05-08 18:22:13","2024-05-26 20:32:04","118","Appetizers."
+"897","Sopa de massa de arroz/Rice noodles soup",NULL,NULL,NULL,"1","1","0","2024-05-08 18:24:41","2024-05-26 20:49:52","118","Rice noodles soup bowls"
+"898","Caril (Coconut Curry) Picante/Spicy🌶",NULL,NULL,NULL,"2","1","0","2024-05-08 18:26:18","2024-05-26 21:03:10","118","Curry coconut 🌶"
+"899","Prato do dia",NULL,NULL,NULL,"3","0","1","2024-05-08 18:32:44","2024-05-26 19:23:23","118",NULL
+"900","WOK - Thailandês/Japonês/ Chinês/ Coreano",NULL,NULL,NULL,"3","1","0","2024-05-22 18:15:54","2024-05-26 21:11:56","118","WOK - Thai / Japanese / Chinese / Korean"
+"901","Salada (Salad)",NULL,NULL,NULL,"4","1","0","2024-05-22 18:51:32","2024-05-26 21:37:29","118","Salad"
+"902","Acompahamento/ Side dish",NULL,NULL,NULL,"5","1","0","2024-05-22 18:59:02","2024-05-26 21:39:41","118","Side Dish"
+"903","Somremesas/ Dessert",NULL,NULL,NULL,"6","1","0","2024-05-22 19:04:52","2024-05-28 19:51:48","118","Dessert"
+"904","Bebida e Refrigerents (Soft Drinks)",NULL,NULL,NULL,"7","1","0","2024-05-24 18:28:46","2024-05-26 21:45:30","118","Soft Drinks"
+"905","Bebidas asiaticas (Asian drink/ beer)",NULL,NULL,NULL,"8","1","0","2024-05-24 19:12:18","2024-05-28 20:25:24","118","Asian beer / drink"
+"906","Cerveja Portuguesa (Portuguese beer)",NULL,NULL,NULL,"9","1","0","2024-05-24 19:38:14","2024-05-26 21:51:16","118","Portuguese beer"
+"907","Sangria",NULL,NULL,NULL,"10","1","0","2024-05-24 20:00:46","2024-05-28 20:29:51","118","Sangria jar"
+"908","Café/Chá (Coffee/Tea)",NULL,NULL,NULL,"11","1","0","2024-05-25 18:20:12","2024-05-26 21:54:39","118","Coffee and Tea"
+"909","Entradas",NULL,NULL,NULL,"0","1","0","2024-05-27 08:45:26","2024-07-25 15:07:27","119","Starters"
+"910","Saladas",NULL,NULL,NULL,"0","1","0","2024-05-27 08:52:32","2024-07-25 15:31:01","119","Salads"
+"911","Pratos",NULL,NULL,NULL,"0","1","0","2024-05-27 08:54:59","2024-07-25 15:33:56","119","Main Courses"
+"912","Acompanhamentos e Molhos",NULL,NULL,NULL,"0","1","0","2024-05-27 09:04:39","2024-07-25 15:45:08","119","Side dishes and sauces"
+"913","Vinho Tinto",NULL,NULL,NULL,"0","1","0","2024-05-27 09:11:46","2024-07-26 08:29:59","119","Red wine"
+"914","Vinho Branco",NULL,NULL,NULL,"0","1","0","2024-05-27 09:39:18","2024-07-26 08:41:50","119","White Wine"
+"915","Vinho Verde",NULL,NULL,NULL,"0","1","0","2024-05-27 09:49:12","2024-07-26 08:50:26","119","Green wine"
+"916","Vinho Rosé",NULL,NULL,NULL,"0","1","0","2024-05-27 09:52:00","2024-07-26 08:52:45","119","Rosé wine"
+"917","Champagne e Espumante",NULL,NULL,NULL,"0","1","0","2024-05-27 09:54:23","2024-07-26 09:02:49","119","Champagne and sparkling wine"
+"918","Sangrias",NULL,NULL,NULL,"0","1","0","2024-05-27 09:56:45","2024-07-26 09:13:24","119","Sangrias"
+"919","Água",NULL,NULL,NULL,"0","1","0","2024-05-27 09:58:58","2024-07-26 09:15:43","119","Water"
+"920","Cerveja",NULL,NULL,NULL,"0","1","0","2024-05-27 10:00:49","2024-07-26 09:17:49","119","Beer"
+"921","Refrigerantes",NULL,NULL,NULL,"0","1","0","2024-05-27 10:05:14","2024-07-26 09:21:52","119","Soft drinks"
+"922","Digestivos e Licores",NULL,NULL,NULL,"0","1","0","2024-05-27 10:12:06","2024-07-26 09:25:31","119","Digestives and Liqueurs"
+"923","Whisky",NULL,NULL,NULL,"0","1","0","2024-05-27 10:18:32","2024-07-26 09:30:16","119","Whisky"
+"924","Cocktails",NULL,NULL,NULL,"0","1","0","2024-05-27 10:25:10","2024-07-26 09:35:00","119","Cocktails"
+"925","Caipirinhas",NULL,NULL,NULL,"0","1","0","2024-05-27 10:26:23","2024-07-26 09:39:40","119","Caipirinhas"
+"926","Gins",NULL,NULL,NULL,"0","1","0","2024-05-27 10:27:44","2024-07-26 09:40:50","119","Gins"
+"927","Cafetarias",NULL,NULL,NULL,"0","1","0","2024-05-27 10:29:03","2024-07-26 09:42:25","119","Coffee shops"
+"928","Sobremesas",NULL,NULL,NULL,"0","1","0","2024-05-27 10:31:24","2024-07-25 15:49:35","119","Desserts"
+"929","Take Away",NULL,NULL,NULL,"0","1","1","2024-05-27 10:49:59","2024-07-29 10:46:47","119","Take Away"
+"930","Sopa",NULL,NULL,NULL,NULL,"1","1","2024-05-27 13:32:01","2024-05-27 13:36:43","6","Soup"
+"931","Arroz",NULL,NULL,NULL,NULL,"1","1","2024-05-27 13:32:01","2024-05-27 13:36:46","6","Rice"
+"932","Pão",NULL,NULL,NULL,NULL,"1","1","2024-05-27 13:32:01","2024-05-27 13:36:50","6","Bread"
+"933","Polvo à Lagareiro",NULL,NULL,NULL,NULL,"1","1","2024-05-27 13:32:01","2024-05-27 13:36:53","6","Octopus in Lagareiro"
+"934","café",NULL,NULL,NULL,NULL,"1","1","2024-05-27 13:32:01","2024-05-27 13:36:55","6","coffee"
+"935","Peixe",NULL,NULL,NULL,NULL,"1","1","2024-05-27 13:50:38","2024-05-27 14:28:26","6","Fish"
+"936","Ovos",NULL,NULL,NULL,NULL,"1","1","2024-05-27 13:51:18","2024-05-27 14:28:29","6","Eggs"
+"937","Acompanhamentos",NULL,NULL,NULL,NULL,"1","1","2024-05-27 13:51:18","2024-05-27 14:28:33","6","Sides"
+"938","Entradas",NULL,NULL,NULL,NULL,"1","1","2024-05-27 13:51:18","2024-05-27 14:28:36","6","Starters"
+"939","Especialidades",NULL,NULL,NULL,NULL,"1","1","2024-05-27 13:51:18","2024-05-27 14:28:40","6","Specialties"
+"940","Carne",NULL,NULL,NULL,NULL,"1","1","2024-05-27 13:51:18","2024-05-27 14:28:43","6","Meat"
+"941","Ementa Turística",NULL,NULL,NULL,NULL,"1","1","2024-05-27 13:51:18","2024-05-27 14:28:48","6","Tourist Menu"
+"942","Entradas",NULL,NULL,NULL,"1","1","0","2024-05-28 21:40:29","2024-05-28 21:44:27","120","Appetizers"
+"943","Especialidades",NULL,NULL,NULL,"0","1","0","2024-05-28 21:40:29","2024-05-28 21:44:27","120","Specialties"
+"944","Carne",NULL,NULL,NULL,"2","1","0","2024-05-28 21:40:30","2024-05-28 21:44:27","120","Meat"
+"945","Entradas",NULL,NULL,NULL,"0","1","0","2024-05-29 00:14:35","2024-05-29 00:19:23","121","Entrys"
+"946","Petiscos",NULL,NULL,NULL,"0","1","0","2024-05-29 00:14:46","2024-06-14 12:29:10","121",NULL
+"947","Pratos",NULL,NULL,NULL,"0","1","0","2024-05-29 00:20:34","2024-05-29 00:25:12","121",NULL
+"948","Bebidas",NULL,NULL,NULL,"0","1","0","2024-05-29 00:20:45","2024-05-29 00:20:45","121",NULL
+"949","Sobremesas",NULL,NULL,NULL,"0","1","0","2024-05-29 00:21:00","2024-05-29 00:21:00","121",NULL
+"950","Servicessdas",NULL,NULL,NULL,"1","1","0","2024-05-24 08:06:04","2024-09-10 09:58:17","122",NULL
+"951","Maintenance",NULL,NULL,NULL,"0","1","0","2024-05-26 18:21:41","2024-06-07 10:49:57","122",NULL
+"952","Servicesi",NULL,NULL,NULL,"1","1","0","2024-05-24 08:06:04","2024-06-18 12:20:25","123",NULL
+"953","Maintenance",NULL,NULL,NULL,"0","1","0","2024-05-26 18:21:41","2024-06-10 11:45:28","123",NULL
+"954","Services",NULL,NULL,NULL,"0","1","0","2024-05-24 08:06:04","2024-05-31 13:27:47","124",NULL
+"955","Maintenance",NULL,NULL,NULL,"0","1","0","2024-05-26 18:21:41","2024-05-31 13:27:47","124",NULL
+"956","Salads",NULL,NULL,NULL,"0","1","0","2024-06-02 12:11:30","2024-06-02 12:11:30","125",NULL
+"957","Cold Mezze",NULL,NULL,NULL,"0","1","0","2024-06-02 16:41:25","2024-06-02 16:41:25","125",NULL
+"958","Entradas Do Nosso Alentejo...",NULL,NULL,NULL,NULL,"1","0","2024-06-03 15:35:11","2024-06-03 16:03:58","126","Appetizers from Our Alentejo"
+"959","Sugestões do Dia...",NULL,NULL,NULL,NULL,"1","0","2024-06-03 15:35:12","2024-07-27 10:59:20","126","Suggestions of the Day"
+"960","Pratos típicos alentejanos...",NULL,NULL,NULL,NULL,"1","0","2024-06-03 15:35:12","2024-06-03 15:35:12","126","Typical Alentejo Dishes"
+"961","Na Grelha cá d’casa...",NULL,NULL,NULL,NULL,"1","0","2024-06-03 15:35:12","2024-06-03 15:35:12","126","From Our Grill"
+"962","Extras...",NULL,NULL,NULL,NULL,"0","0","2024-06-03 15:35:12","2024-06-30 18:35:13","126","Extras"
+"963","Sobremesas Caseiras e Doces Conventuais...",NULL,NULL,NULL,NULL,"1","0","2024-06-03 15:35:12","2024-06-03 15:35:12","126","Homemade Desserts and Conventual Sweets"
+"964","Fruta...",NULL,NULL,NULL,NULL,"1","0","2024-06-03 15:35:12","2024-06-03 15:35:12","126","Fruit"
+"965","Sopa",NULL,NULL,NULL,NULL,"1","0","2024-06-04 15:09:44","2024-06-04 15:09:44","127","Soup"
+"966","Arroz",NULL,NULL,NULL,NULL,"1","0","2024-06-04 15:09:44","2024-06-04 15:09:44","127","Rice"
+"967","Pão",NULL,NULL,NULL,NULL,"1","0","2024-06-04 15:09:44","2024-06-04 15:09:44","127","Bread"
+"968","Polvo à Lagareiro",NULL,NULL,NULL,NULL,"1","0","2024-06-04 15:09:44","2024-06-04 15:09:44","127","Octopus in Lagareiro"
+"969","café",NULL,NULL,NULL,NULL,"1","0","2024-06-04 15:09:44","2024-06-04 15:09:44","127","coffee"
+"970","Cocktails e Gins",NULL,NULL,NULL,"10","0","0","2024-06-04 23:06:10","2024-06-12 19:42:06","75",NULL
+"971","MENUS REQUINTE BRASIL",NULL,NULL,NULL,"0","1","0","2024-06-07 16:23:30","2024-06-07 23:28:46","128",NULL
+"972","Hot Mezze",NULL,NULL,NULL,"0","1","0","2024-06-09 21:51:37","2024-06-09 21:51:37","125",NULL
+"973","Wraps & Manooshe",NULL,NULL,NULL,"0","1","0","2024-06-10 13:33:05","2024-06-10 13:33:05","125",NULL
+"974","Teste Sekai",NULL,NULL,NULL,"1","0","1","2024-06-11 16:14:37","2024-09-02 10:24:42","7","Sekai test"
+"975","SOBREMESAS",NULL,NULL,NULL,"0","1","1","2024-06-12 12:14:10","2024-06-12 12:25:05","128",NULL
+"976","Saladas Frescas",NULL,NULL,NULL,"2","1","0","2024-06-12 19:41:54","2024-06-12 19:42:06","75",NULL
+"977","Pão/Naan",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:17","2024-06-13 08:35:17","129","Bread / Naan"
+"978","Sopa e salada",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:17","2024-06-13 08:35:17","129","Soup and Salad"
+"979","Entrada",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:17","2024-06-13 08:35:17","129","Starter"
+"980","Entrada Não Vegetariana",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:17","2024-06-13 08:35:17","129","Starter Non-Vegetarian"
+"981","Tandoor Vegetariano",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:17","2024-06-13 08:35:17","129","Vegetarian Tandoor"
+"982","Grelhado Não Vegetariano",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:17","2024-06-13 08:35:17","129","Non-Vegetarian Tandoor"
+"983","Durrani Carne de Espetada",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:18","2024-06-13 08:35:18","129","Durrani Seekh Kebab"
+"984","Prato Principal Vegetariano",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:18","2024-06-13 08:35:18","129","Vegetarian Main Course"
+"985","Prato Principal - Não Vegetariano (Frango)",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:18","2024-06-13 08:35:18","129","Main Course - Non Vegetarian (Chicken)"
+"986","Espinafado de Queijo Cottage",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:18","2024-06-13 08:35:18","129","Palak Paneer"
+"987","Borrego",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:18","2024-06-13 08:35:18","129","Lamb"
+"988","Marisco",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:18","2024-06-13 08:35:18","129","Seafood"
+"989","Prato Mistura Turca Grelhadores",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:18","2024-06-13 08:35:18","129","Platter and Grill Turkish Mix"
+"990","Cozinha Paquistanesa",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:18","2024-06-13 08:35:18","129","Pakistani Cuisines"
+"991","Prato Principal - Não Vegetariano (Borrego)",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:19","2024-06-13 08:35:19","129","Main Course - Non Vegetarian (Lamb)"
+"992","Cordeiro de Shinwari",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:19","2024-06-13 08:35:19","129","Mutton Shinwari"
+"993","Biryani",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:19","2024-06-13 08:35:19","129","Biryani"
+"994","Raita",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:19","2024-06-13 08:35:19","129","Raita"
+"995","Arroz",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:19","2024-06-13 08:35:19","129","Rice"
+"996","Sobremesas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:19","2024-06-13 08:35:19","129","Desserts"
+"997","Bebidas Indianas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:19","2024-06-13 08:35:19","129","Indian Drinks"
+"998","Menu Infantil",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:19","2024-06-13 08:35:19","129","Kids Menu"
+"999","Cerveja",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:19","2024-06-13 08:35:19","129","Beer"
+"1000","Bebidas Soft",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:19","2024-06-13 08:35:19","129","Soft Drinks"
+"1001","Vinho Tinto",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:19","2024-06-13 08:35:19","129","Red Wine"
+"1002","Vinho Branco",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:20","2024-06-13 08:35:20","129","White Wine"
+"1003","Vinho Rosé",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:20","2024-06-13 08:35:20","129","Rose Wine"
+"1004","Vinho Verde",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:20","2024-06-13 08:35:20","129","Green Wine"
+"1005","Sangria",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:20","2024-06-13 08:35:20","129","Sangria"
+"1006","Cocktails",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:20","2024-06-13 08:35:20","129","Cocktails"
+"1007","Whisky",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:20","2024-06-13 08:35:20","129","Whisky"
+"1008","Rum",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:20","2024-06-13 08:35:20","129","Rum"
+"1009","Vodka",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:20","2024-06-13 08:35:20","129","Vodka"
+"1010","Gin",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:20","2024-06-13 08:35:20","129","Gin"
+"1011","Tequila",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:20","2024-06-13 08:35:20","129","Tequila"
+"1012","Vermouts",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:20","2024-06-13 08:35:20","129","Vermouts"
+"1013","Licores",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:20","2024-06-13 08:35:20","129","Liqueurs"
+"1014","Shots",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:20","2024-06-13 08:35:20","129","Shots"
+"1015","Café",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:20","2024-06-13 08:35:20","129","Coffee"
+"1016","Chá",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:20","2024-06-13 08:35:20","129","Tea"
+"1017","Pequeno almoço",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:21","2024-06-13 08:35:21","129","Breakfast Menu"
+"1018","Indian Street Food",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:21","2024-06-13 08:35:21","129","Indian Street Food"
+"1019","Punjabi Dhaba",NULL,NULL,NULL,NULL,"1","0","2024-06-13 08:35:21","2024-06-13 08:35:21","129","Punjabi Dhaba"
+"1020","Entradas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:04","2024-06-13 19:40:04","130","Starter"
+"1021","Prato principal",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:05","2024-06-13 19:40:05","130","Main dishes"
+"1022","Sobremesas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:06","2024-06-13 19:40:06","130","Desserts"
+"1023","Bebidas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:06","2024-06-13 19:40:06","130","Drinks"
+"1024","Cafetaria",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-06-13 19:40:08","130","Cafeteria"
+"1025","Pequeno almoço",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-06-13 19:40:08","130","Breakfast Menu"
+"1026","Indian Street Food",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-06-13 19:40:08","130","Indian Street Food"
+"1027","Punjabi Dhaba",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-06-13 19:40:08","130","Punjabi Dhaba"
+"1028","test",NULL,NULL,NULL,"2","1","0","2024-06-18 05:50:42","2024-06-18 05:50:42","122",NULL
+"1029","RESTAURANTE .COME   |   EMENTA",NULL,NULL,NULL,"1","0","1","2023-12-30 21:44:29","2024-06-21 10:55:08","132",NULL
+"1030","Sobremesas",NULL,NULL,NULL,"2","0","1","2024-01-05 21:39:11","2024-06-21 10:55:08","132",NULL
+"1031","Sugestão do Dia",NULL,NULL,NULL,"0","0","1","2024-02-22 10:13:54","2024-06-21 10:55:08","132",NULL
+"1032","EMENTA",NULL,NULL,NULL,"0","1","0","2024-03-06 22:51:33","2024-06-23 11:05:59","132",NULL
+"1033","ENTRADAS",NULL,NULL,NULL,"0","1","0","2024-03-20 16:12:55","2024-06-25 09:14:11","134",NULL
+"1034","SASHIMI - USUZUKURI - TATAKI",NULL,NULL,NULL,"0","1","0","2024-03-20 16:13:19","2024-06-25 09:14:11","134",NULL
+"1035","NIGIRI - GUNKAN - TEMAKI",NULL,NULL,NULL,"0","1","0","2024-03-20 16:13:54","2024-06-25 09:14:11","134",NULL
+"1036","MAKI",NULL,NULL,NULL,"0","1","0","2024-03-20 16:14:09","2024-06-25 09:14:12","134",NULL
+"1037","SUSHI & SASHIMI",NULL,NULL,NULL,"0","1","0","2024-03-20 16:14:33","2024-06-25 09:14:12","134",NULL
+"1038","TEMPURA",NULL,NULL,NULL,"0","1","0","2024-03-20 16:14:44","2024-06-25 09:14:12","134",NULL
+"1039","COZINHA",NULL,NULL,NULL,"0","1","0","2024-03-20 16:15:01","2024-06-25 09:14:12","134",NULL
+"1040","SOBREMESA",NULL,NULL,NULL,"0","1","0","2024-03-20 16:15:09","2024-06-25 09:14:12","134",NULL
+"1041","Entradas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:04","2024-06-26 14:34:10","136","Starter"
+"1042","Prato principal",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:05","2024-06-26 14:34:11","136","Main dishes"
+"1043","Sobremesas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:06","2024-06-26 14:34:11","136","Desserts"
+"1044","Bebidas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:06","2024-06-26 14:34:11","136","Drinks"
+"1045","Cafetaria",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-06-26 14:34:11","136","Cafeteria"
+"1046","Pequeno almoço",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-06-26 14:34:11","136","Breakfast Menu"
+"1047","Indian Street Food",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-06-26 14:34:11","136","Indian Street Food"
+"1048","Punjabi Dhaba",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-06-26 14:34:11","136","Punjabi Dhaba"
+"1049","Entradas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:04","2024-06-26 14:37:54","137","Starter"
+"1050","Prato principal",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:05","2024-06-26 14:37:54","137","Main dishes"
+"1051","Sobremesas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:06","2024-06-26 14:37:55","137","Desserts"
+"1052","Bebidas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:06","2024-06-26 14:37:55","137","Drinks"
+"1053","Cafetaria",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-06-26 14:37:55","137","Cafeteria"
+"1054","Pequeno almoço",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-06-26 14:37:55","137","Breakfast Menu"
+"1055","Indian Street Food",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-06-26 14:37:55","137","Indian Street Food"
+"1056","Punjabi Dhaba",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-06-26 14:37:55","137","Punjabi Dhaba"
+"1057","EMENTA",NULL,NULL,NULL,NULL,"1","1","2024-06-27 16:14:29","2024-06-27 16:14:49","77","Menu"
+"1058","BEBIDAS",NULL,NULL,NULL,NULL,"1","1","2024-06-27 16:14:29","2024-06-27 16:14:54","77","Drinks"
+"1059","ENTRADAS, ACOMPANHAMENTOS E SOBREMESAS",NULL,NULL,NULL,NULL,"1","1","2024-06-27 16:14:30","2024-06-27 16:14:58","77","Starters, sides and desserts"
+"1060","BEBIDAS",NULL,NULL,NULL,NULL,"1","1","2024-06-27 16:16:43","2024-06-27 16:17:05","18","Drinks"
+"1061","EMENTA DO DIA",NULL,NULL,NULL,NULL,"1","1","2024-06-27 16:16:44","2024-06-27 16:17:10","18","Daily Menu"
+"1062","ENTRADAS, ACOMPANHAMENTOS E SOBREMESAS",NULL,NULL,NULL,NULL,"1","1","2024-06-27 16:16:44","2024-06-27 16:17:15","18","Starters, sides and desserts"
+"1063","EMENTA",NULL,NULL,NULL,"0","1","0","2024-06-27 16:17:31","2024-10-10 14:18:02","77","Menu à la carte"
+"1064","CARTA BEBIDAS",NULL,NULL,NULL,"7","1","0","2024-06-27 16:17:31","2024-07-14 13:18:49","77","Drinks"
+"1065","EMENTA DO DIA",NULL,NULL,NULL,"1","0","0","2024-06-27 16:17:32","2024-10-10 14:18:02","77","Daily Menu"
+"1066","ENTRADAS, ACOMPANHAMENTOS E SOBREMESAS",NULL,NULL,NULL,"2","1","0","2024-06-27 16:17:32","2024-07-14 13:18:49","77","Starters, sides and desserts"
+"1067","Brunch & Brinner",NULL,NULL,NULL,"0","1","1","2024-06-28 10:41:13","2024-07-03 07:54:12","138","Brunch & Brinner"
+"1068","Lanche",NULL,NULL,NULL,"3","1","1","2024-06-28 10:41:13","2024-07-03 07:54:21","138","Snack"
+"1069","Pratos principais",NULL,NULL,NULL,"1","1","1","2024-06-28 10:41:14","2024-07-03 07:54:16","138","Main courses"
+"1070","Sobremesas",NULL,NULL,NULL,"4","1","1","2024-06-28 10:41:14","2024-07-03 07:54:31","138","Desserts"
+"1071","Cafetaria",NULL,NULL,NULL,"5","1","1","2024-06-28 10:41:14","2024-07-03 07:54:28","138","Cafeteria"
+"1072","Bebidas",NULL,NULL,NULL,"6","1","1","2024-06-28 10:41:14","2024-07-03 07:54:24","138","Beverages"
+"1073","Partilhar e petiscar",NULL,NULL,NULL,"2","1","1","2024-06-28 10:41:14","2024-07-03 07:54:38","138","To share and snack"
+"1074","CARTA VINHOS",NULL,NULL,NULL,"8","0","0","2024-06-28 19:29:26","2024-07-14 13:18:49","77",NULL
+"1075","Pratos Principais",NULL,NULL,NULL,NULL,"1","0","2024-07-01 06:29:33","2024-07-01 06:29:33","131","Main Dishes"
+"1076","Sobremesas",NULL,NULL,NULL,NULL,"1","0","2024-07-01 06:29:33","2024-07-01 06:29:33","131","Dessert"
+"1077","Bebidas",NULL,NULL,NULL,NULL,"1","0","2024-07-01 06:29:33","2024-07-01 06:29:33","131","Beverages"
+"1078","Entradas",NULL,NULL,NULL,NULL,"1","0","2024-07-01 06:29:34","2024-07-01 06:29:34","131","Appetizers"
+"1079","VINHOS",NULL,NULL,NULL,"6","1","1","2024-07-02 13:38:31","2024-07-02 13:38:50","13",NULL
+"1080","VINHOS",NULL,NULL,NULL,"7","1","1","2024-07-02 13:41:44","2024-07-02 13:45:19","13",NULL
+"1081","Brunch & Brinner",NULL,NULL,NULL,NULL,"1","0","2024-07-03 07:54:57","2024-07-03 07:54:57","138","Brunch & Brinner"
+"1082","Lanche",NULL,NULL,NULL,NULL,"1","0","2024-07-03 07:54:57","2024-07-03 07:54:57","138","Snack"
+"1083","Pratos principais",NULL,NULL,NULL,NULL,"1","0","2024-07-03 07:54:57","2024-07-03 07:54:57","138","Main courses"
+"1084","Sobremesas",NULL,NULL,NULL,NULL,"1","0","2024-07-03 07:54:58","2024-07-03 07:54:58","138","Desserts"
+"1085","Cafetaria",NULL,NULL,NULL,NULL,"1","0","2024-07-03 07:54:58","2024-07-03 07:54:58","138","Cafeteria"
+"1086","Bebidas",NULL,NULL,NULL,NULL,"1","0","2024-07-03 07:54:58","2024-07-03 07:54:58","138","Beverages"
+"1087","Partilhar e petiscar",NULL,NULL,NULL,NULL,"1","0","2024-07-03 07:54:58","2024-07-03 07:54:58","138","To share and snack"
+"1088","SUMOS E REFRIGERANTES ",NULL,NULL,NULL,"8","1","0","2024-07-10 19:58:49","2024-07-10 19:58:49","13",NULL
+"1089","RESTAURANTE .COME   |   EMENTA",NULL,NULL,NULL,"1","0","1","2023-12-30 21:44:29","2024-07-11 13:20:38","139",NULL
+"1090","Sobremesas",NULL,NULL,NULL,"2","0","1","2024-01-05 21:39:11","2024-07-11 13:20:38","139",NULL
+"1091","Sugestão do Dia",NULL,NULL,NULL,"0","0","1","2024-02-22 10:13:54","2024-07-11 13:20:38","139",NULL
+"1092","EMENTA",NULL,NULL,NULL,"0","1","0","2024-03-06 22:51:33","2024-07-11 13:20:38","139",NULL
+"1093","BEBIDAS",NULL,NULL,NULL,NULL,"1","1","2024-06-27 16:16:43","2024-07-11 13:20:39","139","Drinks"
+"1094","EMENTA DO DIA",NULL,NULL,NULL,NULL,"1","1","2024-06-27 16:16:44","2024-07-11 13:20:39","139","Daily Menu"
+"1095","ENTRADAS, ACOMPANHAMENTOS E SOBREMESAS",NULL,NULL,NULL,NULL,"1","1","2024-06-27 16:16:44","2024-07-11 13:20:39","139","Starters, sides and desserts"
+"1096","Entradas",NULL,NULL,NULL,NULL,"1","0","2024-07-15 09:31:48","2024-07-15 09:31:48","140","Starters"
+"1097","Prato principal",NULL,NULL,NULL,NULL,"1","0","2024-07-15 09:31:48","2024-07-15 09:31:48","140","Main Dish"
+"1098","Sobremesas",NULL,NULL,NULL,NULL,"1","0","2024-07-15 09:31:48","2024-07-15 09:31:48","140","Desserts"
+"1099","Petiscos / Entradas",NULL,NULL,NULL,"0","1","0","2024-07-18 18:49:30","2024-07-18 22:46:52","71","Appetizer"
+"1100","Bebidas",NULL,NULL,NULL,"4","1","0","2024-07-18 18:49:30","2024-07-18 22:46:52","71","Drinks"
+"1101","Cafetaria",NULL,NULL,NULL,"3","1","0","2024-07-18 18:49:30","2024-07-18 22:46:52","71","Coffee station"
+"1102","Refeição principal",NULL,NULL,NULL,"1","1","0","2024-07-18 18:49:32","2024-07-18 22:46:52","71","Main course"
+"1103","Doces e Sobremesas",NULL,NULL,NULL,"2","1","0","2024-07-18 18:49:32","2024-07-18 22:46:52","71","Sweets and desserts"
+"1104","Hamburguers",NULL,NULL,NULL,"6","1","0","2024-07-19 07:00:30","2024-07-19 11:08:45","135","Hamburgers"
+"1105","Sugestão do Chef",NULL,NULL,NULL,"2","1","0","2024-07-19 07:00:30","2024-07-19 11:08:45","135","Chef's Suggestion"
+"1106","Menu Infantil",NULL,NULL,NULL,"8","1","0","2024-07-19 07:00:30","2024-07-19 11:08:45","135","Kids Menu"
+"1107","Extras",NULL,NULL,NULL,"9","1","0","2024-07-19 07:00:30","2024-07-19 11:08:45","135","Extras"
+"1108","Couvert",NULL,NULL,NULL,"0","1","0","2024-07-19 07:00:30","2024-07-19 11:08:45","135",NULL
+"1109","Entradas",NULL,NULL,NULL,"1","1","0","2024-07-19 07:00:30","2024-07-19 11:08:45","135",NULL
+"1110","Saladas",NULL,NULL,NULL,"5","1","0","2024-07-19 07:00:31","2024-07-19 11:08:45","135",NULL
+"1111","Risottos",NULL,NULL,NULL,"3","1","0","2024-07-19 07:00:31","2024-07-19 11:08:45","135",NULL
+"1112","Massas Frescas",NULL,NULL,NULL,"4","1","0","2024-07-19 07:00:31","2024-07-19 11:08:45","135","Fresh Pasta"
+"1113","Pizzas",NULL,NULL,NULL,"7","1","0","2024-07-19 07:00:31","2024-07-19 11:08:45","135","Pizzas"
+"1114","Sobremesas",NULL,NULL,NULL,"10","1","0","2024-07-19 07:00:31","2024-07-19 11:08:45","135","Desserts"
+"1115","TINTOS",NULL,NULL,NULL,"11","1","0","2024-07-19 07:00:31","2024-07-19 11:08:45","135","Red Wines"
+"1116","ITALIANOS",NULL,NULL,NULL,"12","1","0","2024-07-19 07:00:32","2024-07-19 11:08:45","135","Italian Wines"
+"1117","COCKTAILS",NULL,NULL,NULL,"13","1","0","2024-07-19 07:00:32","2024-07-19 11:08:45","135","Cocktails"
+"1118","COCKTAILS SEM ÁLCOOL",NULL,NULL,NULL,"14","1","0","2024-07-19 07:00:32","2024-07-19 11:08:45","135","Non-Alcoholic"
+"1119","APERITIVOS",NULL,NULL,NULL,"15","1","0","2024-07-19 07:00:32","2024-07-19 11:08:45","135","Appetizers"
+"1120","GINS",NULL,NULL,NULL,"16","1","0","2024-07-19 07:00:32","2024-07-19 11:08:45","135","Gins"
+"1121","BEBIDAS ESPIRITUOSAS",NULL,NULL,NULL,"17","1","0","2024-07-19 07:00:32","2024-07-19 11:08:45","135","Spirits"
+"1122","WHISKYS",NULL,NULL,NULL,"18","1","0","2024-07-19 07:00:33","2024-07-19 11:08:45","135","Whiskys"
+"1123","BRANCOS",NULL,NULL,NULL,"19","1","0","2024-07-19 07:00:33","2024-07-19 11:08:45","135","Whites"
+"1124","PROSECO / ROSÊ / LAMBRUSCO / VERDE",NULL,NULL,NULL,"20","1","0","2024-07-19 07:00:33","2024-07-19 11:08:45","135","Prosecco / Rosé / Lambrusco / Verde"
+"1125","Bowls",NULL,NULL,NULL,"0","1","0","2024-07-21 13:49:30","2024-07-21 13:49:45","125",NULL
+"1126","Sides",NULL,NULL,NULL,"0","1","0","2024-07-21 14:14:48","2024-07-21 14:14:48","125",NULL
+"1127","Sauces",NULL,NULL,NULL,"0","1","0","2024-07-21 14:30:51","2024-07-21 14:30:51","125",NULL
+"1128","ENTRADAS",NULL,NULL,NULL,"3","1","0","2024-07-28 07:05:43","2024-07-28 18:48:13","16","STARTERS"
+"1129","SALADAS / SALADS / Les SALADES",NULL,NULL,NULL,"7","1","0","2024-07-28 07:32:30","2024-07-28 18:48:13","16","Salad"
+"1130","KIDS MENU",NULL,NULL,NULL,"8","1","0","2024-07-28 07:32:45","2024-07-28 18:48:13","16","Kids menu"
+"1131","Entradas",NULL,NULL,NULL,NULL,"1","1","2024-07-29 09:13:14","2024-07-29 16:42:17","141","Starters"
+"1132","Pratos principais",NULL,NULL,NULL,NULL,"1","1","2024-07-29 09:13:14","2024-07-29 16:42:22","141","Main courses"
+"1133","Bebidas",NULL,NULL,NULL,NULL,"1","1","2024-07-29 09:13:15","2024-07-29 16:42:27","141","Beverages"
+"1134","Sobremesa E Café",NULL,NULL,NULL,NULL,"1","1","2024-07-29 09:13:15","2024-07-29 16:42:32","141","Dessert And Coffee"
+"1135","Delivery",NULL,NULL,NULL,NULL,"1","1","2024-07-29 09:13:15","2024-07-29 16:42:38","141","Delivery"
+"1136","Entradas",NULL,NULL,NULL,NULL,"1","0","2024-07-30 06:00:50","2024-07-30 06:00:50","141","Starters"
+"1137","Ceviches",NULL,NULL,NULL,NULL,"1","0","2024-07-30 06:00:51","2024-07-30 06:00:51","141","Ceviches"
+"1138","Temakis",NULL,NULL,NULL,NULL,"1","0","2024-07-30 06:00:51","2024-07-30 06:00:51","141","Temakis"
+"1139","Massas E Poke",NULL,NULL,NULL,NULL,"1","0","2024-07-30 06:00:51","2024-07-30 06:00:51","141","Massas E Poke"
+"1140","Makis (8 Pcs)",NULL,NULL,NULL,NULL,"1","0","2024-07-30 06:00:51","2024-07-30 06:00:51","141","Makis (8 Pcs)"
+"1141","Sushis Especiais (8 Pcs)",NULL,NULL,NULL,NULL,"1","0","2024-07-30 06:00:51","2024-07-30 06:00:51","141","Special Sushis (8 Pcs)"
+"1142","Sushis Especiais (6 Pcs)",NULL,NULL,NULL,NULL,"1","0","2024-07-30 06:00:51","2024-07-30 06:00:51","141","Special Sushis (6 Pcs)"
+"1143","Combinados Tradicionais",NULL,NULL,NULL,NULL,"1","0","2024-07-30 06:00:51","2024-07-30 06:00:51","141","Traditional Combos"
+"1144","Combinados Especiais",NULL,NULL,NULL,NULL,"1","0","2024-07-30 06:00:51","2024-07-30 06:00:51","141","Special Combos"
+"1145","Clubes Especiais (24Pcs)",NULL,NULL,NULL,NULL,"1","0","2024-07-30 06:00:51","2024-07-30 06:00:51","141","Special Clubs (24Pcs)"
+"1146","Vegetarianos",NULL,NULL,NULL,NULL,"1","0","2024-07-30 06:00:52","2024-07-30 06:00:52","141","Vegan Space"
+"1147","Bebidas",NULL,NULL,NULL,NULL,"1","0","2024-07-30 06:00:52","2024-07-30 06:00:52","141","Beverages"
+"1148","Sobremesa E Café",NULL,NULL,NULL,NULL,"1","0","2024-07-30 06:00:52","2024-07-30 06:00:52","141","Dessert And Coffee"
+"1149","Troca De Pescados/Peças",NULL,NULL,NULL,NULL,"1","0","2024-07-30 06:00:52","2024-07-30 06:00:52","141","Fish/Pieces Exchange"
+"1150","Delivery",NULL,NULL,NULL,NULL,"1","0","2024-07-30 06:00:52","2024-07-30 06:00:52","141","Delivery"
+"1151","Entradas",NULL,NULL,NULL,"1","1","0","2024-07-30 06:01:20","2024-08-05 15:25:46","142","Starters"
+"1152","Pratos principais",NULL,NULL,NULL,"3","1","0","2024-07-30 06:01:20","2024-08-05 15:25:46","142","Main courses"
+"1153","Vinhos",NULL,NULL,NULL,"4","1","0","2024-07-30 06:01:20","2024-08-05 15:25:46","142","Wine"
+"1154","Petiscos",NULL,NULL,NULL,"2","1","0","2024-07-30 06:01:21","2024-08-05 15:25:46","142","Snacks"
+"1155","Entradas",NULL,NULL,NULL,"0","1","0","2024-05-27 08:45:26","2024-07-31 15:36:48","143","Starters"
+"1156","Saladas",NULL,NULL,NULL,"0","1","0","2024-05-27 08:52:32","2024-07-31 15:36:48","143","Salads"
+"1157","Pratos",NULL,NULL,NULL,"0","1","0","2024-05-27 08:54:59","2024-07-31 15:36:48","143","Main Courses"
+"1158","Acompanhamentos e Molhos",NULL,NULL,NULL,"0","1","0","2024-05-27 09:04:39","2024-07-31 15:36:48","143","Side dishes and sauces"
+"1159","Vinho Tinto",NULL,NULL,NULL,"0","1","0","2024-05-27 09:11:46","2024-07-31 15:36:49","143","Red wine"
+"1160","Vinho Branco",NULL,NULL,NULL,"0","1","0","2024-05-27 09:39:18","2024-07-31 15:36:49","143","White Wine"
+"1161","Vinho Verde",NULL,NULL,NULL,"0","1","0","2024-05-27 09:49:12","2024-07-31 15:36:49","143","Green wine"
+"1162","Vinho Rosé",NULL,NULL,NULL,"0","1","0","2024-05-27 09:52:00","2024-07-31 15:36:49","143","Rosé wine"
+"1163","Champagne e Espumante",NULL,NULL,NULL,"0","1","0","2024-05-27 09:54:23","2024-07-31 15:36:49","143","Champagne and sparkling wine"
+"1164","Sangrias",NULL,NULL,NULL,"0","1","0","2024-05-27 09:56:45","2024-07-31 15:36:49","143","Sangrias"
+"1165","Água",NULL,NULL,NULL,"0","1","0","2024-05-27 09:58:58","2024-07-31 15:36:49","143","Water"
+"1166","Cerveja",NULL,NULL,NULL,"0","1","0","2024-05-27 10:00:49","2024-07-31 15:36:49","143","Beer"
+"1167","Refrigerantes",NULL,NULL,NULL,"0","1","0","2024-05-27 10:05:14","2024-07-31 15:36:49","143","Soft drinks"
+"1168","Digestivos e Licores",NULL,NULL,NULL,"0","1","0","2024-05-27 10:12:06","2024-07-31 15:36:49","143","Digestives and Liqueurs"
+"1169","Whisky",NULL,NULL,NULL,"0","1","0","2024-05-27 10:18:32","2024-07-31 15:36:49","143","Whisky"
+"1170","Cocktails",NULL,NULL,NULL,"0","1","0","2024-05-27 10:25:10","2024-07-31 15:36:49","143","Cocktails"
+"1171","Caipirinhas",NULL,NULL,NULL,"0","1","0","2024-05-27 10:26:23","2024-07-31 15:36:49","143","Caipirinhas"
+"1172","Gins",NULL,NULL,NULL,"0","1","0","2024-05-27 10:27:44","2024-07-31 15:36:49","143","Gins"
+"1173","Cafetarias",NULL,NULL,NULL,"0","1","0","2024-05-27 10:29:03","2024-07-31 15:36:49","143","Coffee shops"
+"1174","Sobremesas",NULL,NULL,NULL,"0","1","0","2024-05-27 10:31:24","2024-07-31 15:36:49","143","Desserts"
+"1175","Take Away",NULL,NULL,NULL,"0","1","1","2024-05-27 10:49:59","2024-07-31 15:36:49","143","Take Away"
+"1176","Bebidas não alcoólicas",NULL,NULL,NULL,"4","1","1","2024-08-05 15:16:59","2024-08-05 15:17:29","142",NULL
+"1177","Pratos do dia",NULL,NULL,NULL,"0","1","0","2024-08-05 15:25:37","2024-08-05 15:33:06","142","Today's specials"
+"1178","Servicessdas",NULL,NULL,NULL,"1","1","0","2024-05-24 08:06:04","2024-08-07 08:49:04","145",NULL
+"1179","Maintenance",NULL,NULL,NULL,"0","1","0","2024-05-26 18:21:41","2024-08-07 08:49:04","145",NULL
+"1180","test",NULL,NULL,NULL,"2","1","0","2024-06-18 05:50:42","2024-08-07 08:49:04","145",NULL
+"1181","VINHOS TINTOS",NULL,NULL,NULL,"3","0","0","2024-03-16 22:43:19","2024-08-07 09:33:30","146",NULL
+"1182","VINHOS BRANCOS",NULL,NULL,NULL,"4","0","0","2024-03-17 13:29:32","2024-08-07 09:33:32","146",NULL
+"1183","VINHOS VERDES",NULL,NULL,NULL,"5","0","0","2024-03-17 13:41:30","2024-08-07 09:33:33","146",NULL
+"1184","ROSÉS, FRISANTES E SANGRIA",NULL,NULL,NULL,"6","0","0","2024-03-17 13:43:45","2024-08-07 09:33:35","146",NULL
+"1185","EMENTA",NULL,NULL,NULL,NULL,"1","1","2024-06-27 16:14:29","2024-08-07 09:32:52","146","Menu"
+"1186","BEBIDAS",NULL,NULL,NULL,NULL,"1","1","2024-06-27 16:14:29","2024-08-07 09:32:52","146","Drinks"
+"1187","ENTRADAS, ACOMPANHAMENTOS E SOBREMESAS",NULL,NULL,NULL,NULL,"1","1","2024-06-27 16:14:30","2024-08-07 09:32:52","146","Starters, sides and desserts"
+"1188","EMENTA",NULL,NULL,NULL,"0","1","0","2024-06-27 16:17:31","2024-08-07 09:33:44","146","Menu à la carte"
+"1189","CARTA BEBIDAS",NULL,NULL,NULL,"7","0","0","2024-06-27 16:17:31","2024-08-07 09:33:37","146","Drinks"
+"1190","EMENTA DO DIA",NULL,NULL,NULL,"1","0","0","2024-06-27 16:17:32","2024-08-07 09:33:28","146","Daily Menu"
+"1191","ENTRADAS, ACOMPANHAMENTOS E SOBREMESAS",NULL,NULL,NULL,"2","0","0","2024-06-27 16:17:32","2024-08-07 09:33:29","146","Starters, sides and desserts"
+"1192","CARTA VINHOS",NULL,NULL,NULL,"8","0","0","2024-06-28 19:29:26","2024-08-07 09:32:53","146",NULL
+"1193","Soup",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:53:07","2024-08-07 09:53:07","96","Soup"
+"1194","Salad",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:53:07","2024-08-07 09:53:07","96","Salad"
+"1195","Kids Corner",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:53:08","2024-08-07 09:53:08","96","Kids Corner"
+"1196","Sandwich",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:53:08","2024-08-07 09:53:08","96","Sandwich"
+"1197","Wrap",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:53:08","2024-08-07 09:53:08","96","Wrap"
+"1198","Quesadilla",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:53:08","2024-08-07 09:53:08","96","Quesadilla"
+"1199","Burger Zone",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:53:08","2024-08-07 09:53:08","96","Burger Zone"
+"1200","Pizza Corner",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:53:08","2024-08-07 09:53:08","96","Pizza Corner"
+"1201","Pasta",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:53:08","2024-08-07 09:53:08","96","Pasta"
+"1202","Stir Fry Noodle",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:53:08","2024-08-07 09:53:08","96","Stir Fry Noodle"
+"1203","Swahili Food",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:53:08","2024-08-07 09:53:08","96","Swahili Food"
+"1204","In Curry Sauce",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:53:09","2024-08-07 09:53:09","96","In Curry Sauce"
+"1205","Zanzibar Grilled Food",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:53:09","2024-08-07 09:53:09","96","Zanzibar Grilled Food"
+"1206","Deep Fried",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:53:09","2024-08-07 09:53:09","96","Deep Fried"
+"1207","Iceland Lobster",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:54:18","2024-08-07 09:54:18","96","Iceland Lobster"
+"1208","Special Food",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:54:18","2024-08-07 09:54:18","96","Special Food"
+"1209","Shisha Flavors",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:54:18","2024-08-07 09:54:18","96","Shisha Flavors"
+"1210","Hot Drinks",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:54:18","2024-08-07 09:54:18","96","Hot Drinks"
+"1211","Milk Shake",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:54:18","2024-08-07 09:54:18","96","Milk Shake"
+"1212","Soft Drinks",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:54:18","2024-08-07 09:54:18","96","Soft Drinks"
+"1213","Ice Cream",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:54:19","2024-08-07 09:54:19","96","Ice Cream"
+"1214","Fresh Juice",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:54:19","2024-08-07 09:54:19","96","Fresh Juice"
+"1215","Smoothie",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:54:19","2024-08-07 09:54:19","96","Smoothie"
+"1216","Dessert",NULL,NULL,NULL,NULL,"1","0","2024-08-07 09:54:19","2024-08-07 09:54:19","96","Dessert"
+"1217","Drinks",NULL,NULL,NULL,"0","1","0","2024-08-09 22:16:30","2024-08-09 22:16:30","125",NULL
+"1218","Indian",NULL,NULL,NULL,NULL,"1","0","2024-08-11 08:54:18","2024-08-11 08:54:18","144","Indian"
+"1219","Indo Chinese",NULL,NULL,NULL,NULL,"1","0","2024-08-11 08:54:21","2024-08-11 08:54:21","144","Indo Chinese"
+"1220","Continental",NULL,NULL,NULL,NULL,"1","0","2024-08-11 08:54:21","2024-08-11 08:54:21","144","Continental"
+"1221","Menu",NULL,NULL,NULL,NULL,"1","0","2024-08-17 13:10:14","2024-08-20 15:13:31","147","Lunch"
+"1222","Jantar",NULL,NULL,NULL,NULL,"1","1","2024-08-17 13:10:15","2024-08-19 10:08:57","147","Dinner"
+"1223","Rodízio de Sushi",NULL,NULL,NULL,"0","1","0","2024-09-02 10:24:23","2024-09-02 10:37:58","7","All you can eat"
+"1224","Entradas",NULL,NULL,NULL,NULL,"1","0","2024-09-03 04:58:04","2024-09-03 04:58:04","148","Starters"
+"1225","Pizzas",NULL,NULL,NULL,NULL,"1","0","2024-09-03 04:58:05","2024-09-03 04:58:05","148","Pizzas"
+"1226","Massas",NULL,NULL,NULL,NULL,"1","0","2024-09-03 04:58:05","2024-09-03 04:58:05","148","Pasta"
+"1227","Salads",NULL,NULL,NULL,NULL,"1","0","2024-09-03 04:58:05","2024-09-03 04:58:05","148","Salads"
+"1228","Curries",NULL,NULL,NULL,NULL,"1","0","2024-09-03 04:58:05","2024-09-03 04:58:05","148","Curries"
+"1229","Burgers",NULL,NULL,NULL,NULL,"1","0","2024-09-03 04:58:05","2024-09-03 04:58:05","148","Burgers"
+"1230","Bebidas",NULL,NULL,NULL,NULL,"1","0","2024-09-03 04:58:05","2024-09-03 04:58:05","148","Drinks"
+"1231","Vinhos",NULL,NULL,NULL,NULL,"1","0","2024-09-03 04:58:06","2024-09-03 04:58:06","148","Wines"
+"1232","Sopa",NULL,NULL,NULL,"0","1","0","2024-09-05 09:32:39","2024-10-08 11:16:38","149","Soup"
+"1233","Entradas Vegetarianas",NULL,NULL,NULL,"1","1","0","2024-09-05 09:32:39","2024-10-08 11:16:38","149","Vegetarian Starters"
+"1234","Entradas Não Vegetarianas",NULL,NULL,NULL,"2","1","0","2024-09-05 09:32:40","2024-10-08 11:16:38","149","Non-Veg Starters"
+"1235","Pratos Grelhados",NULL,NULL,NULL,"3","1","0","2024-09-05 09:32:40","2024-10-08 11:16:38","149","Tandoor/Clay Oven"
+"1236","Pratos Grelhados Vegetais",NULL,NULL,NULL,"4","1","0","2024-09-05 09:32:40","2024-10-08 11:16:38","149","Vegetable Grilled Dishes"
+"1237","Pratos Especiais De Caril Vegetarianos",NULL,NULL,NULL,"5","1","0","2024-09-05 09:32:40","2024-10-08 11:16:38","149","Vegetarian Special Curry Dishes"
+"1238","Pratos Queijo Caseiro Indiano",NULL,NULL,NULL,"6","1","0","2024-09-05 09:32:40","2024-10-08 11:16:38","149","Indian Paneer Dishes"
+"1239","Pratos De Frango Indiano",NULL,NULL,NULL,"7","1","0","2024-09-05 09:32:40","2024-10-08 11:16:38","149","Indian Chicken Dishes"
+"1240","Pratos De Borrego",NULL,NULL,NULL,"9","1","0","2024-09-05 09:32:41","2024-10-08 11:16:38","149","Lamb Dishes"
+"1241","Pratos Do Oceano",NULL,NULL,NULL,"8","1","0","2024-09-05 09:32:41","2024-10-08 11:16:38","149","Ocean Dishes"
+"1242","Pratos De Peixe",NULL,NULL,NULL,"10","1","0","2024-09-05 09:32:41","2024-10-08 11:16:38","149","Fish Dishes"
+"1243","Pratos De Biryani Especial",NULL,NULL,NULL,"11","1","0","2024-09-05 09:32:41","2024-10-08 11:16:38","149","Special Biryani Dishes"
+"1244","Arroz Especial Indiano Basmati",NULL,NULL,NULL,"12","1","0","2024-09-05 09:32:41","2024-10-08 11:16:38","149","Indian Special Basmati Rice"
+"1245","Pão Indiano",NULL,NULL,NULL,"13","1","0","2024-09-05 09:32:41","2024-10-08 11:16:38","149","Tandoori Naan Roti"
+"1246","Indiano Doces",NULL,NULL,NULL,"14","1","0","2024-09-05 09:32:42","2024-10-08 11:16:38","149","Famous Indian Sweets"
+"1247","Saladas",NULL,NULL,NULL,"15","1","0","2024-09-05 09:32:42","2024-10-08 11:16:38","149","Salad And Raita"
+"1248","Menu Criança",NULL,NULL,NULL,"20","1","0","2024-09-05 09:32:42","2024-10-08 11:16:38","149","Kids Menu"
+"1249","Vinho Branco",NULL,NULL,NULL,"21","1","0","2024-09-05 09:32:42","2024-10-08 11:16:38","149","White Wine"
+"1250","Vinho Verde",NULL,NULL,NULL,"22","1","0","2024-09-05 09:32:42","2024-10-08 11:16:38","149","Green Wine"
+"1251","Vinho Tinto",NULL,NULL,NULL,"23","1","0","2024-09-05 09:32:42","2024-10-08 11:16:38","149","Red Wine"
+"1252","Vinho Branco Superior",NULL,NULL,NULL,"24","1","0","2024-09-05 09:32:42","2024-10-08 11:16:38","149","Quality White Wine"
+"1253","Vinho Rosé",NULL,NULL,NULL,"25","1","0","2024-09-05 09:32:42","2024-10-08 11:16:38","149","Rose Wine"
+"1254","Cervejas",NULL,NULL,NULL,"26","1","0","2024-09-05 09:32:42","2024-10-08 11:16:38","149","Beer"
+"1255","Refrigerantes",NULL,NULL,NULL,"27","1","0","2024-09-05 09:32:43","2024-10-08 11:16:38","149","Soft Drinks"
+"1256","Batido",NULL,NULL,NULL,"28","1","0","2024-09-05 09:32:43","2024-10-08 11:16:38","149","Lassi"
+"1257","Espirituosas",NULL,NULL,NULL,"29","1","0","2024-09-05 09:32:43","2024-10-08 11:16:38","149","Spirits"
+"1258","Whisky",NULL,NULL,NULL,"30","1","0","2024-09-05 09:32:43","2024-10-08 11:16:38","149","Whisky"
+"1259","Licor",NULL,NULL,NULL,"31","1","0","2024-09-05 09:32:43","2024-10-08 11:16:38","149","Liqueur"
+"1260","Bebidas Quentes",NULL,NULL,NULL,"32","1","0","2024-09-05 09:32:43","2024-10-08 11:16:38","149","Hot Drinks"
+"1261","Pakwan Pizza",NULL,NULL,NULL,"18","1","0","2024-09-05 09:32:43","2024-10-08 11:16:38","149","Pakwan Pizza"
+"1262","Special Pizza",NULL,NULL,NULL,"19","1","0","2024-09-05 09:32:44","2024-10-08 11:16:38","149","Special Pizza"
+"1263","Pasta",NULL,NULL,NULL,"17","1","0","2024-09-05 09:32:44","2024-10-08 11:16:38","149","Pasta"
+"1264","Para Acompanhar",NULL,NULL,NULL,"16","1","0","2024-09-05 09:32:44","2024-10-08 11:16:38","149","Side-Dish"
+"1265","Sopas",NULL,NULL,NULL,NULL,"1","0","2024-09-05 09:33:06","2024-09-05 09:33:06","150","Soups"
+"1266","Arroz & Verduras",NULL,NULL,NULL,NULL,"1","0","2024-09-05 09:33:06","2024-09-05 09:33:06","150","Rice & Vegetables"
+"1267","Siao Long Pao",NULL,NULL,NULL,NULL,"1","0","2024-09-05 09:33:06","2024-09-05 09:33:06","150","Siao Long Pao"
+"1268","Gyozas",NULL,NULL,NULL,NULL,"1","0","2024-09-05 09:33:06","2024-09-05 09:33:06","150","Gyozas"
+"1269","Pratos",NULL,NULL,NULL,NULL,"1","0","2024-09-05 09:33:06","2024-09-05 09:33:06","150","Dishes"
+"1270","Os Clássicos",NULL,NULL,NULL,NULL,"1","0","2024-09-05 09:33:06","2024-09-05 09:33:06","150","The Classics"
+"1271","Baos",NULL,NULL,NULL,NULL,"1","0","2024-09-05 09:33:07","2024-09-05 09:33:07","150","Baos"
+"1272","Os Nossos Crepes",NULL,NULL,NULL,NULL,"1","0","2024-09-05 09:33:07","2024-09-05 09:33:07","150","Our Crepes"
+"1273","Outros Crocantes",NULL,NULL,NULL,NULL,"1","0","2024-09-05 09:33:07","2024-09-05 09:33:07","150","Our Crepes"
+"1274","Sobremesas",NULL,NULL,NULL,NULL,"1","0","2024-09-05 09:33:07","2024-09-05 09:33:07","150","Desserts"
+"1275","Bebidas",NULL,NULL,NULL,NULL,"1","0","2024-09-05 09:33:07","2024-09-05 09:33:07","150","Beverages"
+"1276","Sopas",NULL,NULL,NULL,NULL,"1","0","2024-09-05 15:54:51","2024-09-05 15:54:51","151","Soups"
+"1277","Arroz & Verduras",NULL,NULL,NULL,NULL,"1","0","2024-09-05 15:54:52","2024-09-05 15:54:52","151","Rice & Vegetables"
+"1278","Siao Long Pao",NULL,NULL,NULL,NULL,"1","0","2024-09-05 15:54:52","2024-09-05 15:54:52","151","Siao Long Pao"
+"1279","Gyozas",NULL,NULL,NULL,NULL,"1","0","2024-09-05 15:54:52","2024-09-05 15:54:52","151","Gyozas"
+"1280","Os Clássicos",NULL,NULL,NULL,NULL,"1","0","2024-09-05 15:54:52","2024-09-05 15:54:52","151","The Classics"
+"1281","Baos",NULL,NULL,NULL,NULL,"1","0","2024-09-05 15:54:52","2024-09-05 15:54:52","151","Baos"
+"1282","Os Nossos Crepes",NULL,NULL,NULL,NULL,"1","0","2024-09-05 15:54:52","2024-09-05 15:54:52","151","Our Crepes"
+"1283","Outros Crocantes",NULL,NULL,NULL,NULL,"1","0","2024-09-05 15:54:52","2024-09-05 15:54:52","151","Other Crunchy"
+"1284","Sobremesas",NULL,NULL,NULL,NULL,"1","0","2024-09-05 15:54:52","2024-09-05 15:54:52","151","Desserts"
+"1285","Bebidas",NULL,NULL,NULL,NULL,"1","0","2024-09-05 15:54:52","2024-09-05 15:54:52","151","Beverages"
+"1286","Menus e combinados",NULL,NULL,NULL,NULL,"1","0","2024-09-09 15:23:50","2024-09-09 15:23:50","152","Combo time"
+"1287","Rodízio de sushi",NULL,NULL,NULL,NULL,"1","0","2024-09-09 15:23:50","2024-09-09 15:23:50","152","Sushi all you can eat"
+"1288","entrada",NULL,NULL,NULL,NULL,"1","0","2024-09-09 15:23:50","2024-09-09 15:23:50","152","Starters"
+"1289","Sushi / Sashimi",NULL,NULL,NULL,NULL,"1","0","2024-09-09 15:23:51","2024-09-09 15:23:51","152","Sushi / Sashimi"
+"1290","sushi sashimi combinados",NULL,NULL,NULL,NULL,"1","0","2024-09-09 15:23:51","2024-09-09 15:23:51","152","sushi sashimi combos"
+"1291","quentes",NULL,NULL,NULL,NULL,"1","0","2024-09-09 15:23:51","2024-09-09 15:23:51","152","hot"
+"1292","sobremesa",NULL,NULL,NULL,NULL,"1","0","2024-09-09 15:23:51","2024-09-09 15:23:51","152","dessert"
+"1293","TORRADAS",NULL,NULL,NULL,"1","1","0","2024-09-13 08:06:51","2024-09-13 15:22:13","29","TOASTS"
+"1294","ÁGUAS E REFRIGERANTES",NULL,NULL,NULL,"8","1","0","2024-09-13 08:06:51","2024-09-13 15:22:13","29","WATER & SOFT DRINKS"
+"1295","BEBIDAS QUENTES",NULL,NULL,NULL,"10","1","0","2024-09-13 08:06:51","2024-09-13 15:22:13","29","HOT DRINKS"
+"1296","CERVEJAS",NULL,NULL,NULL,"11","1","0","2024-09-13 08:06:52","2024-09-13 15:22:13","29","BEERS"
+"1297","ESPIRITUOSAS E COCKTAILS",NULL,NULL,NULL,"12","1","0","2024-09-13 08:06:52","2024-09-13 15:22:13","29","SPIRITS & COCKTAILS"
+"1298","SANGRIA FIGO DE PITA",NULL,NULL,NULL,"13","1","0","2024-09-13 08:06:52","2024-09-13 15:22:13","29","FIGO DE PITA SANGRIA"
+"1299","VINHOS BRANCOS",NULL,NULL,NULL,"14","1","0","2024-09-13 08:06:52","2024-09-13 15:22:13","29","WHITE WINES"
+"1300","VINHOS TINTOS",NULL,NULL,NULL,"15","1","0","2024-09-13 08:06:52","2024-09-13 15:22:13","29","RED WINES"
+"1301","VINHO ROSÉ",NULL,NULL,NULL,"16","1","0","2024-09-13 08:06:52","2024-09-13 15:22:13","29","ROSÉ WINE"
+"1302","VINHO VERDE",NULL,NULL,NULL,"17","1","0","2024-09-13 08:06:52","2024-09-13 15:22:13","29","GREEN WINE"
+"1303","ESPUMANTE",NULL,NULL,NULL,"18","1","0","2024-09-13 08:06:53","2024-09-13 15:22:13","29","FIZZY WINE"
+"1304","BAGEL'S",NULL,NULL,NULL,"2","1","0","2024-09-13 08:06:53","2024-09-13 15:22:13","29","BAGEL'S"
+"1305","PANQUECAS",NULL,NULL,NULL,"5","1","0","2024-09-13 08:06:53","2024-09-13 15:22:13","29","PANCAKES"
+"1306","TAÇAS DE FRUTA",NULL,NULL,NULL,"6","1","0","2024-09-13 08:06:53","2024-09-13 15:22:13","29","Fruit Bowls"
+"1307","ENTRADAS",NULL,NULL,NULL,"0","1","0","2024-09-13 08:06:53","2024-09-13 15:22:13","29","STARTERS"
+"1308","BOWLS",NULL,NULL,NULL,"3","1","0","2024-09-13 08:06:53","2024-09-13 15:22:13","29","BOWLS"
+"1309","Hambúrgueres",NULL,NULL,NULL,"4","1","0","2024-09-13 08:06:53","2024-09-13 15:22:13","29","Burgers"
+"1310","SOBREMESAS",NULL,NULL,NULL,"7","1","0","2024-09-13 08:06:53","2024-09-13 15:22:13","29","DESSERTS"
+"1311","BEBIDAS",NULL,NULL,NULL,"9","1","0","2024-09-13 08:06:54","2024-09-13 15:22:13","29","DRINKS"
+"1312","Sugestões da casa",NULL,NULL,NULL,"0","0","1","2024-09-13 15:10:28","2024-09-13 15:13:32","29",NULL
+"1313","cocktails s/ álcool",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:02","2024-09-18 11:10:02","152","Non-alcoholic cocktails"
+"1314","cocktails c/ álcool",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:02","2024-09-18 11:10:02","152","Alcoholic cocktails"
+"1315","aperitivos",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:02","2024-09-18 11:10:02","152","Appetizers"
+"1316","outros",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:03","2024-09-18 11:10:03","152","Others"
+"1317","águas",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:03","2024-09-18 11:10:03","152","Waters"
+"1318","refrigerantes",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:03","2024-09-18 11:10:03","152","Soft Drinks"
+"1319","nectars",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:03","2024-09-18 11:10:03","152","Nectars"
+"1320","sumos de fruta natural",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:03","2024-09-18 11:10:03","152","Natural Juices"
+"1321","cervejas",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:03","2024-09-18 11:10:03","152","Beers"
+"1322","vinhos tintos",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:04","2024-09-18 11:10:04","152","red wines"
+"1323","vinhos brancos",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:04","2024-09-18 11:10:04","152","white wines"
+"1324","vinhos verdes",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:04","2024-09-18 11:10:04","152","green wines"
+"1325","vinhos rosés",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:04","2024-09-18 11:10:04","152","rosé wines"
+"1326","champagnes / espumantes",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:04","2024-09-18 11:10:04","152","Champagnes"
+"1327","sakês",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:05","2024-09-18 11:10:05","152","Sakes"
+"1328","whisky's",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:05","2024-09-18 11:10:05","152","Whiskies"
+"1329","destiladas",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:05","2024-09-18 11:10:05","152","Distilled"
+"1330","licores",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:05","2024-09-18 11:10:05","152","liqueurs"
+"1331","porto / moscatel",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:05","2024-09-18 11:10:05","152","port / muscatel"
+"1332","aguardentes",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:05","2024-09-18 11:10:05","152","brandies"
+"1333","cafetaria",NULL,NULL,NULL,NULL,"1","0","2024-09-18 11:10:05","2024-09-18 11:10:05","152","cafeteria"
+"1334","Salads",NULL,NULL,NULL,"2","1","0","2024-06-02 12:11:30","2024-09-30 12:41:14","158",NULL
+"1335","Cold Mezze",NULL,NULL,NULL,"0","1","0","2024-06-02 16:41:25","2024-09-30 12:41:14","158",NULL
+"1336","Hot Mezze",NULL,NULL,NULL,"1","1","0","2024-06-09 21:51:37","2024-09-30 12:41:14","158",NULL
+"1337","Wraps & Manooshe",NULL,NULL,NULL,"3","0","0","2024-06-10 13:33:05","2024-09-30 12:41:14","158",NULL
+"1338","Mains",NULL,NULL,NULL,"4","1","0","2024-07-21 13:49:30","2024-09-30 12:41:41","158",NULL
+"1339","Extras",NULL,NULL,NULL,"5","1","0","2024-07-21 14:14:48","2024-09-30 12:41:14","158",NULL
+"1340","Sauces",NULL,NULL,NULL,"6","1","0","2024-07-21 14:30:51","2024-09-30 12:41:14","158",NULL
+"1341","Drinks",NULL,NULL,NULL,"7","0","0","2024-08-09 22:16:30","2024-09-30 12:41:14","158",NULL
+"1342","Desserts",NULL,NULL,NULL,"8","1","0","2024-09-29 19:54:17","2024-09-30 12:41:14","158",NULL
+"1343","Sugestões do chef",NULL,NULL,NULL,"0","1","0","2024-09-30 13:01:03","2024-10-08 12:44:13","153","Chef's Suggestions"
+"1344","Menus de ALMOÇO - Exclusivo almoços seg a sex",NULL,NULL,NULL,"2","1","0","2024-09-30 13:03:12","2024-10-08 12:44:13","153","Executive Menus"
+"1345","Entradas/ Tempuras",NULL,NULL,NULL,"3","1","0","2024-09-30 13:03:12","2024-10-08 12:44:13","153","Appetizers/Tempuras"
+"1346","Temakis/ Sushi/ Sashimis",NULL,NULL,NULL,"4","1","0","2024-09-30 13:03:12","2024-10-08 12:44:13","153","Sushi/ Sashimis"
+"1347","Combinados do Cheff",NULL,NULL,NULL,"5","1","0","2024-09-30 13:03:13","2024-10-08 12:44:13","153","Chef's Combos"
+"1348","Combinados de Sashimi",NULL,NULL,NULL,"6","1","0","2024-09-30 13:03:13","2024-10-08 12:44:13","153","Only Sashimi Combos"
+"1349","Massa Bendita",NULL,NULL,NULL,"7","1","0","2024-09-30 13:03:13","2024-10-08 12:44:13","153","Blessed Pasta"
+"1350","Beneditinos (kids menu)",NULL,NULL,NULL,"8","1","0","2024-09-30 13:03:13","2024-10-08 12:44:13","153","Beneditinos (Kids menu)"
+"1351","Pratos Especiais",NULL,NULL,NULL,"8","1","1","2024-09-30 13:03:13","2024-10-03 14:27:51","153","Special Dishes"
+"1352","Sobremesas",NULL,NULL,NULL,"13","1","0","2024-09-30 13:03:13","2024-10-08 12:44:13","153","Desserts"
+"1353","Bebidas",NULL,NULL,NULL,"10","1","0","2024-09-30 13:03:14","2024-10-08 12:44:13","153","Beverages"
+"1354","Vinhos",NULL,NULL,NULL,"12","1","0","2024-09-30 13:03:14","2024-10-08 12:44:13","153","Wines"
+"1355","Águas / Refrigerantes / Nectas",NULL,NULL,NULL,"9","1","0","2024-09-30 13:03:14","2024-10-08 12:44:13","153","Waters and Sodas"
+"1356","Cafeteria",NULL,NULL,NULL,"14","1","0","2024-09-30 13:03:14","2024-10-08 12:44:13","153","Cafeteria"
+"1357","Entradas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:04","2024-09-30 14:22:59","160","Starter"
+"1358","Prato principal",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:05","2024-09-30 14:23:00","160","Main dishes"
+"1359","Sobremesas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:06","2024-09-30 14:23:00","160","Desserts"
+"1360","Bebidas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:06","2024-09-30 14:23:00","160","Drinks"
+"1361","Cafetaria",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-09-30 14:23:00","160","Cafeteria"
+"1362","Pequeno almoço",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-09-30 14:23:00","160","Breakfast Menu"
+"1363","Indian Street Food",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-09-30 14:23:00","160","Indian Street Food"
+"1364","Punjabi Dhaba",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-09-30 14:23:00","160","Punjabi Dhaba"
+"1365","Entradas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:04","2024-09-30 14:29:36","161","Starter"
+"1366","Prato principal",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:05","2024-09-30 14:29:36","161","Main dishes"
+"1367","Sobremesas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:06","2024-09-30 14:29:36","161","Desserts"
+"1368","Bebidas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:06","2024-09-30 14:29:36","161","Drinks"
+"1369","Cafetaria",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-09-30 14:29:36","161","Cafeteria"
+"1370","Pequeno almoço",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-09-30 14:29:37","161","Breakfast Menu"
+"1371","Indian Street Food",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-09-30 14:29:37","161","Indian Street Food"
+"1372","Punjabi Dhaba",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-09-30 14:29:37","161","Punjabi Dhaba"
+"1373","Entradas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:04","2024-09-30 17:34:33","162","Starter"
+"1374","Prato principal",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:05","2024-09-30 17:34:33","162","Main dishes"
+"1375","Sobremesas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:06","2024-09-30 17:34:33","162","Desserts"
+"1376","Bebidas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:06","2024-09-30 17:34:33","162","Drinks"
+"1377","Cafetaria",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-09-30 17:34:33","162","Cafeteria"
+"1378","Pequeno almoço",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-09-30 17:34:33","162","Breakfast Menu"
+"1379","Indian Street Food",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-09-30 17:34:33","162","Indian Street Food"
+"1380","Punjabi Dhaba",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-09-30 17:34:33","162","Punjabi Dhaba"
+"1381","Entradas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:04","2024-09-30 17:36:48","163","Starter"
+"1382","Prato principal",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:05","2024-09-30 17:36:48","163","Main dishes"
+"1383","Sobremesas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:06","2024-09-30 17:36:48","163","Desserts"
+"1384","Bebidas",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:06","2024-09-30 17:36:48","163","Drinks"
+"1385","Cafetaria",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-09-30 17:36:48","163","Cafeteria"
+"1386","Pequeno almoço",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-09-30 17:36:48","163","Breakfast Menu"
+"1387","Indian Street Food",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-09-30 17:36:48","163","Indian Street Food"
+"1388","Punjabi Dhaba",NULL,NULL,NULL,NULL,"1","0","2024-06-13 19:40:08","2024-09-30 17:36:48","163","Punjabi Dhaba"
+"1389","Sugestões do chef",NULL,NULL,NULL,NULL,"0","0","2024-09-30 13:01:03","2024-09-30 18:07:33","164","Chef's Suggestions"
+"1390","Menus Executivo",NULL,NULL,NULL,NULL,"0","0","2024-09-30 13:03:12","2024-09-30 18:07:33","164","Executive Menus"
+"1391","Entradas/ Tempuras",NULL,NULL,NULL,NULL,"1","0","2024-09-30 13:03:12","2024-09-30 18:07:34","164","Appetizers/Tempuras"
+"1392","Sushi/ Sashimis",NULL,NULL,NULL,NULL,"1","0","2024-09-30 13:03:12","2024-09-30 18:07:34","164","Sushi/ Sashimis"
+"1393","Combinados do Chefe",NULL,NULL,NULL,NULL,"1","0","2024-09-30 13:03:13","2024-09-30 18:07:34","164","Chef's Combos"
+"1394","Combinados Only Sashimi",NULL,NULL,NULL,NULL,"1","0","2024-09-30 13:03:13","2024-09-30 18:07:34","164","Only Sashimi Combos"
+"1395","Massa Bendita",NULL,NULL,NULL,NULL,"1","0","2024-09-30 13:03:13","2024-09-30 18:07:34","164","Blessed Pasta"
+"1396","Beneditinos (Kids menu)",NULL,NULL,NULL,NULL,"1","0","2024-09-30 13:03:13","2024-09-30 18:07:34","164","Beneditinos (Kids menu)"
+"1397","Pratos Especiais",NULL,NULL,NULL,NULL,"1","0","2024-09-30 13:03:13","2024-09-30 18:07:34","164","Special Dishes"
+"1398","Sobremesas",NULL,NULL,NULL,NULL,"1","0","2024-09-30 13:03:13","2024-09-30 18:07:34","164","Desserts"
+"1399","Bebidas",NULL,NULL,NULL,NULL,"1","0","2024-09-30 13:03:14","2024-09-30 18:07:34","164","Beverages"
+"1400","Vinhos",NULL,NULL,NULL,NULL,"1","0","2024-09-30 13:03:14","2024-09-30 18:07:34","164","Wines"
+"1401","Águas e Refrigerantes",NULL,NULL,NULL,NULL,"1","0","2024-09-30 13:03:14","2024-09-30 18:07:34","164","Waters and Sodas"
+"1402","Cafeteria",NULL,NULL,NULL,NULL,"1","0","2024-09-30 13:03:14","2024-09-30 18:07:34","164","Cafeteria"
+"1403","Panquecas viciantes",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:07","2024-10-01 10:44:22","159","Addictive Pancakes"
+"1404","Para uma entrada em grande",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:07","2024-10-01 10:44:27","159","For a Grand Entrance"
+"1405","Bowls of LOV",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:07","2024-10-01 10:44:31","159","Bowls of LOV"
+"1406","Ovos-que-chocam",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:07","2024-10-01 10:45:36","159","Eggs that Shock"
+"1407","Viremos pelas tostas",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:07","2024-10-01 10:45:24","159","We Come for the Toasts"
+"1408","Poke Bowls",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:07","2024-10-01 10:44:34","159","Poke Bowls"
+"1409","Burritos & Wraps",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:08","2024-10-01 10:44:58","159","Burritos & Wraps"
+"1410","Pratos Fixos",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:08","2024-10-01 10:45:02","159","Fixed Dishes"
+"1411","Drinks Menu",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:08","2024-10-01 10:44:38","159","Drinks Menu"
+"1412","Sumos Super Naturais",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:08","2024-10-01 10:44:41","159","Super Natural Juices"
+"1413","Chá Quente",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:08","2024-10-01 10:44:47","159","Hot Tea"
+"1414","Chá Frio",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:08","2024-10-01 10:44:44","159","Iced Tea"
+"1415","Smoothie-Operator",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:08","2024-10-01 10:45:05","159","Smoothie-Operator"
+"1416","Café",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:08","2024-10-01 10:45:08","159","Coffee"
+"1417","Sangria",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:08","2024-10-01 10:45:14","159","Sangria"
+"1418","Espumante",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:08","2024-10-01 10:45:11","159","Sparkling Wine"
+"1419","Vinho Branco",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:08","2024-10-01 10:45:21","159","White Wine"
+"1420","Vinho Tinto",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:08","2024-10-01 10:44:54","159","Red Wine"
+"1421","Cerveja",NULL,NULL,NULL,NULL,"1","1","2024-09-30 18:10:08","2024-10-01 10:44:51","159","Beer"
+"1422","Sample Category",NULL,NULL,NULL,"0","1","0","2024-10-01 08:04:24","2024-10-01 08:04:24","165",NULL
+"1423","Panquecas viciantes",NULL,NULL,NULL,"0","1","0","2024-10-01 10:45:45","2024-10-10 01:15:05","159","Addictive Pancakes"
+"1424","Para uma entrada em grande",NULL,NULL,NULL,"6","1","0","2024-10-01 10:45:45","2024-10-10 01:15:05","159","For a Grand Entrance"
+"1425","Bowls of LOV",NULL,NULL,NULL,"3","1","0","2024-10-01 10:45:45","2024-10-10 01:15:05","159","Bowls of LOV"
+"1426","Ovos-que-chocam",NULL,NULL,NULL,"1","1","0","2024-10-01 10:45:45","2024-10-10 01:15:05","159","Eggs that Shock"
+"1427","Viremos pelas tostas",NULL,NULL,NULL,"2","1","0","2024-10-01 10:45:45","2024-10-10 01:15:05","159","We Come for the Toasts"
+"1428","Poke Bowls",NULL,NULL,NULL,"4","1","0","2024-10-01 10:45:45","2024-10-10 01:15:05","159","Poke Bowls"
+"1429","Burritos & Wraps",NULL,NULL,NULL,"5","1","0","2024-10-01 10:45:45","2024-10-10 01:15:05","159","Burritos & Wraps"
+"1430","Pratos Fixos",NULL,NULL,NULL,"7","1","0","2024-10-01 10:45:45","2024-10-10 01:15:05","159","Fixed Dishes"
+"1431","Drinks Menu",NULL,NULL,NULL,"8","1","0","2024-10-01 10:45:45","2024-10-10 01:15:05","159","Drinks Menu"
+"1432","Sumos Super Naturais",NULL,NULL,NULL,"9","1","0","2024-10-01 10:45:45","2024-10-10 01:15:05","159","Super Natural Juices"
+"1433","Limo-Nada",NULL,NULL,NULL,"10","1","0","2024-10-01 10:45:45","2024-10-10 01:15:05","159","Lemonade"
+"1434","Chá Quente",NULL,NULL,NULL,NULL,"1","1","2024-10-01 10:45:45","2024-10-06 22:50:41","159","Hot Tea"
+"1435","Chá Frio",NULL,NULL,NULL,NULL,"1","1","2024-10-01 10:45:45","2024-10-06 22:50:45","159","Iced Tea"
+"1436","Smoothie-Operator",NULL,NULL,NULL,"11","1","0","2024-10-01 10:45:45","2024-10-10 01:15:05","159","Smoothie-Operator"
+"1437","Café",NULL,NULL,NULL,"12","1","0","2024-10-01 10:45:45","2024-10-10 01:15:05","159","Coffee"
+"1438","Chá",NULL,NULL,NULL,"13","1","0","2024-10-01 10:45:46","2024-10-10 01:15:05","159","Tea"
+"1439","Sangria",NULL,NULL,NULL,"14","1","0","2024-10-01 10:45:46","2024-10-10 01:15:05","159","Sangria"
+"1440","Espumante",NULL,NULL,NULL,"15","1","0","2024-10-01 10:45:46","2024-10-10 01:15:05","159","Sparkling Wine"
+"1441","Vinho Branco",NULL,NULL,NULL,"16","1","0","2024-10-01 10:45:46","2024-10-10 01:15:05","159","White Wine"
+"1442","Vinho Tinto",NULL,NULL,NULL,"17","1","0","2024-10-01 10:45:46","2024-10-10 01:15:05","159","Red Wine"
+"1443","Cerveja",NULL,NULL,NULL,"18","1","0","2024-10-01 10:45:46","2024-10-10 01:15:05","159","Beer"
+"1444","Licores / Conhacs / Digestilvos / Whiskys",NULL,NULL,NULL,"11","1","0","2024-10-03 08:59:08","2024-10-08 12:44:13","153",NULL
+"1445","Sample",NULL,NULL,NULL,"0","1","0","2024-10-08 12:24:02","2024-10-08 12:24:02","165",NULL
+"1446","Prato do dia - Exclusivo almoço seg a sex",NULL,NULL,NULL,"1","1","0","2024-10-08 12:43:20","2024-10-08 12:54:26","153",NULL

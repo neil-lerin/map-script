@@ -121,12 +121,12 @@ export async function restaurantMigrate(
       .on('end', async () => {
         try {
           const filteredRestaurants = results.filter(row => row.userId === oldUserId);
-          let hasSelectedRestaurant = false;
+          // let hasSelectedRestaurant = false;
           await Promise.all(filteredRestaurants.map(async (row) => {
             const token = nanoid(12);
             const resType = await getRestaurantType(row.cuisines);
-            const isSelected = !hasSelectedRestaurant;
-            hasSelectedRestaurant = true;
+            // const isSelected = !hasSelectedRestaurant;
+            // hasSelectedRestaurant = true;
             const newRes = await prisma.restaurant.create({
               data: {
                 name: row.name,
@@ -134,7 +134,7 @@ export async function restaurantMigrate(
                 token: token,
                 vat_number: row.VATNumber,
                 restaurantUsers: {
-                  create: { userId: newUserId, isSelected: isSelected },
+                  create: { userId: newUserId, isSelected: false },
                 },
                 ...(row.cuisines && { restaurantTypeId: row.cuisines && resType?.id }),
                 theme: {
