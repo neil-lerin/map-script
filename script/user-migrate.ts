@@ -35,6 +35,7 @@ const itemIngredientsCsv = path.join(__dirname, '../csv/itemingredient.csv');
 const restrictionsCsv = path.join(__dirname, '../csv/restrictions.csv');
 const dietaryRestriction = path.join(__dirname, '../csv/dietaryrestrictions.csv');
 const sidesCsv = path.join(__dirname, '../csv/sides.csv');
+const csvFilePath = path.join(__dirname, '../csv/users.csv');
 const menuItemMap: Array<{
   oldId: string,
   newId: string
@@ -52,7 +53,7 @@ const allRestrictionsMaps: Array<{
 const hashPass = await bcrypt.hash("password", 10)
 export async function userMigrate() {
   const results: any[] = [];
-  const csvFilePath = path.join(__dirname, '../csv/users.csv');
+
   // const allIngredientMaps: { oldId: string; newId: string }[] = [];
   fs.createReadStream(csvFilePath)
     .pipe(csv())
@@ -121,12 +122,12 @@ export async function restaurantMigrate(
       .on('end', async () => {
         try {
           const filteredRestaurants = results.filter(row => row.userId === oldUserId);
-          // let hasSelectedRestaurant = false;
+          let hasSelectedRestaurant = false;
           await Promise.all(filteredRestaurants.map(async (row) => {
             const token = nanoid(12);
             const resType = await getRestaurantType(row.cuisines);
-            // const isSelected = !hasSelectedRestaurant;
-            // hasSelectedRestaurant = true;
+            const isSelected = !hasSelectedRestaurant;
+            hasSelectedRestaurant = true;
             const newRes = await prisma.restaurant.create({
               data: {
                 name: row.name,
@@ -134,7 +135,7 @@ export async function restaurantMigrate(
                 token: token,
                 vat_number: row.VATNumber,
                 restaurantUsers: {
-                  create: { userId: newUserId, isSelected: false },
+                  create: { userId: newUserId, isSelected: isSelected },
                 },
                 ...(row.cuisines && { restaurantTypeId: row.cuisines && resType?.id }),
                 theme: {

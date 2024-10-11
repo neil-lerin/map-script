@@ -32,13 +32,13 @@ const itemIngredientsCsv = path.join(__dirname, '../csv/itemingredient.csv');
 const restrictionsCsv = path.join(__dirname, '../csv/restrictions.csv');
 const dietaryRestriction = path.join(__dirname, '../csv/dietaryrestrictions.csv');
 const sidesCsv = path.join(__dirname, '../csv/sides.csv');
+const csvFilePath = path.join(__dirname, '../csv/users.csv');
 const menuItemMap = [];
 const allIngredientMaps = [];
 const allRestrictionsMaps = [];
 const hashPass = await bcrypt.hash("password", 10);
 export async function userMigrate() {
     const results = [];
-    const csvFilePath = path.join(__dirname, '../csv/users.csv');
     // const allIngredientMaps: { oldId: string; newId: string }[] = [];
     fs.createReadStream(csvFilePath)
         .pipe(csv())
@@ -96,12 +96,12 @@ export async function restaurantMigrate(oldUserId, newUserId, prisma) {
             .on('end', async () => {
             try {
                 const filteredRestaurants = results.filter(row => row.userId === oldUserId);
-                // let hasSelectedRestaurant = false;
+                let hasSelectedRestaurant = false;
                 await Promise.all(filteredRestaurants.map(async (row) => {
                     const token = nanoid(12);
                     const resType = await getRestaurantType(row.cuisines);
-                    // const isSelected = !hasSelectedRestaurant;
-                    // hasSelectedRestaurant = true;
+                    const isSelected = !hasSelectedRestaurant;
+                    hasSelectedRestaurant = true;
                     const newRes = await prisma.restaurant.create({
                         data: {
                             name: row.name,
@@ -122,7 +122,7 @@ export async function restaurantMigrate(oldUserId, newUserId, prisma) {
                         },
                     });
                     const languagesArray = row.languages.split(',');
-                    // await ingredientMigrate(row.id, newRes.id, newUserId, languagesArray, prisma)
+                    await ingredientMigrate(row.id, newRes.id, newUserId, languagesArray, prisma);
                     await restricitonMigrate(row.id, newRes.id, newUserId, languagesArray, prisma);
                     await categoryMigrate(row.id, newRes.id, languagesArray, prisma);
                 }));
