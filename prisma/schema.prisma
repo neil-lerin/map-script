@@ -17,9 +17,9 @@ model User {
   createdAt          DateTime            @default(now())
   updatedAt          DateTime            @updatedAt
   isVerified         Boolean             @default(false)
-  defaultLanguange   String              @default("en")
   isActive           Boolean             @default(true)
   phoneNumber        String?
+  defaultLanguage    String              @default("en")
   authProviders      AuthProviders[]
   dietaryWarnings    DeitaryWarning[]
   emailVerification  EmailVerification[]
@@ -86,7 +86,7 @@ model MenuItem {
   restaurantId      String?
   dish_images       String[]
   price             Decimal                  @db.Decimal(9, 2)
-  calories          Int?
+  calories          Decimal?                 @db.Decimal(9, 2)
   variantMenuItemId String?
   extraMenuItemId   String?
   categoryId        String?
