@@ -35,6 +35,7 @@ const itemIngredientsCsv = path.join(__dirname, '../csv/itemingredient.csv');
 const restrictionsCsv = path.join(__dirname, '../csv/restrictions.csv');
 const dietaryRestriction = path.join(__dirname, '../csv/dietaryrestrictions.csv');
 const sidesCsv = path.join(__dirname, '../csv/sides.csv');
+const csvFilePath = path.join(__dirname, '../csv/users.csv');
 const menuItemMap: Array<{
   oldId: string,
   newId: string
@@ -52,7 +53,7 @@ const allRestrictionsMaps: Array<{
 const hashPass = await bcrypt.hash("password", 10)
 export async function userMigrate() {
   const results: any[] = [];
-  const csvFilePath = path.join(__dirname, '../csv/users.csv');
+
   // const allIngredientMaps: { oldId: string; newId: string }[] = [];
   fs.createReadStream(csvFilePath)
     .pipe(csv())
