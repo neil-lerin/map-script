@@ -69,7 +69,7 @@ export async function userMigrate() {
                 role: row.isAdmin == 1 ? Role.ADMIN : Role.OWNER,
                 email: row.email,
                 isActive: true,
-                defaultLanguange: row.userLanguage,
+                defaultLanguage: 'pt',
                 phoneNumber: row.mobile,
                 isVerified: true,
                 password: hashPass

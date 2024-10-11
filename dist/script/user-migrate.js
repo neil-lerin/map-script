@@ -54,7 +54,7 @@ export async function userMigrate() {
                             role: row.isAdmin == 1 ? Role.ADMIN : Role.OWNER,
                             email: row.email,
                             isActive: true,
-                            defaultLanguange: row.userLanguage,
+                            defaultLanguage: row.userLanguage,
                             phoneNumber: row.mobile,
                             isVerified: true,
                             password: hashPass
@@ -109,7 +109,7 @@ export async function restaurantMigrate(oldUserId, newUserId, prisma) {
                             token: token,
                             vat_number: row.VATNumber,
                             restaurantUsers: {
-                                create: { userId: newUserId, isSelected: false },
+                                create: { userId: newUserId, isSelected: isSelected },
                             },
                             ...(row.cuisines && { restaurantTypeId: row.cuisines && resType?.id }),
                             theme: {
