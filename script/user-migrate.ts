@@ -79,8 +79,8 @@ export async function userMigrate() {
             await restaurantMigrate(row.id, newUser.id, prisma);
           }
           await itemIngredientMap(menuItemMap, allIngredientMaps, itemIngredientsCsv, prisma)
-          await dietaryRestrictionMap(menuItemMap, allRestrictionsMaps, dietaryRestriction, prisma)
-          await itemSideScript(menuItemMap, sidesCsv, prisma)
+          // await dietaryRestrictionMap(menuItemMap, allRestrictionsMaps, dietaryRestriction, prisma)
+          // await itemSideScript(menuItemMap, sidesCsv, prisma)
         });
 
         console.log('Data successfully inserted into PostgreSQL!');
@@ -148,7 +148,7 @@ export async function restaurantMigrate(
               },
             });
             const languagesArray = row.languages.split(',');
-            await ingredientMigrate(row.id, newRes.id, newUserId, languagesArray, prisma)
+            // await ingredientMigrate(row.id, newRes.id, newUserId, languagesArray, prisma)
             await restricitonMigrate(row.id, newRes.id, newUserId, languagesArray, prisma)
             await categoryMigrate(row.id, newRes.id, languagesArray, prisma,);
           }));
@@ -605,7 +605,7 @@ export async function categoryItem(
                         name: item.name,
                         description: item.description
                       });
-                    } else if (lang === 'en' && (row.name_ol !== 'NULL' && row.description_ol !== 'NULL')) {
+                    } else if (lang === 'en' && (item.name_ol !== 'NULL' && item.description_ol !== 'NULL')) {
                       translations.push({
                         lang: 'en',
                         name: item.name_ol,
