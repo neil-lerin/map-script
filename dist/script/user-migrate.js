@@ -5,10 +5,8 @@ import { dirname } from 'path';
 import csv from 'csv-parser';
 import { PrismaClient, Role } from '@prisma/client';
 import { nanoid } from 'nanoid';
-import { itemIngredientMap } from './item-ingredient-map.js';
-import { dietaryRestrictionMap } from './dietary-restrictions-map.js';
-import { itemSideScript } from './sides-script.js';
 import * as bcrypt from 'bcrypt';
+import { itemIngredient } from './item-ingredient.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const prisma = new PrismaClient({
@@ -54,7 +52,7 @@ export async function userMigrate() {
                             role: row.isAdmin == 1 ? Role.ADMIN : Role.OWNER,
                             email: row.email,
                             isActive: true,
-                            defaultLanguage: row.userLanguage,
+                            defaultLanguage: 'pt',
                             phoneNumber: row.mobile,
                             isVerified: true,
                             password: hashPass
@@ -62,9 +60,9 @@ export async function userMigrate() {
                     });
                     await restaurantMigrate(row.id, newUser.id, prisma);
                 }
-                await itemIngredientMap(menuItemMap, allIngredientMaps, itemIngredientsCsv, prisma);
-                await dietaryRestrictionMap(menuItemMap, allRestrictionsMaps, dietaryRestriction, prisma);
-                await itemSideScript(menuItemMap, sidesCsv, prisma);
+                // await itemIngredientMap(menuItemMap, allIngredientMaps, itemIngredientsCsv, prisma)
+                // await dietaryRestrictionMap(menuItemMap, allRestrictionsMaps, dietaryRestriction, prisma)
+                // await itemSideScript(menuItemMap, sidesCsv, prisma)
             });
             console.log('Data successfully inserted into PostgreSQL!');
         }
@@ -122,9 +120,9 @@ export async function restaurantMigrate(oldUserId, newUserId, prisma) {
                         },
                     });
                     const languagesArray = row.languages.split(',');
-                    await ingredientMigrate(row.id, newRes.id, newUserId, languagesArray, prisma);
+                    // await ingredientMigrate(row.id, newRes.id, newUserId, languagesArray, prisma)
                     await restricitonMigrate(row.id, newRes.id, newUserId, languagesArray, prisma);
-                    await categoryMigrate(row.id, newRes.id, languagesArray, prisma);
+                    await categoryMigrate(row.id, newRes.id, languagesArray, newUserId, prisma);
                 }));
                 console.log(`Restaurants for user ${newUserId} successfully migrated!`);
                 resolve(true);
@@ -254,7 +252,7 @@ export async function restricitonMigrate(oldRestoId, newRestoId, userId, languag
         });
     });
 }
-export async function categoryMigrate(resOldId, resNewId, languages, prisma) {
+export async function categoryMigrate(resOldId, resNewId, languages, newUserId, prisma) {
     const results = [];
     return new Promise((resolve, reject) => {
         fs.createReadStream(categoriesCsv)
@@ -315,8 +313,8 @@ export async function categoryMigrate(resOldId, resNewId, languages, prisma) {
                             deletedAt: row.isDeleted == 1 ? new Date() : null
                         },
                     });
-                    await subCategoryMigrate(row.id, newCategory.id, languages, resNewId, resOldId, prisma);
-                    await categoryItem(row.id, newCategory.id, resNewId, languages, resOldId, prisma);
+                    await subCategoryMigrate(row.id, newCategory.id, languages, resNewId, newUserId, prisma);
+                    await categoryItem(row.id, newCategory.id, resNewId, languages, newUserId, prisma);
                 }));
                 console.log(`Categories for restaurant ${resNewId} successfully migrated!`);
                 resolve(true);
@@ -328,7 +326,7 @@ export async function categoryMigrate(resOldId, resNewId, languages, prisma) {
         });
     });
 }
-export async function subCategoryMigrate(oldCategoryId, newCategoryId, languages, resNewId, resOldId, prisma) {
+export async function subCategoryMigrate(oldCategoryId, newCategoryId, languages, resNewId, newUserId, prisma) {
     const results = [];
     return new Promise((resolve, reject) => {
         fs.createReadStream(subcategoriesCsv)
@@ -390,7 +388,7 @@ export async function subCategoryMigrate(oldCategoryId, newCategoryId, languages
                             deletedAt: row.isDeleted == 1 ? new Date() : null
                         },
                     });
-                    await subcategoryItemMigrate(row.id, newSubCat.id, newCategoryId, languages, resNewId, resOldId, prisma);
+                    await subcategoryItemMigrate(row.id, newSubCat.id, newCategoryId, languages, resNewId, newUserId, prisma);
                 }));
                 console.log(`Subcategories for category ${oldCategoryId} successfully migrated!`);
                 resolve(true);
@@ -402,7 +400,7 @@ export async function subCategoryMigrate(oldCategoryId, newCategoryId, languages
         });
     });
 }
-export async function subcategoryItemMigrate(oldSubCategoryId, newSubCategoryId, newCategoryId, languages, restaurantId, resOldId, prisma) {
+export async function subcategoryItemMigrate(oldSubCategoryId, newSubCategoryId, newCategoryId, languages, restaurantId, newUserId, prisma) {
     const results = [];
     return new Promise((resolve, reject) => {
         fs.createReadStream(itemCsv)
@@ -470,6 +468,7 @@ export async function subcategoryItemMigrate(oldSubCategoryId, newSubCategoryId,
                             }
                         }
                     });
+                    await itemIngredient(row.id, newItem.id, itemIngredientsCsv, newUserId, languages, ingredientsCsv, prisma);
                     menuItemMap.push({ oldId: row.id, newId: newItem.id });
                 }));
                 console.log(`Subcategory Item Migrated!`);
@@ -482,7 +481,7 @@ export async function subcategoryItemMigrate(oldSubCategoryId, newSubCategoryId,
         });
     });
 }
-export async function categoryItem(oldCategoryId, newCategoryId, restaurantId, languages, resOldId, prisma) {
+export async function categoryItem(oldCategoryId, newCategoryId, restaurantId, languages, newUserId, prisma) {
     const results = [];
     return new Promise((resolve, reject) => {
         fs.createReadStream(categoryitem)
@@ -513,7 +512,7 @@ export async function categoryItem(oldCategoryId, newCategoryId, restaurantId, l
                                             description: item.description
                                         });
                                     }
-                                    else if (lang === 'en' && (row.name_ol !== 'NULL' && row.description_ol !== 'NULL')) {
+                                    else if (lang === 'en' && (item.name_ol !== 'NULL' && item.description_ol !== 'NULL')) {
                                         translations.push({
                                             lang: 'en',
                                             name: item.name_ol,
@@ -549,14 +548,15 @@ export async function categoryItem(oldCategoryId, newCategoryId, restaurantId, l
                                 }
                             }
                         });
+                        await itemIngredient(item.id, newItem.id, itemIngredientsCsv, newUserId, languages, ingredientsCsv, prisma);
                         menuItemMap.push({ oldId: item.id, newId: newItem.id });
                     }
                 }));
-                console.log(`Subcategories for category ${oldCategoryId} successfully migrated!`);
+                console.log(`Item for ${oldCategoryId} successfully migrated!`);
                 resolve(true);
             }
             catch (error) {
-                console.error('Error migrating categories:', error);
+                console.error('Error migrating item:', error);
                 reject(error);
             }
         });
