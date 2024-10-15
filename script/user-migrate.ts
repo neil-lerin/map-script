@@ -10,6 +10,7 @@ import { itemIngredientMap } from './item-ingredient-map.js';
 import { dietaryRestrictionMap } from './dietary-restrictions-map.js';
 import { itemSideScript } from './sides-script.js';
 import * as bcrypt from 'bcrypt';
+import { itemIngredient } from './item-ingredient.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -78,9 +79,9 @@ export async function userMigrate() {
 
             await restaurantMigrate(row.id, newUser.id, prisma);
           }
-          await itemIngredientMap(menuItemMap, allIngredientMaps, itemIngredientsCsv, prisma)
-          // await dietaryRestrictionMap(menuItemMap, allRestrictionsMaps, dietaryRestriction, prisma)
-          // await itemSideScript(menuItemMap, sidesCsv, prisma)
+          // await itemIngredientMap(menuItemMap, allIngredientMaps, itemIngredientsCsv, prisma)
+          await dietaryRestrictionMap(menuItemMap, allRestrictionsMaps, dietaryRestriction, prisma)
+          await itemSideScript(menuItemMap, sidesCsv, prisma)
         });
 
         console.log('Data successfully inserted into PostgreSQL!');
@@ -150,7 +151,7 @@ export async function restaurantMigrate(
             const languagesArray = row.languages.split(',');
             // await ingredientMigrate(row.id, newRes.id, newUserId, languagesArray, prisma)
             await restricitonMigrate(row.id, newRes.id, newUserId, languagesArray, prisma)
-            await categoryMigrate(row.id, newRes.id, languagesArray, prisma,);
+            await categoryMigrate(row.id, newRes.id, languagesArray, newUserId, prisma);
           }));
 
           console.log(`Restaurants for user ${newUserId} successfully migrated!`);
@@ -302,6 +303,7 @@ export async function categoryMigrate(
   resOldId: string,
   resNewId: string,
   languages: Array<any>,
+  newUserId: string,
   prisma: Omit<PrismaClient<Prisma.PrismaClientOptions, never, DefaultArgs>, "$connect" | "$disconnect" | "$on" | "$transaction" | "$use" | "$extends">,
 ) {
   const results: any[] = [];
@@ -367,8 +369,8 @@ export async function categoryMigrate(
                 deletedAt: row.isDeleted == 1 ? new Date() : null
               },
             });
-            await subCategoryMigrate(row.id, newCategory.id, languages, resNewId, resOldId, prisma)
-            await categoryItem(row.id, newCategory.id, resNewId, languages, resOldId, prisma)
+            await subCategoryMigrate(row.id, newCategory.id, languages, resNewId, newUserId, prisma)
+            await categoryItem(row.id, newCategory.id, resNewId, languages, newUserId, prisma)
           }));
           console.log(`Categories for restaurant ${resNewId} successfully migrated!`);
           resolve(true);
@@ -385,7 +387,7 @@ export async function subCategoryMigrate(
   newCategoryId: string,
   languages: Array<any>,
   resNewId: string,
-  resOldId: string,
+  newUserId: string,
   prisma: Omit<PrismaClient<Prisma.PrismaClientOptions, never, DefaultArgs>, "$connect" | "$disconnect" | "$on" | "$transaction" | "$use" | "$extends">,
 ) {
   const results: any[] = [];
@@ -453,7 +455,7 @@ export async function subCategoryMigrate(
                 deletedAt: row.isDeleted == 1 ? new Date() : null
               },
             });
-            await subcategoryItemMigrate(row.id, newSubCat.id, newCategoryId, languages, resNewId, resOldId, prisma)
+            await subcategoryItemMigrate(row.id, newSubCat.id, newCategoryId, languages, resNewId, newUserId, prisma)
           }));
 
           console.log(`Subcategories for category ${oldCategoryId} successfully migrated!`);
@@ -472,7 +474,7 @@ export async function subcategoryItemMigrate(
   newCategoryId: string,
   languages: Array<any>,
   restaurantId: string,
-  resOldId: string,
+  newUserId: string,
   prisma: Omit<PrismaClient<Prisma.PrismaClientOptions, never, DefaultArgs>, "$connect" | "$disconnect" | "$on" | "$transaction" | "$use" | "$extends">,
 ) {
   const results: any[] = [];
@@ -483,9 +485,6 @@ export async function subcategoryItemMigrate(
       .on('end', async () => {
         try {
           const filteredMenuItem = results.filter(row => row.subcategoryId === oldSubCategoryId);
-
-
-
           await Promise.all(filteredMenuItem.map(async (row) => {
             const translations: any = [];
 
@@ -549,6 +548,7 @@ export async function subcategoryItemMigrate(
                 }
               }
             })
+            await itemIngredient(row.id, newItem.id, itemIngredientsCsv, newUserId, languages, ingredientsCsv, prisma)
             menuItemMap.push({ oldId: row.id, newId: newItem.id })
           }));
           console.log(`Subcategory Item Migrated!`);
@@ -567,7 +567,7 @@ export async function categoryItem(
   newCategoryId: string,
   restaurantId: string,
   languages: Array<any>,
-  resOldId: string,
+  newUserId: string,
   prisma: Omit<PrismaClient<Prisma.PrismaClientOptions, never, DefaultArgs>, "$connect" | "$disconnect" | "$on" | "$transaction" | "$use" | "$extends">
 ) {
   const results: any[] = [];
@@ -642,13 +642,14 @@ export async function categoryItem(
                   }
                 }
               })
+              await itemIngredient(item.id, newItem.id, itemIngredientsCsv, newUserId, languages, ingredientsCsv, prisma)
               menuItemMap.push({ oldId: item.id, newId: newItem.id })
             }
           }));
-          console.log(`Subcategories for category ${oldCategoryId} successfully migrated!`);
+          console.log(`Item for ${oldCategoryId} successfully migrated!`);
           resolve(true);
         } catch (error) {
-          console.error('Error migrating categories:', error);
+          console.error('Error migrating item:', error);
           reject(error);
         }
       });
