@@ -5,8 +5,29 @@ import { dirname } from 'path';
 import csv from 'csv-parser';
 import { PrismaClient, Role } from '@prisma/client';
 import { nanoid } from 'nanoid';
+import { dietaryRestrictionMap } from './dietary-restrictions-map.js';
+import { itemSideScript } from './sides-script.js';
 import * as bcrypt from 'bcrypt';
 import { itemIngredient } from './item-ingredient.js';
+import { S3Client } from '@aws-sdk/client-s3';
+import { Upload } from "@aws-sdk/lib-storage";
+import 'dotenv/config';
+import mime from 'mime-types';
+import axios from 'axios';
+const accessKeyId = process.env.S3_ACCESS_KEY;
+const secretAccessKey = process.env.S3_SECRET_ACCESS_KEY;
+const region = process.env.S3_REGION;
+if (!accessKeyId || !secretAccessKey || !region) {
+    throw new Error('Missing S3 configuration in environment variables');
+}
+const s3 = new S3Client({
+    region,
+    credentials: {
+        accessKeyId,
+        secretAccessKey,
+    },
+    forcePathStyle: true,
+});
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const prisma = new PrismaClient({
@@ -61,8 +82,8 @@ export async function userMigrate() {
                     await restaurantMigrate(row.id, newUser.id, prisma);
                 }
                 // await itemIngredientMap(menuItemMap, allIngredientMaps, itemIngredientsCsv, prisma)
-                // await dietaryRestrictionMap(menuItemMap, allRestrictionsMaps, dietaryRestriction, prisma)
-                // await itemSideScript(menuItemMap, sidesCsv, prisma)
+                await dietaryRestrictionMap(menuItemMap, allRestrictionsMaps, dietaryRestriction, prisma);
+                await itemSideScript(menuItemMap, sidesCsv, prisma);
             });
             console.log('Data successfully inserted into PostgreSQL!');
         }
@@ -529,9 +550,21 @@ export async function categoryItem(oldCategoryId, newCategoryId, restaurantId, l
                             //   });
                             // }
                         }
+                        const randomName = nanoid(14);
+                        let dishImages = [];
+                        if (item.itemImage !== 'NULL') {
+                            const imageUrls = item.itemImage.split(',');
+                            await Promise.all(imageUrls.map(async (imageUrl) => {
+                                const fullUrl = `https://api.joinbitte.com/${imageUrl.trim()}`;
+                                const itemKey = await uploadFileToS3(fullUrl, randomName);
+                                if (itemKey !== null) {
+                                    dishImages.push(itemKey);
+                                }
+                            }));
+                        }
                         const newItem = await prisma.menuItem.create({
                             data: {
-                                dish_images: [],
+                                dish_images: dishImages,
                                 restaurantId: restaurantId,
                                 isActive: item.isActive == 1 ? true : false,
                                 position: parseInt(item.srOrder, 10) || 0,
@@ -586,4 +619,32 @@ export async function findItemInCsv(itemId) {
             reject(error);
         });
     });
+}
+async function uploadFileToS3(filePath, key) {
+    try {
+        const response = await axios({
+            url: filePath,
+            method: 'GET',
+            responseType: 'stream'
+        });
+        if (response.status === 200) {
+            const contentType = mime.lookup(filePath) || 'application/octet-stream';
+            const upload = new Upload({
+                client: s3,
+                params: {
+                    Bucket: process.env.S3_BUCKET_NAME,
+                    Key: `item/${key}`,
+                    Body: response.data,
+                    ContentType: contentType
+                }
+            });
+            await upload.done();
+            return key;
+        }
+        return null;
+    }
+    catch (err) {
+        console.error('Error uploading file:', err);
+        return null;
+    }
 }

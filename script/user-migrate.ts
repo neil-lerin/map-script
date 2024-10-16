@@ -6,11 +6,31 @@ import csv from 'csv-parser';
 import { Prisma, PrismaClient, Role } from '@prisma/client';
 import { nanoid } from 'nanoid';
 import { DefaultArgs } from '@prisma/client/runtime/library';
-import { itemIngredientMap } from './item-ingredient-map.js';
 import { dietaryRestrictionMap } from './dietary-restrictions-map.js';
 import { itemSideScript } from './sides-script.js';
 import * as bcrypt from 'bcrypt';
 import { itemIngredient } from './item-ingredient.js';
+import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3'
+import { Upload } from "@aws-sdk/lib-storage";
+import 'dotenv/config'
+import mime from 'mime-types';
+import axios from 'axios'
+const accessKeyId = process.env.S3_ACCESS_KEY;
+const secretAccessKey = process.env.S3_SECRET_ACCESS_KEY;
+const region = process.env.S3_REGION;
+
+if (!accessKeyId || !secretAccessKey || !region) {
+  throw new Error('Missing S3 configuration in environment variables');
+}
+
+const s3 = new S3Client({
+  region,
+  credentials: {
+    accessKeyId,
+    secretAccessKey,
+  },
+  forcePathStyle: true,
+});
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -623,9 +643,26 @@ export async function categoryItem(
                 //   });
                 // }
               }
+              const randomName = nanoid(14);
+              let dishImages: string[] = [];
+
+              if (item.itemImage !== 'NULL') {
+                const imageUrls = item.itemImage.split(',');
+
+                await Promise.all(
+                  imageUrls.map(async (imageUrl: string) => {
+                    const fullUrl = `https://api.joinbitte.com/${imageUrl.trim()}`;
+                    const itemKey = await uploadFileToS3(fullUrl, randomName);
+                    if (itemKey !== null) {
+                      dishImages.push(`image/${itemKey}`);
+                    }
+                  })
+                );
+              }
+
               const newItem = await prisma.menuItem.create({
                 data: {
-                  dish_images: [],
+                  dish_images: dishImages,
                   restaurantId: restaurantId,
                   isActive: item.isActive == 1 ? true : false,
                   position: parseInt(item.srOrder, 10) || 0,
@@ -684,4 +721,60 @@ export async function findItemInCsv(itemId: string): Promise<any> {
       });
   });
 }
+
+async function uploadBase64Image(base64Image: string, key: string): Promise<string | null> {
+  try {
+    const base64Data = base64Image.replace(/^data:image\/\w+;base64,/, "");
+    const imageBuffer = Buffer.from(base64Data, "base64");
+
+    const mimeType = base64Image.match(/data:(.*?);/)?.[1] || 'application/octet-stream';
+
+    const uploadParams = {
+      Bucket: process.env.S3_BUCKET_NAME,
+      Key: key,
+      Body: imageBuffer,
+      ContentType: mimeType,
+    };
+
+    const command = new PutObjectCommand(uploadParams);
+    await s3.send(command);
+    return key
+  } catch (err) {
+    console.error('Error uploading file:', err);
+    return null;
+  }
+}
+
+async function uploadFileToS3(filePath: string, key: string): Promise<string | null> {
+  try {
+
+    const response = await axios({
+      url: filePath,
+      method: 'GET',
+      responseType: 'stream'
+    });
+
+    if (response.status === 200) {
+      const contentType = mime.lookup(filePath) || 'application/octet-stream';
+
+      const upload = new Upload({
+        client: s3,
+        params: {
+          Bucket: process.env.S3_BUCKET_NAME,
+          Key: `item/${key}`,
+          Body: response.data,
+          ContentType: contentType
+        }
+      });
+
+      await upload.done();
+      return key;
+    }
+    return null;
+  } catch (err) {
+    console.error('Error uploading file:', err);
+    return null
+  }
+}
+
 
