@@ -21,6 +21,8 @@
     "bcrypt": "^5.1.1",
     "csv-parser": "^3.0.0",
     "dotenv": "^16.4.5",
+    "file-type": "^19.6.0",
+    "mime": "^4.0.4",
     "mime-types": "^2.1.35",
     "mysql2": "^3.11.3",
     "nanoid": "^5.0.7",

@@ -15,6 +15,8 @@ import { Upload } from "@aws-sdk/lib-storage";
 import 'dotenv/config'
 import mime from 'mime-types';
 import axios from 'axios'
+import { fileTypeFromBuffer } from 'file-type';
+
 const accessKeyId = process.env.S3_ACCESS_KEY;
 const secretAccessKey = process.env.S3_SECRET_ACCESS_KEY;
 const region = process.env.S3_REGION;
@@ -149,8 +151,22 @@ export async function restaurantMigrate(
             const resType = await getRestaurantType(row.cuisines);
             const isSelected = !hasSelectedRestaurant;
             hasSelectedRestaurant = true;
+            let image = null
+            const randomName = nanoid(14);
+            const backgroundImageRandom = nanoid(14);
+            if (row.logoImage !== 'NULL') {
+              image = await uploadBase64Image(row.logoImage, `restaurant/${randomName}`)
+            }
+
+
+            let backgroundImage = null
+            if (row.bgImage !== 'NULL') {
+              const fullUrl = `https://api.joinbitte.com/${row.bgImage.trim()}`;
+              backgroundImage = await uploadFileToS3(fullUrl, backgroundImageRandom, 'theme')
+            }
             const newRes = await prisma.restaurant.create({
               data: {
+                image,
                 name: row.name,
                 address: row.address,
                 token: token,
@@ -164,6 +180,8 @@ export async function restaurantMigrate(
                     facebookLink: row.facebookLink === 'NULL' ? null : row.facebookLink,
                     instagramLink: row.instaLink === 'NULL' ? null : row.instaLink,
                     tiktokLink: row.tiktokLink === 'NULL' ? null : row.tiktokLink,
+                    isImageBackground: row.bgImage !== 'NULL' ? false : true,
+                    menu_background: row.bgImage !== 'NULL' ? backgroundImage : null
                   },
                 },
               },
@@ -374,12 +392,18 @@ export async function categoryMigrate(
               //   });
               // }
             }
+            // let image = null
+            // const randomName = nanoid(14);
+            // if (row.catImage !== 'NULL') {
+            //   image = await uploadBase64Image(row.catImage, `category/${randomName}`)
+            // }
             const newCategory = await prisma.category.create({
               data: {
                 isActive: row.isActive == 1 ? true : false,
                 createdAt: new Date(row.createdAt),
                 updatedAt: new Date(row.updatedAt),
                 restaurantId: resNewId,
+                // image: image,
                 categoryTranslation: {
                   createMany: {
                     data: translations.length > 0 ? translations : [],
@@ -389,6 +413,7 @@ export async function categoryMigrate(
                 deletedAt: row.isDeleted == 1 ? new Date() : null
               },
             });
+            // TODO
             await subCategoryMigrate(row.id, newCategory.id, languages, resNewId, newUserId, prisma)
             await categoryItem(row.id, newCategory.id, resNewId, languages, newUserId, prisma)
           }));
@@ -548,9 +573,26 @@ export async function subcategoryItemMigrate(
                 // }
               }
             }
+            const randomName = nanoid(14);
+            let dishImages: string[] = [];
+
+            if (row.itemImage !== 'NULL') {
+              const imageUrls = row.itemImage.split(',');
+
+              await Promise.all(
+                imageUrls.map(async (imageUrl: string) => {
+                  const fullUrl = `https://api.joinbitte.com/${imageUrl.trim()}`;
+                  const itemKey = await uploadFileToS3(fullUrl, randomName, 'item');
+                  if (itemKey !== null) {
+                    dishImages.push(`image/${itemKey}`);
+                  }
+                })
+              );
+            }
+
             const newItem = await prisma.menuItem.create({
               data: {
-                dish_images: [],
+                dish_images: dishImages,
                 restaurantId: restaurantId,
                 isActive: row.isActive == 1 ? true : false,
                 position: parseInt(row.srOrder, 10) || 0,
@@ -652,7 +694,7 @@ export async function categoryItem(
                 await Promise.all(
                   imageUrls.map(async (imageUrl: string) => {
                     const fullUrl = `https://api.joinbitte.com/${imageUrl.trim()}`;
-                    const itemKey = await uploadFileToS3(fullUrl, randomName);
+                    const itemKey = await uploadFileToS3(fullUrl, randomName, 'item');
                     if (itemKey !== null) {
                       dishImages.push(`image/${itemKey}`);
                     }
@@ -724,28 +766,37 @@ export async function findItemInCsv(itemId: string): Promise<any> {
 
 async function uploadBase64Image(base64Image: string, key: string): Promise<string | null> {
   try {
-    const base64Data = base64Image.replace(/^data:image\/\w+;base64,/, "");
-    const imageBuffer = Buffer.from(base64Data, "base64");
+    const cleanedBase64Image = base64Image
+      .trim()
+      .replace(/\s+/g, '')
+      .replace(/^data:image\/\w+;base64,/, "");
 
-    const mimeType = base64Image.match(/data:(.*?);/)?.[1] || 'application/octet-stream';
+    if (!cleanedBase64Image) {
+      console.error('Invalid base64 data:', base64Image);
+      return null;
+    }
+
+    const imageBuffer = Buffer.from(cleanedBase64Image, "base64");
+    const mimeTypeMatch = base64Image.match(/data:(.*?);/);
+    const mimeType = mimeTypeMatch ? mimeTypeMatch[1] : 'image/png';
 
     const uploadParams = {
       Bucket: process.env.S3_BUCKET_NAME,
-      Key: key,
+      Key: `${key}.png`,
       Body: imageBuffer,
       ContentType: mimeType,
     };
 
     const command = new PutObjectCommand(uploadParams);
     await s3.send(command);
-    return key
+    return key;
   } catch (err) {
     console.error('Error uploading file:', err);
     return null;
   }
 }
 
-async function uploadFileToS3(filePath: string, key: string): Promise<string | null> {
+async function uploadFileToS3(filePath: string, key: string, folder: string): Promise<string | null> {
   try {
 
     const response = await axios({
@@ -761,7 +812,7 @@ async function uploadFileToS3(filePath: string, key: string): Promise<string | n
         client: s3,
         params: {
           Bucket: process.env.S3_BUCKET_NAME,
-          Key: `item/${key}`,
+          Key: `${folder}/${key}`,
           Body: response.data,
           ContentType: contentType
         }
