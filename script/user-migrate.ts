@@ -15,7 +15,6 @@ import { Upload } from "@aws-sdk/lib-storage";
 import 'dotenv/config'
 import mime from 'mime-types';
 import axios from 'axios'
-import { fileTypeFromBuffer } from 'file-type';
 
 const accessKeyId = process.env.S3_ACCESS_KEY;
 const secretAccessKey = process.env.S3_SECRET_ACCESS_KEY;
@@ -584,7 +583,7 @@ export async function subcategoryItemMigrate(
                   const fullUrl = `https://api.joinbitte.com/${imageUrl.trim()}`;
                   const itemKey = await uploadFileToS3(fullUrl, randomName, 'item');
                   if (itemKey !== null) {
-                    dishImages.push(`image/${itemKey}`);
+                    dishImages.push(`item/${itemKey}`);
                   }
                 })
               );
@@ -696,7 +695,7 @@ export async function categoryItem(
                     const fullUrl = `https://api.joinbitte.com/${imageUrl.trim()}`;
                     const itemKey = await uploadFileToS3(fullUrl, randomName, 'item');
                     if (itemKey !== null) {
-                      dishImages.push(`image/${itemKey}`);
+                      dishImages.push(`item/${itemKey}`);
                     }
                   })
                 );
@@ -782,7 +781,7 @@ async function uploadBase64Image(base64Image: string, key: string): Promise<stri
 
     const uploadParams = {
       Bucket: process.env.S3_BUCKET_NAME,
-      Key: `${key}.png`,
+      Key: `${key}`,
       Body: imageBuffer,
       ContentType: mimeType,
     };
@@ -798,7 +797,6 @@ async function uploadBase64Image(base64Image: string, key: string): Promise<stri
 
 async function uploadFileToS3(filePath: string, key: string, folder: string): Promise<string | null> {
   try {
-
     const response = await axios({
       url: filePath,
       method: 'GET',

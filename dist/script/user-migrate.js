@@ -668,7 +668,7 @@ async function uploadBase64Image(base64Image, key) {
         const mimeType = mimeTypeMatch ? mimeTypeMatch[1] : 'image/png';
         const uploadParams = {
             Bucket: process.env.S3_BUCKET_NAME,
-            Key: `${key}.png`,
+            Key: `${key}`,
             Body: imageBuffer,
             ContentType: mimeType,
         };
@@ -683,6 +683,7 @@ async function uploadBase64Image(base64Image, key) {
 }
 async function uploadFileToS3(filePath, key, folder) {
     try {
+        console.log('kry', key);
         const response = await axios({
             url: filePath,
             method: 'GET',
