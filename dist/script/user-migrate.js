@@ -32,8 +32,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const prisma = new PrismaClient({
     transactionOptions: {
-        timeout: 6000000,
-        maxWait: 6000000
+        timeout: 60000000000,
+        maxWait: 60000000000
     }
 });
 const restaurantType = await prisma.restaurantType.findMany({
@@ -76,7 +76,7 @@ export async function userMigrate() {
                             defaultLanguage: 'pt',
                             phoneNumber: row.mobile,
                             isVerified: true,
-                            password: hashPass
+                            password: row.password
                         },
                     });
                     await restaurantMigrate(row.id, newUser.id, prisma);
@@ -498,7 +498,7 @@ export async function subcategoryItemMigrate(oldSubCategoryId, newSubCategoryId,
                             const fullUrl = `https://api.joinbitte.com/${imageUrl.trim()}`;
                             const itemKey = await uploadFileToS3(fullUrl, randomName, 'item');
                             if (itemKey !== null) {
-                                dishImages.push(`image/${itemKey}`);
+                                dishImages.push(`item/${itemKey}`);
                             }
                         }));
                     }
@@ -591,7 +591,7 @@ export async function categoryItem(oldCategoryId, newCategoryId, restaurantId, l
                                 const fullUrl = `https://api.joinbitte.com/${imageUrl.trim()}`;
                                 const itemKey = await uploadFileToS3(fullUrl, randomName, 'item');
                                 if (itemKey !== null) {
-                                    dishImages.push(`image/${itemKey}`);
+                                    dishImages.push(`item/${itemKey}`);
                                 }
                             }));
                         }
@@ -683,7 +683,6 @@ async function uploadBase64Image(base64Image, key) {
 }
 async function uploadFileToS3(filePath, key, folder) {
     try {
-        console.log('kry', key);
         const response = await axios({
             url: filePath,
             method: 'GET',

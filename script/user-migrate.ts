@@ -37,8 +37,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const prisma = new PrismaClient({
   transactionOptions: {
-    timeout: 6000000,
-    maxWait: 6000000
+    timeout: 60000000000,
+    maxWait: 60000000000
   }
 });
 
@@ -94,7 +94,7 @@ export async function userMigrate() {
                 defaultLanguage: 'pt',
                 phoneNumber: row.mobile,
                 isVerified: true,
-                password: hashPass
+                password: row.password
               },
             });
 
