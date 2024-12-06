@@ -47,6 +47,9 @@ const restaurantType = await prisma.restaurantType.findMany({
     restaurantTypeTranslation: true
   }
 })
+
+const serviceTypes = await prisma.serviceType.findMany()
+
 const restoCsv = path.join(__dirname, '../csv/restaurants.csv');
 const categoriesCsv = path.join(__dirname, '../csv/categories.csv');
 const subcategoriesCsv = path.join(__dirname, '../csv/subcategories.csv');
@@ -76,7 +79,7 @@ const hashPass = await bcrypt.hash("password", 10)
 export async function userMigrate() {
   const results: any[] = [];
 
-  // const allIngredientMaps: { oldId: string; newId: string }[] = [];
+  const allIngredientMaps: { oldId: string; newId: string }[] = [];
   fs.createReadStream(csvFilePath)
     .pipe(csv())
     .on('data', (data) => results.push(data))
@@ -101,6 +104,7 @@ export async function userMigrate() {
             await restaurantMigrate(row.id, newUser.id, prisma);
           }
           // await itemIngredientMap(menuItemMap, allIngredientMaps, itemIngredientsCsv, prisma)
+          // TODO: Uncomment
           await dietaryRestrictionMap(menuItemMap, allRestrictionsMaps, dietaryRestriction, prisma)
           await itemSideScript(menuItemMap, sidesCsv, prisma)
         });
@@ -153,16 +157,18 @@ export async function restaurantMigrate(
             let image = null
             const randomName = nanoid(14);
             const backgroundImageRandom = nanoid(14);
-            if (row.logoImage !== 'NULL') {
-              image = await uploadBase64Image(row.logoImage, `restaurant/${randomName}`)
-            }
+            // TODO: Uncomment this
+            // if (row.logoImage !== 'NULL') {
+            //   image = await uploadBase64Image(row.logoImage, `restaurant/${randomName}`)
+            // }
 
 
             let backgroundImage = null
-            if (row.bgImage !== 'NULL') {
-              const fullUrl = `https://api.joinbitte.com/${row.bgImage.trim()}`;
-              backgroundImage = await uploadFileToS3(fullUrl, backgroundImageRandom, 'theme')
-            }
+            // TODO: Uncomment this
+            // if (row.bgImage !== 'NULL') {
+            //   const fullUrl = `https://api.joinbitte.com/${row.bgImage.trim()}`;
+            //   backgroundImage = await uploadFileToS3(fullUrl, backgroundImageRandom, 'theme')
+            // }
             const newRes = await prisma.restaurant.create({
               data: {
                 image,
@@ -575,19 +581,20 @@ export async function subcategoryItemMigrate(
             const randomName = nanoid(14);
             let dishImages: string[] = [];
 
-            if (row.itemImage !== 'NULL') {
-              const imageUrls = row.itemImage.split(',');
+            // TODO Uncomment this
+            // if (row.itemImage !== 'NULL') {
+            //   const imageUrls = row.itemImage.split(',');
 
-              await Promise.all(
-                imageUrls.map(async (imageUrl: string) => {
-                  const fullUrl = `https://api.joinbitte.com/${imageUrl.trim()}`;
-                  const itemKey = await uploadFileToS3(fullUrl, randomName, 'item');
-                  if (itemKey !== null) {
-                    dishImages.push(`item/${itemKey}`);
-                  }
-                })
-              );
-            }
+            //   await Promise.all(
+            //     imageUrls.map(async (imageUrl: string) => {
+            //       const fullUrl = `https://api.joinbitte.com/${imageUrl.trim()}`;
+            //       const itemKey = await uploadFileToS3(fullUrl, randomName, 'item');
+            //       if (itemKey !== null) {
+            //         dishImages.push(`item/${itemKey}`);
+            //       }
+            //     })
+            //   );
+            // }
 
             const newItem = await prisma.menuItem.create({
               data: {
@@ -596,12 +603,27 @@ export async function subcategoryItemMigrate(
                 isActive: row.isActive == 1 ? true : false,
                 position: parseInt(row.srOrder, 10) || 0,
                 isAvailable: row.availability == 1 ? true : false,
-                portionSize: parseInt(row.portionSize, 10) || 0,
+                portionSize: parseInt(row.portionSize, 10).toString() || '0',
                 price: parseFloat(row.itemPrice) || 0.0,
                 calories: parseInt(row.calories, 10) || 0,
                 deletedAt: row.isDeleted == 1 ? new Date() : null,
                 categoryId: newCategoryId,
                 subCategoryId: newSubCategoryId,
+                serviceTypeId: serviceTypes.find(service => service.serviceEnum === 'DINE_IN')?.id,
+                menuItemServices: {
+                  createMany: {
+                    data: serviceTypes.filter(service => service.serviceEnum !== 'DINE_IN').map(service => (
+                      {
+                        price: parseFloat(row.itemPrice) || 0.0,
+                        position: 0,
+                        serviceTypeId: service.id,
+                        categoryId: newCategoryId,
+                        restaurantId: restaurantId,
+                        subCategoryId: newSubCategoryId,
+                      }
+                    ))
+                  }
+                },
                 menuTranslations: {
                   createMany: {
                     data: translations.length > 0 ? translations : [],
@@ -687,19 +709,20 @@ export async function categoryItem(
               const randomName = nanoid(14);
               let dishImages: string[] = [];
 
-              if (item.itemImage !== 'NULL') {
-                const imageUrls = item.itemImage.split(',');
+              // TODO: Uncomment this
+              // if (item.itemImage !== 'NULL') {
+              //   const imageUrls = item.itemImage.split(',');
 
-                await Promise.all(
-                  imageUrls.map(async (imageUrl: string) => {
-                    const fullUrl = `https://api.joinbitte.com/${imageUrl.trim()}`;
-                    const itemKey = await uploadFileToS3(fullUrl, randomName, 'item');
-                    if (itemKey !== null) {
-                      dishImages.push(`item/${itemKey}`);
-                    }
-                  })
-                );
-              }
+              //   await Promise.all(
+              //     imageUrls.map(async (imageUrl: string) => {
+              //       const fullUrl = `https://api.joinbitte.com/${imageUrl.trim()}`;
+              //       const itemKey = await uploadFileToS3(fullUrl, randomName, 'item');
+              //       if (itemKey !== null) {
+              //         dishImages.push(`item/${itemKey}`);
+              //       }
+              //     })
+              //   );
+              // }
 
               const newItem = await prisma.menuItem.create({
                 data: {
@@ -708,16 +731,30 @@ export async function categoryItem(
                   isActive: item.isActive == 1 ? true : false,
                   position: parseInt(item.srOrder, 10) || 0,
                   isAvailable: item.availability == 1 ? true : false,
-                  portionSize: parseInt(item.portionSize, 10) || 0,
+                  portionSize: parseInt(item.portionSize, 10).toString() || '0',
                   price: parseFloat(item.itemPrice) || 0.0,
                   calories: parseInt(item.calories, 10) || 0,
                   deletedAt: row.isDeleted == 1 ? new Date() : null,
                   categoryId: newCategoryId,
+                  serviceTypeId: serviceTypes.find(service => service.serviceEnum === 'DINE_IN')?.id,
+                  menuItemServices: {
+                    createMany: {
+                      data: serviceTypes.filter(service => service.serviceEnum !== 'DINE_IN').map(service => (
+                        {
+                          price: parseFloat(item.itemPrice) || 0.0,
+                          position: 0,
+                          serviceTypeId: service.id,
+                          categoryId: newCategoryId,
+                          restaurantId: restaurantId
+                        }
+                      ))
+                    }
+                  },
                   menuTranslations: {
                     createMany: {
                       data: translations.length > 0 ? translations : [],
                     }
-                  }
+                  },
                 }
               })
               await itemIngredient(item.id, newItem.id, itemIngredientsCsv, newUserId, languages, ingredientsCsv, prisma)
