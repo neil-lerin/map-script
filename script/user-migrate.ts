@@ -97,7 +97,7 @@ export async function userMigrate() {
                 defaultLanguage: 'pt',
                 phoneNumber: row.mobile,
                 isVerified: true,
-                password: row.password
+                password: hashPass
               },
             });
 
